@@ -1,0 +1,1269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Website Sketches</title>
+<style>
+  :root {
+    --bg: #fbf7f1; --card: #ffffff; --ink: #231f1a; --muted: #6f675d; --line: #e6dfd3;
+    --accent: #2c6e5b; --accent-dark: #1f5144; --accent-soft: #e3f0ea; --warm: #f0a35e; --warm-soft: #fdf0e2;
+    --bad: #b3261e; --bad-soft: #fbe9e7; --radius: 16px;
+    --serif: ui-serif, Georgia, "Times New Roman", serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: radial-gradient(1100px 500px at 85% -10%, #f6e6d0 0%, transparent 60%), var(--bg); color: var(--ink); font: 18px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; min-height: 100vh; }
+  header.top { max-width: 920px; margin: 0 auto; padding: 22px 20px 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .brand { font-family: var(--serif); font-size: 1.25rem; font-weight: 700; letter-spacing: .2px; }
+  .brand span { color: var(--accent); }
+  main { max-width: 920px; margin: 0 auto; padding: 18px 20px 60px; }
+  h1 { font-family: var(--serif); font-size: clamp(1.9rem, 5vw, 2.8rem); line-height: 1.15; margin: 10px 0 10px; }
+  h2 { font-family: var(--serif); font-size: clamp(1.4rem, 3.5vw, 1.8rem); margin: 0 0 6px; }
+  p.lead { color: var(--muted); font-size: 1.08rem; margin: 0 0 22px; max-width: 640px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(18px, 4vw, 32px); box-shadow: 0 12px 34px rgba(60, 40, 10, .07); }
+  .stepnav { display: flex; gap: 8px; margin: 0 0 18px; }
+  .stepnav button { flex: 1; min-width: 0; background: none; border: 0; padding: 0; cursor: pointer; text-align: left; font: inherit; color: var(--muted, #6b6b6b); }
+  .stepnav button i { display: block; height: 7px; border-radius: 99px; background: var(--line); margin-bottom: 6px; }
+  .stepnav button.done i { background: var(--accent); } .stepnav button.now i { background: var(--warm); }
+  .stepnav button span { display: block; font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .stepnav button.now span { color: inherit; font-weight: 700; } .stepnav button:hover span { text-decoration: underline; }
+  @media (max-width: 560px) { .stepnav button span { display: none; } }
+  .steps { display: flex; gap: 8px; margin: 0 0 18px; }
+  .steps i { flex: 1; height: 7px; border-radius: 99px; background: var(--line); }
+  .steps i.done { background: var(--accent); } .steps i.now { background: var(--warm); }
+  .stepname { color: var(--muted); font-size: .92rem; margin-bottom: 4px; letter-spacing: .3px; text-transform: uppercase; font-weight: 600; }
+  label.f { display: block; margin: 18px 0 6px; font-weight: 600; }
+  .hint { color: var(--muted); font-weight: 400; font-size: .92rem; display: block; margin-top: 2px; }
+  input[type=text], input[type=url], input[type=tel], input[type=email], textarea { width: 100%; font: inherit; padding: 13px 15px; border: 1.5px solid var(--line); border-radius: 12px; background: #fffdfa; color: var(--ink); }
+  textarea { min-height: 96px; resize: vertical; }
+  input:focus, textarea:focus, button:focus-visible, .tile:focus-within, .drop:focus-within { outline: 3px solid #f5c892; outline-offset: 1px; border-color: var(--warm); }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; } @media (max-width: 640px) { .two { grid-template-columns: 1fr; } }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; margin-top: 8px; }
+  .tile { border: 1.5px solid var(--line); border-radius: 14px; padding: 14px 16px; cursor: pointer; background: #fffdfa; display: flex; gap: 10px; align-items: flex-start; }
+  .tile.on { border-color: var(--accent); background: var(--accent-soft); }
+  .tile input { margin-top: 5px; accent-color: var(--accent); width: 18px; height: 18px; }
+  .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 24px; }
+  button { font: inherit; cursor: pointer; border-radius: 99px; padding: 13px 26px; border: 1.5px solid var(--line); background: #fff; color: var(--ink); font-weight: 600; }
+  button.go { background: var(--accent); border-color: var(--accent); color: #fff; box-shadow: 0 8px 18px rgba(44, 110, 91, .25); }
+  button.go:hover { background: var(--accent-dark); } button.warm { background: var(--warm); border-color: var(--warm); color: #3a2200; }
+  button.quiet { border-color: transparent; background: transparent; color: var(--muted); text-decoration: underline; padding-left: 8px; padding-right: 8px; }
+  button:disabled { opacity: .5; cursor: not-allowed; }
+  .note { border-radius: 14px; padding: 14px 16px; margin-top: 16px; }
+  .note.warm { background: var(--warm-soft); border: 1px solid #f3d3ad; } .note.bad { background: var(--bad-soft); border: 1px solid #f1c5c0; color: #6b1a14; }
+  .note.good { background: var(--accent-soft); border: 1px solid #c3ddd2; }
+  .drop { border: 2px dashed #d8cdb9; border-radius: 16px; padding: 20px; text-align: center; background: #fffdfa; cursor: pointer; position: relative; }
+  .drop.over { border-color: var(--accent); background: var(--accent-soft); }
+  .drop input { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
+  .drop .folderbtn { position: relative; z-index: 2; display: block; margin: 12px auto 0; }
+  .drop b { display: block; font-size: 1.05rem; }
+  .tile.kind { background: #fffdfa; border: 2px solid #e6dcc9; border-radius: 14px; padding: 14px; font: inherit; color: inherit; }
+  .tile.kind:hover { border-color: var(--accent); }
+  .tablewrap { overflow-x: auto; border: 1px solid #e6dcc9; border-radius: 12px; margin-top: 10px; }
+  table.items { width: 100%; border-collapse: collapse; min-width: 520px; }
+  table.items th { text-align: left; font-size: .8rem; color: var(--muted); padding: 8px 10px; background: #faf6ee; }
+  table.items td { padding: 4px 6px; border-top: 1px solid #efe7d8; }
+  input.cell { width: 100%; border: 1px solid transparent; background: transparent; padding: 7px 8px; border-radius: 8px; font: inherit; }
+  input.cell:hover, input.cell:focus { border-color: #d8cdb9; background: #fff; }
+  .counts { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; margin: 10px 0; }
+  .count { background: #faf6ee; border-radius: 10px; padding: 8px 10px; } .count b { display: block; font-size: 1.4rem; } .count span { font-size: .8rem; color: var(--muted); }
+  .matchrow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; align-items: center; border-top: 1px solid #efe7d8; padding: 10px 0; }
+  .matchrow .files { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+  .thumbfile { display: inline-flex; align-items: center; gap: 4px; background: #faf6ee; border-radius: 8px; padding: 2px 8px; font-size: .8rem; overflow-wrap: anywhere; }
+  .thumbfile .quiet { padding: 0 6px; }
+  .itemright { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+  .chip { font-size: .72rem; font-weight: 700; border-radius: 999px; padding: 2px 10px; background: #efe7d8; color: var(--muted); white-space: nowrap; }
+  .chip.good { background: #e1f2e8; color: #1f7a4d; } .chip.warm { background: #fff0d4; color: #9a5b00; } .chip.bad { background: #fbe5de; color: #a8402a; }
+  details.itemsum { margin: 8px 0; } details.itemsum summary { cursor: pointer; font-weight: 600; }
+  @media (max-width: 640px) { .matchrow { grid-template-columns: 1fr; } } .drop small { color: var(--muted); }
+  details.byhand { margin: 14px 0; } details.byhand > summary { cursor: pointer; font-weight: 700; padding: 6px 0; }
+  .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 10px; }
+  .tab { background: #fff; border: 1px solid var(--line, #e6dcc9); border-radius: 99px; padding: 8px 14px; cursor: pointer; font: inherit; }
+  .tab.on { background: var(--accent, #2d6e5c); color: #fff; border-color: transparent; }
+  td.ph { width: 140px; vertical-align: top; }
+  .rowthumb { position: relative; display: inline-block; margin: 0 6px 6px 0; }
+  .rowthumb img { width: 44px; height: 44px; object-fit: cover; border-radius: 8px; display: block; }
+  .rowthumb button { position: absolute; top: -6px; right: -6px; width: 18px; height: 18px; padding: 0; line-height: 16px; border-radius: 50%; background: rgba(0,0,0,.7); color: #fff; border: 0; cursor: pointer; font-size: 12px; }
+  .addphoto { padding: 4px 8px; font-size: 13px; }
+  .thumbs { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; justify-content: center; }
+  .thumb { position: relative; width: 92px; height: 92px; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: #f4efe6; display: grid; place-items: center; font-size: .75rem; padding: 4px; text-align: center; word-break: break-all; }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+  .thumb button { position: absolute; top: 3px; right: 3px; z-index: 2; padding: 0; width: 26px; height: 26px; line-height: 22px; border-radius: 50%; background: rgba(0,0,0,.65); color: #fff; border: 0; font-size: 1rem; }
+  dl.review { margin: 0; } dl.review div { display: grid; grid-template-columns: 170px 1fr; gap: 6px 14px; padding: 9px 0; border-bottom: 1px solid var(--line); } dl.review dt { color: var(--muted); } dl.review dd { margin: 0; word-break: break-word; }
+  @media (max-width: 640px) { dl.review div { grid-template-columns: 1fr; } }
+  .progress { list-style: none; padding: 0; margin: 20px 0; }
+  .progress li { display: flex; gap: 14px; align-items: center; padding: 12px 0; color: var(--muted); border-bottom: 1px solid var(--line); }
+  .progress li.working { color: var(--ink); font-weight: 600; } .progress li.done { color: var(--accent); }
+  .dot { width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--line); flex: none; display: grid; place-items: center; font-size: .9rem; }
+  li.done .dot { background: var(--accent); border-color: var(--accent); color: #fff; }
+  li.working .dot { border-color: var(--warm); border-top-color: transparent; animation: spin 0.9s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .found { border: 1.5px solid var(--line); border-radius: 14px; padding: 14px 16px; margin-top: 12px; }
+  .found h3 { margin: 0 0 6px; font-size: 1.02rem; } .found ul { margin: 4px 0 8px 18px; padding: 0; }
+  .swatches { display: flex; gap: 8px; margin: 6px 0 10px; } .swatch { width: 42px; height: 42px; border-radius: 10px; border: 1px solid rgba(0,0,0,.15); }
+  .seg { display: inline-flex; border: 1.5px solid var(--line); border-radius: 99px; overflow: hidden; }
+  .seg button { border: 0; border-radius: 0; padding: 8px 18px; background: #fff; font-weight: 600; } .seg button.yes.on { background: var(--accent); color: #fff; } .seg button.no.on { background: var(--bad); color: #fff; }
+  .sketches.single { grid-template-columns: 1fr; max-width: 860px; margin-left: auto; margin-right: auto; }
+  .pagetabs { display: flex; flex-wrap: wrap; gap: 6px; padding: 10px 14px; border-bottom: 1px solid var(--line); background: #fbf8f2; }
+  .pagetabs .tab { padding: 6px 16px; font-size: .92rem; }
+  .pagetabs .tab.on { background: var(--accent-soft); border-color: var(--accent); color: var(--accent-dark); }
+  .sketches { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 18px; } @media (max-width: 860px) { .sketches { grid-template-columns: 1fr; } }
+  .sketch { background: #fff; border: 2px solid var(--line); border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; }
+  .sketch.picked { border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+  .chrome { background: #efe8dc; padding: 9px 12px; display: flex; gap: 6px; } .chrome i { width: 10px; height: 10px; border-radius: 50%; background: #d0c5b1; }
+  .view { position: relative; overflow: hidden; background: #fff; } .view iframe { border: 0; width: 1440px; height: 1900px; transform-origin: top left; pointer-events: none; }
+  .sketch .body { padding: 16px 18px 20px; } .sketch h3 { font-family: var(--serif); margin: 0 0 4px; font-size: 1.3rem; } .sketch p { margin: 0 0 14px; color: var(--muted); font-size: .98rem; }
+  .busy { position: fixed; inset: 0; background: rgba(251, 247, 241, .93); display: grid; place-items: center; z-index: 10; text-align: center; padding: 20px; }
+  .busy .bar { height: 10px; width: min(380px, 80vw); background: var(--line); border-radius: 99px; overflow: hidden; margin: 14px auto 0; } .busy .bar i { display: block; height: 100%; background: var(--accent); width: 0; transition: width .3s; }
+  .check { font-size: 3rem; } .center { text-align: center; }
+  footer { max-width: 920px; margin: 0 auto; padding: 0 20px 40px; color: var(--muted); font-size: .9rem; }
+  .req { color: var(--bad); }
+  .mine { margin: 0 0 26px; } .mine h2 { margin-bottom: 10px; }
+  .mine .list { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; }
+  .proj { display: flex; gap: 12px; align-items: center; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
+  .proj .pic { width: 56px; height: 56px; border-radius: 12px; background: var(--accent-soft); flex: none; display: grid; place-items: center; font-weight: 700; color: var(--accent-dark); font-size: 1.4rem; overflow: hidden; }
+  .proj .pic img { width: 100%; height: 100%; object-fit: cover; }
+  .proj .info { flex: 1; min-width: 0; } .proj b { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .proj small { color: var(--muted); display: block; } .proj .st { font-weight: 600; color: var(--accent-dark); }
+  .proj button { padding: 8px 16px; }
+</style>
+</head>
+<body>
+<header class="top"><div class="brand" id="brand" role="link" tabindex="0" title="Back to the start" style="cursor:pointer">Your <span>Website</span> Sketches</div><div id="topright" class="hint"></div></header>
+<main id="app"></main>
+<footer>Your information is only used to prepare your website sketches.</footer>
+
+<script src="/match.js"></script>
+<script>
+const $ = (id) => document.getElementById(id);
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+function h(tag, props = {}, children = []) {
+  const node = document.createElement(tag);
+  for (const [k, v] of Object.entries(props)) {
+    if (k === 'class') node.className = v;
+    else if (k.startsWith('on')) node.addEventListener(k.slice(2), v);
+    else if (k.includes('-')) { if (v !== undefined && v !== null && v !== false) node.setAttribute(k, v); } // aria-label, data-x: real attributes
+    else if (v !== undefined && v !== null && v !== false) node[k] = v;
+  }
+  for (const c of [].concat(children)) if (c !== null && c !== undefined && c !== false) node.append(c);
+  return node;
+}
+
+// ---------- previous projects (remembered on this device) ----------
+const STATUS_TEXT = { queued: 'Being prepared', analyzing: 'Being prepared', designing: 'Being drawn', confirm: 'Waiting for your check', ready: 'Sketches ready', building: 'Finishing your choice', chosen: 'Approved', failed: 'Needs another try' };
+function savedIds() {
+  try {
+    const v = JSON.parse(localStorage.getItem('sketchRequestIds') || '[]');
+    const list = Array.isArray(v) ? v.filter((x) => typeof x === 'string') : [];
+    const old = localStorage.getItem('sketchRequestId'); // a request made before this list existed
+    return old && !list.includes(old) ? [...list, old] : list;
+  } catch { return []; }
+}
+function rememberId(id) { try { localStorage.setItem('sketchRequestIds', JSON.stringify([id, ...savedIds().filter((x) => x !== id)].slice(0, 30))); } catch { /* storage not available */ } }
+async function loadMine() {
+  const ids = savedIds();
+  if (!ids.length) { S.mine = []; return; }
+  try { S.mine = await post('/api/mine', { ids }); } catch { S.mine = []; }
+  if (S.view === 'form' && S.step === 0) render();
+}
+function openProject(id) {
+  S.id = id; S.status = null; S.picked = 0; S.lastAlt = undefined; S.note = '';
+  history.replaceState(null, '', `?id=${id}`);
+  try { localStorage.setItem('sketchRequestId', id); } catch { /* storage not available */ }
+  boot();
+}
+function viewMine() {
+  if (!S.mine?.length) return [];
+  const when = (iso) => (iso ? new Date(iso).toLocaleDateString(undefined, { day: 'numeric', month: 'short', year: 'numeric' }) : '');
+  return [h('section', { class: 'mine', id: 'mine' }, [
+    h('h2', { textContent: 'Your previous projects' }),
+    h('div', { class: 'list' }, S.mine.map((p) => h('div', { class: 'proj' }, [
+      h('div', { class: 'pic' }, p.picture ? h('img', { src: p.picture, alt: '' }) : (p.name || '?').trim().charAt(0).toUpperCase()),
+      h('div', { class: 'info' }, [h('b', { textContent: p.name || 'Untitled project' }), h('small', { class: 'st', textContent: STATUS_TEXT[p.phase] ?? p.phase }), h('small', { textContent: when(p.createdAt) })]),
+      h('button', { class: 'go', textContent: 'Open', onclick: () => openProject(p.id) }),
+    ]))),
+  ])];
+}
+
+// The words of the form depend on the kind of website: a restaurant has dishes and a menu, a shop has products, a service business has
+// services. Every question, button and message takes its nouns from here, so a salon is never asked for "your menu".
+const VOCAB = {
+  menu: { item: 'dish', items: 'dishes', yourList: 'menu', stepName: 'Your menu', pageName: 'Menu', priceDoc: 'menu', place: 'place', ownerQuestion: 'What is your restaurant or cafe called?', kindQuestion: 'What kind of place is it?', kindExample: 'Lebanese home cooking, dine in and delivery.', sections: 'Sub-folders (Starters, Mains) become menu sections', exampleFile: 'Fattoush', askItems: 'What are your main dishes?', itemsPlaceholder: 'Fattoush - $8\nKibbeh - $12', photosTitle: 'Photos of your dishes and your place' },
+  shop: { item: 'product', items: 'products', yourList: 'product list', stepName: 'Your products', pageName: 'Shop', priceDoc: 'price list', place: 'shop', ownerQuestion: 'What is your shop called?', kindQuestion: 'What do you sell?', kindExample: 'Original perfumes for men and women, ordered by message.', sections: 'Sub-folders (Women, Men) become categories', exampleFile: 'Gucci Bloom', askItems: 'What are your main products?', itemsPlaceholder: 'Eau de parfum for men - $60\nEau de parfum for women - $55', photosTitle: 'Photos of your products and your place' },
+  services: { item: 'service', items: 'services', yourList: 'list of services', stepName: 'Your services', pageName: 'Services', priceDoc: 'price list', place: 'business', ownerQuestion: 'What is your business called?', kindQuestion: 'What do you do?', kindExample: 'A hair salon for colour and styling.', sections: 'Sub-folders (Hair, Nails) become categories', exampleFile: 'Haircut', askItems: 'What services do you offer?', itemsPlaceholder: 'Haircut - $25\nManicure - $30', photosTitle: 'Photos of your place or your work' },
+  intro: { item: 'project', items: 'projects', yourList: 'list of your work', stepName: 'Your work', pageName: 'Our work', priceDoc: 'brochure', place: 'business', ownerQuestion: 'What is your business called?', kindQuestion: 'What do you do?', kindExample: 'We are a small law firm for families.', sections: 'Sub-folders (Branding, Interiors) become groups', exampleFile: 'Villa Rosa', askItems: 'What work or offers would you like to show? (optional)', itemsPlaceholder: 'Villa Rosa\nBrand identity for Cafe Noor', photosTitle: 'Photos of your place or your work' },
+  other: { item: 'item', items: 'items', yourList: 'list', stepName: 'Your list', pageName: 'Products', priceDoc: 'price list', place: 'business', ownerQuestion: 'What is your business called?', kindQuestion: 'What do you do?', kindExample: 'One sentence is perfect.', sections: 'Sub-folders become categories', exampleFile: 'Name', askItems: 'What do you offer?', itemsPlaceholder: '', photosTitle: 'Photos of your place, products or work' },
+};
+const V = () => VOCAB[S.formKind] ?? VOCAB.other;
+const cap = (t) => t.charAt(0).toUpperCase() + t.slice(1);
+const num = (n, one, many) => `${n} ${n === 1 ? one : many}`;
+// the kinds that have their own list-and-pictures form (the others use the general form)
+const LISTED_KINDS = ['menu', 'shop', 'services'];
+const namesFromPictures = () => ['menu', 'services'].includes(S.formKind); // the list can start from the picture names
+const stepNames = () => ['Your business', 'How people reach you', V().stepName, 'Look and feel', 'Check and send'];
+// the same for the questions about what the business does and how its pictures are used
+const LOOK = {
+  menu: { doQ: 'What kind of place is it?', doEx: 'Lebanese home cooking, dine in and delivery.', wishes: 'my signature dish first, a seasonal special, a warm cozy feeling, a picture of the dining room', own: 'your own dishes', never: 'Your dishes themselves' },
+  shop: { doQ: 'What do you sell?', doEx: 'We sell perfumes online...', wishes: 'my best sellers first, a seasonal offer, a warm cozy feeling, a picture of my products together', own: 'your own products', never: 'Your products themselves' },
+  services: { doQ: 'What do you do?', doEx: 'We are a hair salon in Beirut...', wishes: 'my most booked service first, a seasonal offer, a calm feeling, a picture of my team at work', own: 'your own place and work', never: 'Your place and your work themselves' },
+  intro: { doQ: 'What do you do?', doEx: 'We are a small law firm for families...', wishes: 'what I want people to feel first, a seasonal message, a warm cozy feeling', own: 'your own place and work', never: 'Your place and your work themselves' },
+  other: { doQ: 'What do you do?', doEx: 'One or two sentences...', wishes: 'what I want people to feel first, a warm cozy feeling', own: 'your own place and work', never: 'Your place and your work themselves' },
+};
+const L = () => LOOK[S.formKind] ?? LOOK.other;
+const showsPrices = () => S.formKind !== 'intro'; // a website that only presents the business has no prices
+const GOALS = {
+  orders: ['Get orders by message or DM', 'Customers choose and message me to order.'],
+  bookings: ['Get bookings or appointments', 'Customers book a time with me.'],
+  showcase: ['Show my products and prices', 'A clear catalog people can browse.'],
+  calls: ['Get phone calls and visits', 'Customers call me or come to my place.'],
+  trust: ['Introduce my business', 'Build trust and tell my story.'],
+  other: ['Something else', 'I will describe it.'],
+};
+const PAGES = { products: 'Products or menu', about: 'About us', gallery: 'Gallery', contact: 'Contact' };
+const FEATURES = { 'contact form': 'A contact form', map: 'A map to find me', 'booking link': 'A booking link', 'social links': 'Links to my social media', gallery: 'A photo gallery' };
+
+const STORY_MIN = 20; // characters: a few words is not a story
+const empty = () => ({ currency: 'USD', businessName: '', whatItDoes: '', customers: '', notFor: '', story: '', phone: '', email: '', address: '', hours: '', instagram: '', tiktok: '', facebook: '', goal: '', goalText: '', products: '', showPrices: '', pages: ['products', 'contact'], otherPages: '', features: ['contact form'], bookingUrl: '', brandColors: '', feelingWords: '', likedSites: '', dislikedSites: '', notes: '', homeWishes: '', aiPictures: 'allowed', whatsapp: '', messagesTo: '', assistant: null, assistantRules: '', assistantModel: 'standard', orderMode: '', fulfil: ['pickup', 'delivery'], deliveryFee: '', openDays: ['mon', 'tue', 'wed', 'thu', 'fri'], openFrom: '09:00', openTo: '17:00', slotMinutes: 60, timeZone: (() => { try { return Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch { return ''; } })() });
+const S = { mine: [], view: 'form', step: 0, form: empty(), files: { logo: null, photos: [], documents: [], knowledge: [] }, errors: [], softAsked: false, softOk: false, id: null, status: null, busy: null, picked: 0, note: '', fileMessage: '', kind: null, formKind: null, items: [], overrides: {}, noPhoto: {}, draftId: null, docsUploaded: {}, listMessage: '', listBusy: false };
+try { S.id = localStorage.getItem('sketchRequestId'); } catch { /* storage not available */ }
+
+async function api(path, options = {}) {
+  const res = await fetch(path, { method: options.method || 'GET', headers: options.headers || { 'Content-Type': 'application/json' }, body: options.body });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(data.error || 'Something went wrong. Please try again.');
+  return data;
+}
+const post = (path, body) => api(path, { method: 'POST', body: JSON.stringify(body ?? {}) });
+
+// ---------- form pieces ----------
+function bind(key, props = {}) { return { value: S.form[key], oninput: (e) => { S.form[key] = e.target.value; }, ...props }; }
+function field(label, hint, control, required) {
+  return h('div', {}, [h('label', { class: 'f' }, [label, required ? h('span', { class: 'req', textContent: ' *' }) : null, hint ? h('span', { class: 'hint', textContent: hint }) : null]), control]);
+}
+function tile(type, name, value, title, desc, checked, onchange) {
+  const input = h('input', { type, name, checked, onchange });
+  const node = h('label', { class: `tile ${checked ? 'on' : ''}` }, [input, h('span', {}, [h('b', { textContent: title }), desc ? h('div', { class: 'hint', textContent: desc }) : null])]);
+  return node;
+}
+function checks(key, options) {
+  return h('div', { class: 'tiles' }, Object.entries(options).map(([value, title]) => tile('checkbox', key, value, title, '', S.form[key].includes(value), (e) => {
+    S.form[key] = e.target.checked ? [...S.form[key], value] : S.form[key].filter((v) => v !== value);
+    if (key === 'features' && value === 'booking link') render();
+    else e.target.closest('.tile').classList.toggle('on', e.target.checked);
+  })));
+}
+
+// One list of social pages: the customer adds only the ones they use (Instagram, TikTok, Facebook).
+const SOCIALS = { instagram: 'Instagram', tiktok: 'TikTok', facebook: 'Facebook' };
+function socialsBlock() {
+  if (!S.socials) S.socials = Object.keys(SOCIALS).filter((k) => S.form[k]).map((k) => ({ platform: k, handle: S.form[k] }));
+  if (!S.socials.length) S.socials.push({ platform: 'instagram', handle: '' });
+  const sync = () => { for (const k of Object.keys(SOCIALS)) S.form[k] = ''; for (const x of S.socials) if (x.handle.trim()) S.form[x.platform] = x.handle.trim(); };
+  return field('Your social pages (optional)', 'Add the ones you use. Visitors will find links to them on your website.', h('div', {}, [
+    ...S.socials.map((x, i) => h('div', { class: 'row', style: 'margin:0 0 8px;flex-wrap:nowrap' }, [
+      h('select', { 'aria-label': 'Platform', onchange: (e) => { x.platform = e.target.value; sync(); } }, Object.entries(SOCIALS).map(([k, t]) => h('option', { value: k, selected: x.platform === k, textContent: t }))),
+      h('input', { type: 'text', value: x.handle, placeholder: '@yourname or the page link', 'aria-label': 'Name or link', oninput: (e) => { x.handle = e.target.value; sync(); } }),
+      h('button', { type: 'button', class: 'quiet', title: 'Remove', textContent: '\u00d7', onclick: () => { S.socials.splice(i, 1); sync(); render(); } }),
+    ])),
+    S.socials.length < 3 ? h('button', { type: 'button', textContent: '+ Add another social page', onclick: () => { const used = S.socials.map((x) => x.platform); S.socials.push({ platform: Object.keys(SOCIALS).find((k) => !used.includes(k)) ?? 'instagram', handle: '' }); render(); } }) : null,
+  ]));
+}
+
+function stepContact() {
+  const missing = softMissing();
+  return [
+    h('div', { class: 'note good', textContent: 'These details let your customers reach you. We never invent them: whatever you leave empty simply stays empty on your sketches.' }),
+    h('div', { class: 'two' }, [
+      field('Phone or WhatsApp', 'Strongly recommended', h('input', { type: 'tel', ...bind('phone', { id: 'f-phone', placeholder: 'For example: 81 123 456', autocomplete: 'tel' }) })),
+      field('Email', '', h('input', { type: 'email', ...bind('email', { autocomplete: 'email' }) })),
+    ]),
+    field('WhatsApp number (with the country code)', 'So visitors can message you on WhatsApp straight from your website. For example +961 71 014 463. Leave empty if you do not use WhatsApp for your business.', h('input', { type: 'tel', ...bind('whatsapp', { id: 'f-whatsapp', placeholder: '+961 71 014 463' }) })),
+    field('Address or area', 'Strongly recommended if people visit you', h('input', { type: 'text', ...bind('address', { id: 'f-address', placeholder: 'Street, city or neighbourhood', autocomplete: 'street-address' }) })),
+    field('Opening hours', 'Strongly recommended', h('input', { type: 'text', ...bind('hours', { id: 'f-hours', placeholder: 'For example: Tuesday to Saturday, 10 to 7' }) })),
+    socialsBlock(),
+    S.softAsked && missing.length ? h('div', { class: 'note warm' }, [
+      h('b', { textContent: `Not added yet: ${missing.join(', ')}` }),
+      h('div', { textContent: 'Without these, visitors will not know how to reach you. You can add them now, or continue and add them later.' }),
+      h('div', { class: 'row', style: 'margin-top:12px' }, [
+        h('button', { class: 'warm', textContent: 'I will add them now', onclick: () => { S.softAsked = false; render(); const k = ['phone', 'address', 'hours'].find((x) => !S.form[x].trim()); document.getElementById(`f-${k}`)?.focus(); } }),
+        h('button', { textContent: 'Continue without them', onclick: () => { S.softOk = true; S.step++; S.softAsked = false; render(); window.scrollTo(0, 0); } }),
+      ]),
+    ]) : null,
+  ];
+}
+const softMissing = () => [['phone', 'a phone number'], ['address', 'an address'], ['hours', 'opening hours']].filter(([k]) => !S.form[k].trim()).map(([, label]) => label);
+
+// The kind of website was chosen on the first page, so there is no "goal" question: the list and its pictures live on one page.
+// A WhatsApp number counts only with its country code (+ or 00 first): a wa.me link cannot be built from a local number.
+const waOk = (v) => { const t = String(v || '').trim(); const d = t.replace(/^(\+|00)/, '').replace(/\D/g, ''); return /^(\+|00)\s*\d/.test(t) && d.length >= 8 && d.length <= 15; };
+const mailOk = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(v || '').trim());
+
+// Shown when the owner chose a contact form: where do the messages go?
+function messagesBlock() {
+  const wa = waOk(S.form.whatsapp);
+  const mail = mailOk(S.form.email);
+  if (!wa && !mail) return h('div', { class: 'note warm' }, [
+    h('b', { textContent: 'Where should the messages from your contact form go?' }),
+    h('p', { class: 'hint', textContent: 'Give us a WhatsApp number (with the country code) or an email address. One of them is needed, or the form could not reach you.' }),
+    h('div', { class: 'two' }, [
+      field('WhatsApp number', 'For example +961 71 014 463', h('input', { type: 'tel', ...bind('whatsapp', { placeholder: '+961 71 014 463' }) })),
+      field('Email', '', h('input', { type: 'email', ...bind('email') })),
+    ]),
+  ]);
+  if (wa && mail) return field('Where should the messages from your contact form go?', 'You gave us both.', h('div', { class: 'tiles' }, [['whatsapp', 'To my WhatsApp'], ['email', 'To my email']].map(([k, t]) => tile('radio', 'messagesTo', k, t, '', (S.form.messagesTo || 'whatsapp') === k, () => { S.form.messagesTo = k; render(); }))));
+  return h('div', { class: 'note good', textContent: wa ? 'Messages from your contact form will open your WhatsApp with the message ready to send.' : 'Messages from your contact form will go to your email.' });
+}
+
+
+// ---------- uploads ----------
+const LIMITS = { photo: 5 * 1024 * 1024, logo: 5 * 1024 * 1024, document: 20 * 1024 * 1024 };
+const EXT = { photo: /\.(jpe?g|png|webp)$/i, logo: /\.(jpe?g|png|webp|svg)$/i, document: /\.(pdf|jpe?g|png|webp)$/i };
+function addFiles(kind, list) {
+  S.fileMessage = ''; S.fileTone = 'bad';
+  for (const file of list) {
+    if (!EXT[kind].test(file.name)) { S.fileMessage = `"${file.name}" is not supported. Please use ${kind === 'document' ? 'a PDF' : 'JPG, PNG or WebP pictures'}.`; continue; }
+    if (file.size > LIMITS[kind]) { S.fileMessage = `"${file.name}" is too large (maximum ${LIMITS[kind] / 1048576} MB).`; continue; }
+    if (kind === 'photo') { if (S.files.photos.length >= MAX_PHOTOS) { S.fileMessage = `You can add up to ${MAX_PHOTOS} photos.`; break; } S.files.photos.push(file); }
+    else S.files.logo = file;
+  }
+  render();
+}
+// The message under the upload boxes. When a folder of pictures was dropped into the menu box, it also offers to use them as photos.
+function fileNote() {
+  if (!S.fileMessage) return null;
+  return h('div', { class: `note ${S.fileTone ?? 'bad'}` }, [
+    h('div', { textContent: S.fileMessage }),
+    S.moveOffer?.length ? h('button', { type: 'button', class: 'go', style: 'margin-top:10px', textContent: `Use these ${S.moveOffer.length} pictures as photos`, onclick: async () => { const move = S.moveOffer; S.moveOffer = null; await addPhotos(move); } }) : null,
+  ]);
+}
+// ---------- a whole folder of pictures at once ----------
+const MAX_PHOTOS = 150;
+const naturalSort = (a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }); // photo2 before photo10
+
+// A big camera photo (often 6 to 12 MB) is made smaller here instead of being refused. Returns null when it cannot be used.
+async function shrinkIfNeeded(file, limit) {
+  if (file.size <= limit) return file;
+  try {
+    const bitmap = await createImageBitmap(file, { imageOrientation: 'from-image' });
+    const scale = Math.min(1, 2400 / Math.max(bitmap.width, bitmap.height));
+    const canvas = document.createElement('canvas');
+    canvas.width = Math.max(1, Math.round(bitmap.width * scale)); canvas.height = Math.max(1, Math.round(bitmap.height * scale));
+    canvas.getContext('2d').drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+    const blob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/jpeg', 0.85));
+    return blob && blob.size <= limit ? new File([blob], file.name.replace(/\.\w+$/, '') + '.jpg', { type: 'image/jpeg' }) : null;
+  } catch { return null; }
+}
+
+// Every file inside what was dropped, folders and their subfolders included.
+async function filesFromDrop(dataTransfer) {
+  const out = [];
+  const walk = async (entry, prefix) => {
+    if (entry.isFile) await new Promise((resolve) => entry.file((f) => { try { Object.defineProperty(f, 'folderPath', { value: prefix + f.name }); } catch { /* read only */ } out.push(f); resolve(); }, resolve));
+    else if (entry.isDirectory) {
+      const reader = entry.createReader();
+      for (;;) {
+        const batch = await new Promise((resolve) => reader.readEntries(resolve, () => resolve([])));
+        if (!batch.length) break;
+        for (const e of batch) await walk(e, prefix + entry.name + '/');
+      }
+    }
+  };
+  const entries = [...(dataTransfer.items ?? [])].map((i) => (i.webkitGetAsEntry ? i.webkitGetAsEntry() : null)).filter(Boolean);
+  if (!entries.length) return [...dataTransfer.files];
+  for (const e of entries) await walk(e, '');
+  return out;
+}
+
+// Pictures chosen one by one, dropped, or taken from a folder. Pictures only (others are skipped and counted), natural order, a file
+// called logo... becomes the logo when there is none yet, big photos are shrunk, and what does not fit in 20 is said plainly.
+async function addPhotos(list) {
+  S.fileMessage = ''; S.moveOffer = null;
+  const pathOf = (f) => f.webkitRelativePath || f.folderPath || f.name;
+  const files = [...list].sort((a, b) => naturalSort(pathOf(a), pathOf(b)));
+  const folder = files.map(pathOf).find((p) => p.includes('/'))?.split('/')[0];
+  let added = 0; let skipped = 0; let unreadable = 0; let over = 0; let logo = false; let duplicates = 0;
+  for (const f of files) {
+    if (!EXT.photo.test(f.name)) { skipped++; continue; }
+    if (S.files.photos.some((p) => p.srcKey === photoKey(f))) { duplicates++; continue; } // the same photo (name and size) is already here
+    if (!S.files.logo && /^logo/i.test(f.name)) { const small = await shrinkIfNeeded(f, LIMITS.logo); if (small) { S.files.logo = small; logo = true; continue; } }
+    if (S.files.photos.length >= MAX_PHOTOS) { over++; continue; }
+    const small = await shrinkIfNeeded(f, LIMITS.photo);
+    if (!small) { unreadable++; continue; }
+    small.itemPath = pathOf(f); small.srcKey = photoKey(f); S.files.photos.push(small); added++;
+  }
+  const parts = [];
+  if (added) parts.push(`Added ${added} picture${added === 1 ? '' : 's'}${folder ? ` from "${folder}"` : ''}.`);
+  if (duplicates) parts.push(`${duplicates} photo${duplicates === 1 ? ' was' : 's were'} already added, so ${duplicates === 1 ? 'it was' : 'they were'} not added again.`);
+  if (logo) parts.push('A file called "logo" was used as your logo.');
+  if (over) parts.push(`${over} more picture${over === 1 ? ' was' : 's were'} not added: you can use up to ${MAX_PHOTOS} photos. Remove some and add others if you prefer.`);
+  if (skipped) parts.push(`${skipped} file${skipped === 1 ? ' was' : 's were'} skipped because only JPG, PNG and WebP pictures are used.`);
+  if (unreadable) parts.push(`${unreadable} picture${unreadable === 1 ? ' could' : 's could'} not be used (too large or damaged).`);
+  if (S.kind === 'shop' && namesFromPictures() && added && !S.items.some((i) => i.name.trim())) { const n = listFromPhotos(); if (n) parts.push(`We built your ${V().yourList} from the photo names: ${num(n, V().item, V().items)}. Check the names and add the prices in the table below. Photos that are not ${V().items} (your place, for example) can be removed there.`); }
+  S.fileMessage = parts.join(' ');
+  S.fileTone = over || skipped || unreadable ? 'warm' : 'good';
+  render();
+}
+// A menu or price list: a PDF, or pictures of its pages (chosen one by one, a whole folder, or dropped). Pictures are read like a PDF:
+// the prices are taken from them and the customer confirms them. Several pages are fine (up to 10 files).
+const MAX_DOCUMENTS = 10;
+async function addDocuments(list) {
+  S.fileMessage = ''; S.moveOffer = null;
+  const pathOf = (f) => f.webkitRelativePath || f.folderPath || f.name;
+  const files = [...list].sort((a, b) => naturalSort(pathOf(a), pathOf(b)));
+  const folder = files.map(pathOf).find((p) => p.includes('/'))?.split('/')[0];
+  // More than a few pictures is a folder of photos, not the pages of a menu: nothing is added here, the customer chooses.
+  const pictures = files.filter((f) => /\.(jpe?g|png|webp)$/i.test(f.name));
+  if (pictures.length > MAX_DOCUMENTS) {
+    S.moveOffer = pictures; S.fileTone = 'warm';
+    S.fileMessage = `These ${pictures.length} pictures${folder ? ` (from "${folder}")` : ''} look like photos, not the pages of a ${V().priceDoc}. A ${V().priceDoc} is a PDF or up to ${MAX_DOCUMENTS} pictures of its pages.`;
+    return render();
+  }
+  let added = 0; let skipped = 0; let unreadable = 0; let over = 0;
+  for (const f of files) {
+    if (!EXT.document.test(f.name)) { skipped++; continue; }
+    if (S.files.documents.length >= MAX_DOCUMENTS) { over++; continue; }
+    const ok = /\.pdf$/i.test(f.name) ? (f.size <= LIMITS.document ? f : null) : await shrinkIfNeeded(f, LIMITS.photo);
+    if (!ok) { unreadable++; continue; }
+    S.files.documents.push(ok); added++;
+  }
+  const parts = [];
+  if (added) parts.push(`Added ${added} page${added === 1 ? '' : 's'} of your ${V().priceDoc}${folder ? ` from "${folder}"` : ''}.`);
+  if (over) parts.push(`${over} more ${over === 1 ? 'file was' : 'files were'} not added: up to ${MAX_DOCUMENTS} files are used.`);
+  if (skipped) parts.push(`${skipped} file${skipped === 1 ? ' was' : 's were'} skipped because only PDF, JPG, PNG and WebP files are used.`);
+  if (unreadable) parts.push(`${unreadable} file${unreadable === 1 ? ' could' : 's could'} not be used (too large or damaged).`);
+  S.fileMessage = parts.join(' ');
+  S.fileTone = over || skipped || unreadable ? 'warm' : 'good';
+  render();
+}
+function dropzone(kind, title, hint, multiple) {
+  const take = (list) => (kind === 'photo' ? addPhotos(list) : kind === 'document' ? addDocuments(list) : addFiles(kind, list));
+  const input = h('input', { type: 'file', multiple, accept: kind === 'document' ? '.pdf,application/pdf,image/*' : 'image/*', onchange: (e) => { take([...e.target.files]); } });
+  const zone = h('div', { class: 'drop', ondragover: (e) => { e.preventDefault(); zone.classList.add('over'); }, ondragleave: () => zone.classList.remove('over'),
+    ondrop: (e) => { e.preventDefault(); zone.classList.remove('over'); (kind === 'photo' || kind === 'document' ? filesFromDrop(e.dataTransfer) : Promise.resolve([...e.dataTransfer.files])).then(take); } }, [input, h('b', { textContent: title }), h('small', { textContent: hint })]);
+  if (kind === 'photo' || kind === 'document') { // a whole folder: the browser hands over every picture inside it, subfolders included
+    const folderInput = h('input', { type: 'file', multiple: true, style: 'display:none', onchange: (e) => { take([...e.target.files]); e.target.value = ''; } });
+    folderInput.webkitdirectory = true; folderInput.setAttribute('webkitdirectory', '');
+    zone.append(h('button', { class: 'folderbtn', type: 'button', textContent: 'Choose a whole folder', onclick: (e) => { e.stopPropagation(); folderInput.click(); } }), folderInput);
+  }
+  const files = kind === 'photo' ? S.files.photos : kind === 'document' ? S.files.documents : S.files.logo ? [S.files.logo] : [];
+  const thumbs = h('div', { class: 'thumbs' }, files.map((f, i) => h('div', { class: 'thumb' }, [
+    f.type.startsWith('image/') && !f.name.endsWith('.svg') ? h('img', { src: URL.createObjectURL(f), alt: f.name }) : h('span', { textContent: f.name }),
+    h('button', { title: 'Remove', textContent: '×', onclick: (e) => { e.stopPropagation(); if (kind === 'photo') S.files.photos.splice(i, 1); else if (kind === 'document') S.files.documents.splice(i, 1); else S.files.logo = null; render(); } }),
+  ])));
+  return h('div', { style: 'margin-top:18px' }, [zone, files.length ? thumbs : null]);
+}
+
+
+// ---------- what kind of website? and the shop form ----------
+const KINDS = [
+  ['menu', 'Menu or food', 'Restaurant, cafe, bakery. Menu sections with prices.'],
+  ['shop', 'Shop', 'You sell products. A list with prices and photos.'],
+  ['services', 'Services', 'Salon, clinic, lawyer. Services and how to book.'],
+  ['intro', 'Introduce my business', 'Present who you are and your work, like a portfolio. No prices or list needed.'],
+];
+function viewKind() {
+  return [
+    ...viewMine(),
+    h('h1', { textContent: 'Tell us about your business. See your website in minutes.' }),
+    h('p', { class: 'lead', textContent: 'First, what kind of website do you need? Your answer decides which questions we ask, so you only answer what matters for you.' }),
+    h('div', { class: 'card' }, [
+      h('div', { class: 'tiles' }, KINDS.map(([id, title, desc]) => h('button', { class: 'tile kind', type: 'button', style: 'text-align:left;cursor:pointer', onclick: () => { S.kind = 'shop'; S.formKind = id; S.step = 0; render(); window.scrollTo(0, 0); } }, [h('span', {}, [h('b', { textContent: title }), h('div', { class: 'hint', textContent: desc })])]))),
+      h('div', { class: 'hint', style: 'margin-top:12px', textContent: 'Every website introduces your business and shows what you offer. You give your pictures and a list, and we match them by name.' }),
+    ]),
+  ];
+}
+
+// Products and their photos are ONE step (one table): dishes come from the pictures' names and a list file (CSV), or one at a time by hand.
+const isMenu = () => S.formKind === 'menu';
+const shopSteps = () => [`Your ${V().place}`, 'How people reach you', V().stepName, 'Look and feel', 'Check and send'];
+const shopBuilders = () => [shopStepBusiness, stepContact, shopStepItems, shopStepLook, shopStepReview];
+
+// The dish names come from the photo file names: "Starters/fattoush-2.jpg" is the dish "Fattoush" (one row for all its photos).
+function dishName(path) {
+  const base = String(path).split('/').pop().replace(/\.[a-z0-9]+$/i, '').replace(/[-_ ]+\(?\d+\)?$/, '').replace(/[-_]+/g, ' ').replace(/\s+/g, ' ').trim();
+  return base === base.toLowerCase() ? base.replace(/(^|\s)(\p{L})/gu, (m, a, b) => a + b.toUpperCase()) : base;
+}
+function listFromPhotos() {
+  const have = new Set(S.items.map((i) => IM().norm(i.name)));
+  const fresh = [];
+  for (const f of S.files.photos) {
+    const name = dishName(photoPath(f)); const key = IM().norm(name);
+    if (!name || have.has(key)) continue;
+    have.add(key); fresh.push({ name, price: '', description: '', fromPhoto: true }); // made from a photo name only: no price, no description
+  }
+  if (fresh.length) S.items = [...S.items.filter((i) => i.name.trim() || i.price || i.description), ...fresh];
+  return fresh.length;
+}
+const IM = () => window.ItemMatch;
+const photoPath = (f) => f.itemPath || f.webkitRelativePath || f.folderPath || f.name;
+// the customer's own choices are remembered per photo (by its path), so removing a photo does not shift them
+function shopAnalysis() {
+  const ov = {};
+  S.files.photos.forEach((f, n) => { const v = S.overrides[photoPath(f)]; if (v !== undefined) ov[n] = v; });
+  return IM().analyse(S.items.filter((i) => i.name.trim()), S.files.photos.map((f) => ({ path: photoPath(f) })), ov);
+}
+const namedItems = () => S.items.filter((i) => i.name.trim());
+
+function shopStepBusiness() {
+  return [
+    field(V().ownerQuestion, '', h('input', { type: 'text', ...bind('businessName', { placeholder: 'For example: Bonza Perfumes', autocomplete: 'organization' }) }), true),
+    field(V().kindQuestion, 'One sentence is perfect.', h('textarea', bind('whatItDoes', { placeholder: V().kindExample }))),
+    field('Tell us your story', 'How did it start? What makes you special? Write as you would tell a friend, in a few sentences. This is the inspiration for the About section of your website: we write it from your story, and we never add facts you did not tell us.', h('textarea', bind('story', { style: 'min-height:130px' })), true),
+  ];
+}
+
+// ----- the product list -----
+// Adds the rows of a list file to the table. A dish that is already there keeps what the owner wrote and only gets the parts it lacked.
+// replacePhotoRows: the owner gave a real list, so dishes that were only made from photo names and are not in that list are removed
+// (their photos stay as photos we could not place). The list is what the website shows, never a guess from a file name.
+function addRows(rows, { replacePhotoRows = false } = {}) {
+  let added = 0; let updated = 0; let dropped = 0;
+  if (replacePhotoRows && rows.length) {
+    const inList = new Set(rows.map((r) => IM().norm(r.name)));
+    const before = S.items.length;
+    S.items = S.items.filter((i) => !(i.fromPhoto && !i.price && !i.description && !inList.has(IM().norm(i.name))));
+    dropped = before - S.items.length;
+    if (dropped) { S.overrides = {}; S.noPhoto = {}; } // the positions changed: matches are made again from the names
+  }
+  for (const row of rows) {
+    const key = IM().norm(row.name);
+    const at = S.items.findIndex((i) => IM().norm(i.name) === key);
+    if (at < 0) { S.items.push(row); added++; continue; }
+    const it = S.items[at]; let changed = false;
+    if (!it.price && row.price) { it.price = row.price; changed = true; }
+    if (!it.description && row.description) { it.description = row.description; changed = true; }
+    if (!it.category && row.category) { it.category = row.category; changed = true; }
+    if (changed) { updated++; it.fromPhoto = false; }
+  }
+  S.items = S.items.filter((i) => i.name.trim() || i.price || i.description);
+  return { added, updated, dropped };
+}
+// A file with the whole list. CSV/TSV/text are read here, exactly as written (columns found by their titles). PDFs and pictures go to
+// the price-list reader and the owner checks every row. Excel and Word files are not read: the message says how to save them.
+async function listFromFile(files) {
+  S.fileMessage = ''; S.moveOffer = null;
+  const text = files.filter((f) => /\.(csv|tsv|txt)$/i.test(f.name));
+  const scans = files.filter((f) => /\.(pdf|jpe?g|png|webp)$/i.test(f.name));
+  const office = files.filter((f) => /\.(xlsx?|docx?)$/i.test(f.name));
+  let added = 0; let updated = 0; let dropped = 0;
+  for (const f of text) {
+    const r = addRows(IM().parseTable(await f.text(), /\.(csv|tsv)$/i.test(f.name)), { replacePhotoRows: true });
+    added += r.added; updated += r.updated; dropped += r.dropped;
+  }
+  const parts = [];
+  if (text.length) parts.push(added || updated ? `Read ${num(added, V().item, V().items)}${updated ? ` and completed ${updated}` : ''} from your file${dropped ? `. ${num(dropped, V().item, V().items)} made from picture names ${dropped === 1 ? 'is' : 'are'} not in your file, so ${dropped === 1 ? 'it was' : 'they were'} removed (the pictures stay: you can place them below)` : ''}. Please check the table below.` : `We found nothing to add in that file. It needs one ${V().item} per line or per row.`);
+  if (office.length) parts.push('Excel and Word files cannot be read yet. In Excel use File, Save as, CSV. In Word, save it as PDF or a plain text file. Then upload it again.');
+  S.fileTone = added || updated ? 'good' : 'warm';
+  S.fileMessage = parts.join(' ');
+  if (scans.length) { render(); return readListFromFiles(scans).then(() => { S.fileMessage = [S.fileMessage, S.listMessage].filter(Boolean).join(' '); S.fileTone = S.listTone === 'bad' ? 'bad' : 'warm'; render(); }); }
+  render();
+}
+// The list file: a CSV (or a text file, a PDF, pictures of a price list). Its names are matched to the photos' names.
+function listFileCard() {
+  const fileInput = h('input', { type: 'file', multiple: true, accept: '.csv,.tsv,.txt,.pdf,image/*,.xlsx,.xls,.docx,.doc', style: 'display:none', onchange: (e) => { listFromFile([...e.target.files]); e.target.value = ''; } });
+  const menu = isMenu();
+  return h('div', { class: 'card', style: 'margin:14px 0' }, [
+    h('h3', { textContent: 'Your list: prices and descriptions' }),
+    h('p', { class: 'hint', textContent: `One file for the details of your ${V().items}: a CSV with the columns Item (or Name), Price, Description and, if you like, Category. Keep the names exactly the same as the names of your pictures, and each picture finds its row. A CSV is read exactly as written. A PDF or pictures of a ${V().priceDoc} are read for you to check.` }),
+    h('button', { type: 'button', class: 'go', disabled: S.listBusy, textContent: S.listBusy ? 'Reading your file...' : 'Upload my list (CSV)', onclick: () => fileInput.click() }),
+    fileInput,
+  ]);
+}
+async function ensureDraft() { if (!S.draftId) S.draftId = (await post('/api/start')).id; return S.draftId; }
+async function readListFromFiles(files) {
+  S.listMessage = ''; S.listBusy = true; render();
+  try {
+    const id = await ensureDraft();
+    const usable = [];
+    for (const f of [...files].sort((a, b) => naturalSort(photoPath(a), photoPath(b)))) { if (!EXT.document.test(f.name)) continue; const small = /\.pdf$/i.test(f.name) ? f : await shrinkIfNeeded(f, LIMITS.photo); if (small) usable.push(small); }
+    if (!usable.length) throw new Error(`Please choose a PDF or pictures (JPG, PNG, WebP) of your ${V().priceDoc}.`);
+    for (const f of usable.slice(0, MAX_DOCUMENTS)) {
+      const key = `${f.name}:${f.size}`;
+      if (S.docsUploaded[key]) continue;
+      await api(`/api/upload/${id}?kind=document&name=${encodeURIComponent(f.name)}`, { method: 'PUT', headers: { 'Content-Type': 'application/octet-stream' }, body: f });
+      S.docsUploaded[key] = true;
+    }
+    const { items } = await post(`/api/read-list/${id}`);
+    const have = new Set(S.items.map((i) => i.name.trim().toLowerCase()));
+    const fresh = items.filter((i) => !have.has(i.name.toLowerCase()));
+    S.items = [...S.items.filter((i) => i.name.trim() || i.price || i.description), ...fresh];
+    S.listMessage = fresh.length ? `We found ${num(fresh.length, V().item, V().items)} in your ${V().priceDoc}. Please check every row: names and prices must be exactly right.` : `We could not find any new ${V().items} in that ${V().priceDoc}.`;
+    S.listTone = fresh.length ? 'warm' : 'bad';
+  } catch (e) { S.listMessage = e.message; S.listTone = 'bad'; }
+  S.listBusy = false; render();
+}
+// ----- ONE step for the products and their photos -----
+// Whatever way things are added (a folder of photos, photos one by one, a list file, one product by hand), they all end up
+// in the same table below. A photo that is already there (same name and size) is never added twice, and a product that is already
+// there (same name, spelled any way) is completed instead of added again.
+function photoKey(f) { return `${f.name.toLowerCase()}|${f.size}`; }
+const thumbUrls = new WeakMap();
+const thumbUrl = (file) => { if (!thumbUrls.has(file)) thumbUrls.set(file, URL.createObjectURL(file)); return thumbUrls.get(file); };
+// the position among the NAMED products (the photo matching counts only those)
+function namedIndexOf(i) { let k = 0; for (let j = 0; j < S.items.length; j++) { if (!S.items[j].name.trim()) continue; if (j === i) return k; k++; } return -1; }
+
+// Removes a product. The photo choices that pointed to later products move up with them.
+function dropItem(i) {
+  const k = namedIndexOf(i);
+  S.items.splice(i, 1);
+  if (k < 0) return;
+  for (const [key, v] of Object.entries(S.overrides)) { if (v === k) delete S.overrides[key]; else if (v > k) S.overrides[key] = v - 1; }
+  const kept = {};
+  for (const [idx, v] of Object.entries(S.noPhoto)) { const n = Number(idx); if (n !== k) kept[n > k ? n - 1 : n] = v; }
+  S.noPhoto = kept;
+}
+
+// Photos chosen for ONE product (the "+ photo" of its row, or the "One at a time" form): linked to it directly.
+async function attachPhotos(itemIndex, list) {
+  const named = namedIndexOf(itemIndex);
+  if (named < 0) return 0;
+  let n = 0;
+  for (const f of [...list]) {
+    if (!EXT.photo.test(f.name)) continue;
+    const key = photoKey(f);
+    let photo = S.files.photos.find((p) => p.srcKey === key);
+    if (!photo) {
+      if (S.files.photos.length >= MAX_PHOTOS) break;
+      const small = await shrinkIfNeeded(f, LIMITS.photo);
+      if (!small) continue;
+      small.itemPath = f.name; small.srcKey = key; S.files.photos.push(small); photo = small;
+    }
+    S.overrides[photoPath(photo)] = named; n++;
+  }
+  return n;
+}
+
+// One product at a time: name, price, description and, if you like, its photo(s).
+function addBox() {
+  const menu = isMenu();
+  const name = h('input', { type: 'text', ariaLabel: 'new name', placeholder: `${cap(V().item)} name, for example ${V().exampleFile}` });
+  const desc = h('input', { type: 'text', ariaLabel: 'new description', placeholder: 'Short description (optional)' });
+  const price = h('input', { type: 'text', ariaLabel: 'new price', placeholder: 'Price, for example $8 (optional)' });
+  const photo = h('input', { type: 'file', accept: 'image/*', multiple: true, ariaLabel: 'new photo' });
+  const add = async () => {
+    const nm = name.value.trim();
+    if (!nm) { name.focus(); return; }
+    let at = S.items.findIndex((i) => IM().norm(i.name) === IM().norm(nm));
+    const already = at >= 0;
+    if (already) {
+      const it = S.items[at];
+      if (!it.price && price.value.trim()) it.price = price.value.trim();
+      if (!it.description && desc.value.trim()) it.description = desc.value.trim();
+      it.fromPhoto = false;
+    } else { S.items.push({ name: nm, price: price.value.trim(), description: desc.value.trim() }); at = S.items.length - 1; }
+    const n = photo.files.length ? await attachPhotos(at, photo.files) : 0;
+    S.fileTone = 'good';
+    S.fileMessage = already ? `"${nm}" was already in your list, so it was completed, not added twice${n ? ` (${n} photo${n === 1 ? '' : 's'} linked)` : ''}.` : n ? `Added "${nm}" with ${n} photo${n === 1 ? '' : 's'}.` : '';
+    render();
+    setTimeout(() => document.querySelector('input[aria-label="new name"]')?.focus(), 0);
+  };
+  for (const input of [name, desc, price]) input.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); add(); } });
+  return h('div', { class: 'card', style: 'margin:12px 0' }, [
+    h('h3', { textContent: `Add one ${V().item}` }),
+    h('div', { class: 'two' }, [field(`${cap(V().item)} name`, '', name), ...(showsPrices() ? [field('Price', 'Leave empty to show no price.', price)] : [])]),
+    field('Description', 'One short line, written by you.', desc),
+    field('Its photo (optional)', `You can choose several photos of the same ${V().item}.`, photo),
+    h('button', { type: 'button', class: 'go', style: 'margin-top:14px', textContent: `Add this ${V().item} to my ${V().yourList}`, onclick: add }),
+  ]);
+}
+
+function shopStepItems() {
+  const menu = isMenu();
+  const word = V().item;
+  const analysis = S.items.some((i) => i.name.trim()) && S.files.photos.length ? shopAnalysis() : null;
+  const cell = (i, key, extra) => h('input', { type: 'text', class: 'cell', 'aria-label': key, value: S.items[i][key], oninput: (e) => { S.items[i][key] = e.target.value; }, ...extra });
+  const rows = S.items.map((it, i) => {
+    const k = namedIndexOf(i);
+    const mine = analysis && k >= 0 ? analysis.byItem[k] : [];
+    const picker = h('input', { type: 'file', accept: 'image/*', multiple: true, style: 'display:none', onchange: async (e) => {
+      const n = await attachPhotos(i, e.target.files); e.target.value = '';
+      S.fileTone = 'good'; S.fileMessage = n ? `${n} photo${n === 1 ? '' : 's'} linked to "${it.name}".` : '';
+      render();
+    } });
+    return h('tr', {}, [
+      h('td', { class: 'ph' }, [
+        ...mine.map((p) => h('span', { class: 'rowthumb' }, [
+          h('img', { src: thumbUrl(S.files.photos[p.n]), alt: p.name, title: p.name }),
+          h('button', { type: 'button', title: `This photo is not this ${V().item}`, textContent: '×', onclick: () => { S.overrides[photoPath(S.files.photos[p.n])] = -1; render(); } }),
+        ])),
+        k >= 0 ? h('button', { type: 'button', class: 'quiet addphoto', title: `Add a photo of this ${word}`, textContent: mine.length ? '+' : '+ photo', onclick: () => picker.click() }) : null,
+        picker,
+      ]),
+      h('td', {}, [cell(i, 'name', { placeholder: `${cap(V().item)} name` })]),
+      ...(showsPrices() ? [h('td', { style: 'width:110px' }, [cell(i, 'price', { placeholder: 'Price' })])] : []),
+      h('td', {}, [cell(i, 'description', { placeholder: 'Short description (optional)' })]),
+      h('td', { style: 'width:36px' }, [h('button', { type: 'button', class: 'quiet', title: `Remove this ${word}`, textContent: '×', onclick: () => { dropItem(i); render(); } })]),
+    ]);
+  });
+  // the two uploads side by side: the pictures (named after the plates) and the list (a CSV with the same names)
+  const photosCard = h('div', { class: 'card', style: 'margin:14px 0' }, [
+    h('h3', { textContent: `Your ${V().item} pictures` }),
+    h('p', { class: 'hint', textContent: `A folder of pictures, each named like its ${V().item}, for example "${V().exampleFile}.jpg". ${V().sections}; "${V().exampleFile}-2" is a second picture of the same ${V().item}. You can also choose pictures one by one, and add more any time: a picture that is already here is never added twice.` }),
+    dropzone('photo', `Your ${V().item} pictures`, 'Up to 150 pictures. Drop a whole folder here, tap to choose pictures, or press the folder button.', true),
+    namesFromPictures() && S.files.photos.length && !S.items.some((i) => i.name.trim()) ? h('button', { type: 'button', class: 'go', style: 'margin-top:12px', textContent: `No list file? Create my ${V().yourList} from the picture names`, onclick: () => { const n = listFromPhotos(); S.fileMessage = n ? `We added ${num(n, V().item, V().items)} to your ${V().yourList} from the picture names. Add the prices in the table below.` : ''; S.fileTone = 'good'; render(); } }) : null,
+  ]);
+  return [
+    ...(showsPrices() ? [field('Currency of your prices', 'Shown next to every price, for example $20. The numbers stay exactly as you wrote them.', h('select', { ariaLabel: 'currency', onchange: (e) => { S.form.currency = e.target.value; } }, [['USD', 'US dollar ($)'], ['EUR', 'Euro (€)'], ['GBP', 'Pound (£)'], ['LBP', 'Lebanese pound (LBP)'], ['AED', 'Dirham (AED)'], ['SAR', 'Riyal (SAR)'], ['', 'No sign: show prices as I wrote them']].map(([v, t]) => h('option', { value: v, selected: S.form.currency === v, textContent: t }))))] : []),
+    h('h3', { style: 'margin:16px 0 6px', textContent: `How do you want to add your ${V().items}?` }),
+    h('div', { class: 'tabs' }, [['files', 'Upload files (pictures and a list)'], ['one', `Add ${word} by ${word}`]].map(([id, label]) => h('button', { type: 'button', class: (S.addTab ?? 'files') === id ? 'tab on' : 'tab', textContent: label, onclick: () => { S.addTab = id; render(); } }))),
+    h('p', { class: 'hint', textContent: 'You can use both. Everything goes into the same table below, matched by name, and nothing is added twice.' }),
+    (S.addTab ?? 'files') === 'one' ? addBox() : h('div', { class: 'two' }, [photosCard, listFileCard()]),
+    fileNote(),
+    S.listMessage ? h('div', { class: `note ${S.listTone ?? 'warm'}`, style: 'margin-top:10px', textContent: S.listMessage }) : null,
+    h('h3', { style: 'margin:18px 0 6px', textContent: V().stepName }),
+    S.items.length
+      ? h('div', { class: 'tablewrap' }, [h('table', { class: 'items' }, [h('thead', {}, [h('tr', {}, ['Photos', 'Name', ...(showsPrices() ? ['Price'] : []), 'Description', ''].map((t) => h('th', { textContent: t })))]), h('tbody', {}, rows)])])
+      : h('div', { class: 'hint', style: 'margin:10px 0', textContent: `Nothing here yet. Add your items with one of the two ways above.` }),
+    S.items.length ? h('div', { class: 'hint', style: 'margin-top:6px', textContent: `Pictures that match no ${word} are used as pictures of your place. Every row is exactly what will appear on your website; leave a price empty to show none.` }) : null,
+    S.items.length > 100 ? h('div', { class: 'hint', textContent: 'That is a long list. Only the first 200 items are used.' }) : null,
+    matchPanel(),
+    dropzone('logo', 'Your logo', 'Drop it here or tap to choose. Skip it if you do not have one yet. A file called logo in your folder is used too.', false),
+  ];
+}
+
+// ----- the photos and their matches -----
+function chipFor(s) { const [cls, text] = { ok: ['good', 'Matched'], check: ['warm', 'Please check'], missing: ['bad', 'No photo'], left: ['', 'Left without a photo'] }[s]; return h('span', { class: `chip ${cls}`, textContent: text }); }
+function matchPanel() {
+  const items = namedItems();
+  if (!items.length || !S.files.photos.length) return null;
+  const a = shopAnalysis();
+  const st = (i) => IM().status(a, i, S.noPhoto);
+  const counts = { ok: 0, check: 0, missing: 0 };
+  items.forEach((_, i) => { const s = st(i); if (s === 'ok') counts.ok++; else if (s === 'check') counts.check++; else if (s === 'missing') counts.missing++; });
+  const set = (photo, value) => { S.overrides[photoPath(S.files.photos[photo.n])] = value; render(); };
+  const panel = h('div', { class: 'card', style: 'margin-top:18px' }, [
+    h('h3', { textContent: `Do the photos belong to the right ${V().items}?` }),
+    h('p', { class: 'hint', textContent: 'We matched the file names with your list. Only what needs a look is listed here.' }),
+    h('div', { class: 'counts' }, [['matched', counts.ok], ['to check', counts.check], ['without a photo', counts.missing], ['pictures of the place', a.extras.length]].map(([t, n]) => h('div', { class: 'count' }, [h('b', { textContent: String(n) }), h('span', { textContent: t })]))),
+  ]);
+  if (counts.check) panel.appendChild(h('button', { type: 'button', class: 'warm', style: 'margin:6px 0 10px', textContent: 'Everything marked "please check" is right', onclick: () => { a.photos.forEach((p) => { if (p.item != null && !p.confirmed) S.overrides[photoPath(S.files.photos[p.n])] = p.item; }); render(); } }));
+  items.forEach((it, i) => {
+    const s = st(i); const ph = a.byItem[i];
+    if (s === 'ok' || s === 'left') return; // fine: the table above shows it
+    const right = h('div', { class: 'itemright' }, [chipFor(s)]);
+    if (s === 'check') right.appendChild(h('button', { type: 'button', textContent: 'Yes, correct', onclick: () => { ph.forEach((p) => { S.overrides[photoPath(S.files.photos[p.n])] = i; }); render(); } }));
+    if (s === 'missing') right.appendChild(h('button', { type: 'button', textContent: 'Leave without a photo', onclick: () => { S.noPhoto[i] = true; render(); } }));
+    panel.appendChild(h('div', { class: 'matchrow' }, [h('div', {}, [h('b', { textContent: it.name }), h('div', { class: 'hint', textContent: [it.price || 'no price shown', ph[0]?.category].filter(Boolean).join(' · ') }),
+      ph.length ? h('div', { class: 'files' }, ph.map((p) => h('span', { class: 'thumbfile' }, [p.name, p.confirmed ? null : ' ?', h('button', { type: 'button', class: 'quiet', title: `This is not this ${V().item}`, textContent: '×', onclick: () => set(p, -1) })]))) : null]), right]));
+  });
+  const rest = a.photos.filter((p) => p.item == null);
+  if (rest.length) {
+    panel.appendChild(h('h3', { style: 'margin-top:14px', textContent: 'Photos we could not place' }));
+    rest.forEach((p) => {
+      const choice = S.overrides[photoPath(S.files.photos[p.n])];
+      const sel = h('select', { 'aria-label': `Which ${V().item} is ${p.name}?`, onchange: (e) => { const v = e.target.value; if (v === '') delete S.overrides[photoPath(S.files.photos[p.n])]; else set(p, v === 'place' ? -1 : Number(v)); } },
+        [h('option', { value: '', textContent: p.m.kind === 'ambiguous' ? `Which ${V().item} is this?` : `Choose a ${V().item} (or leave it)` }), h('option', { value: 'place', selected: choice === -1, textContent: 'Use it as a picture of my place' }), ...items.map((it, i) => h('option', { value: i, textContent: it.name }))]);
+      const close = p.m.kind === 'none' && choice === undefined ? IM().suggest(p.name, items) : null;
+      panel.appendChild(h('div', { class: 'matchrow' }, [h('div', {}, [h('span', { class: 'thumbfile', textContent: p.name }), close !== null ? h('div', { class: 'hint' }, [`Maybe this is "${items[close].name}". `, h('button', { type: 'button', textContent: `Yes, it is ${items[close].name}`, onclick: () => set(p, close) })]) : null, h('div', { class: 'hint', textContent: p.m.kind === 'ambiguous' ? `Could be: ${p.m.cands.map((c) => items[c].name).join(' or ')}` : choice === -1 ? 'It will be used as a picture of your place.' : `No ${V().item} has this name. It will be used as a picture of your place unless you choose one.` })]), sel]));
+    });
+  }
+  return panel;
+}
+const unresolved = () => { if (!S.files.photos.length) return 0; const a = shopAnalysis(); const items = namedItems(); return items.filter((_, i) => IM().status(a, i, S.noPhoto) === 'check').length + a.photos.filter((p) => p.m.kind === 'ambiguous' && S.overrides[photoPath(S.files.photos[p.n])] === undefined).length; };
+// Ordering (menu, shop) or asking for an appointment (services) on the website. The request arrives on the owner's WhatsApp and the
+// customer pays the owner directly (cash on delivery / at the visit): no online payment yet, so nothing sensitive is collected.
+function orderBlock() {
+  if (!LISTED_KINDS.includes(S.formKind)) return null;
+  const book = S.formKind === 'services';
+  const mode = S.form.orderMode;
+  const choices = book ? [
+    ['none', 'A basic website: only show my services', 'People read about you and use the contact form (it arrives on your WhatsApp) or your booking link.'],
+    ['panel', 'An interactive website: appointment requests arrive in my live panel', 'People choose a service, a day and a time on your website. You see every request on a private page that updates by itself, and you confirm or decline each one.'],
+  ] : [
+    ['none', 'A basic website: only show it', 'A page to scroll through. People contact you with the contact form, which arrives on your WhatsApp.'],
+    ['panel', 'An interactive website: orders are placed on the website and arrive in my live orders panel', 'You get a private page that updates by itself with every order. You accept it, mark it ready, and you are done.'],
+  ];
+  const ways = [['pickup', 'Pick up'], ['delivery', 'Delivery'], ...(S.formKind === 'menu' ? [['dinein', 'Eat in']] : [])];
+  const blocks = [
+    field(book ? 'Should your website be interactive (people ask for appointments on it) or basic?' : `Should your website be interactive (people order from your ${S.formKind === 'menu' ? 'menu' : 'shop'} on it) or basic?`,
+      'Please choose one. Customers pay you directly (in cash on delivery or at the visit): paying by card on the website will come later.',
+      h('div', {}, [h('div', { class: 'tiles' }, choices.map(([k, t, d]) => tile('radio', 'orderMode', k, t, d, mode === k, () => { S.form.orderMode = k; render(); })))])),
+  ];
+  if (book && mode === 'panel') { // a real calendar: the website shows only the times that are free, and nobody can book the same time twice
+    const DAY_NAMES = [['mon', 'Monday'], ['tue', 'Tuesday'], ['wed', 'Wednesday'], ['thu', 'Thursday'], ['fri', 'Friday'], ['sat', 'Saturday'], ['sun', 'Sunday']];
+    blocks.push(field('When do you take appointments?', 'Your website will show a calendar with only these days and hours. A time that is booked is faded and cannot be chosen, so nobody can book the same time twice.', h('div', { class: 'tiles' }, DAY_NAMES.map(([k, name]) => tile('checkbox', 'openDays', k, name, '', S.form.openDays.includes(k), () => { S.form.openDays = S.form.openDays.includes(k) ? S.form.openDays.filter((x) => x !== k) : [...S.form.openDays, k]; render(); })))));
+    blocks.push(h('div', { class: 'two' }, [field('From', '', h('input', { type: 'time', ...bind('openFrom') })), field('Until', '', h('input', { type: 'time', ...bind('openTo') }))]));
+    blocks.push(field('How long is one appointment?', 'The same for every service. You can still decline a request in your panel.', h('select', { ariaLabel: 'appointment length', onchange: (e) => { S.form.slotMinutes = Number(e.target.value); } }, [[30, '30 minutes'], [45, '45 minutes'], [60, '1 hour'], [90, '1 hour 30 minutes'], [120, '2 hours']].map(([v, label]) => h('option', { value: v, selected: Number(S.form.slotMinutes) === v, textContent: label })))));
+    if (!S.form.openDays.length) blocks.push(h('p', { class: 'hint', textContent: 'Please tick at least one day.' }));
+  }
+  if (!book && mode === 'panel') {
+    blocks.push(field('How can people get their order?', 'Tick everything you offer.', h('div', { class: 'tiles' }, ways.map(([k, t]) => tile('checkbox', 'fulfil', k, t, '', S.form.fulfil.includes(k), () => { S.form.fulfil = S.form.fulfil.includes(k) ? S.form.fulfil.filter((x) => x !== k) : [...S.form.fulfil, k]; render(); })))));
+    if (S.form.fulfil.includes('delivery')) blocks.push(field('Delivery fee (optional)', 'Added to the order when people choose delivery. Leave empty if delivery is free.', h('input', { type: 'text', inputmode: 'decimal', ...bind('deliveryFee', { placeholder: 'For example: 2' }) })));
+    if (!S.form.fulfil.length) blocks.push(h('p', { class: 'hint', textContent: 'Please tick at least one way.' }));
+  }
+  return h('div', {}, blocks);
+}
+
+// The website assistant (an extra). The owner gives it files to learn from (we also give it everything from this form: prices, items, hours,
+// contact) and the rules it must follow. Three kinds of answer: it knows (it answers), it does not know (a button to reach a person on
+// WhatsApp), it is out of topic (a polite "this is not our field"), or it is something private (politely declined).
+const KNOWLEDGE_EXT = /\.(pdf|docx|txt|md|csv|jpe?g|png|webp)$/i;
+function addKnowledge(list) {
+  S.knowledgeMessage = '';
+  for (const f of list) {
+    if (!KNOWLEDGE_EXT.test(f.name)) { S.knowledgeMessage = `"${f.name}" is not supported. Please use PDF, Word (.docx), text, CSV or pictures.`; continue; }
+    if (f.size > 20 * 1048576) { S.knowledgeMessage = `"${f.name}" is too large (20 MB at most).`; continue; }
+    if (S.files.knowledge.length >= 10) { S.knowledgeMessage = 'You can add up to 10 files for the assistant.'; break; }
+    if (!S.files.knowledge.some((k) => k.name === f.name && k.size === f.size)) S.files.knowledge.push(f);
+  }
+  render();
+}
+function assistantBlock() {
+  const on = S.form.assistant === true;
+  const blocks = [field('Do you want a chat assistant on your website? (an extra)', 'Visitors ask questions in a chat window and get answers from what you tell us: your prices, items, hours and contact from this form, plus the files you add here. It is an AI assistant, and it never invents an answer.',
+    h('div', {}, [h('div', { class: 'tiles' }, [[false, 'No assistant', 'People use the contact form.'], [true, 'Yes, add the assistant', 'A chat bubble on every page.']].map(([k, tt, d]) => tile('radio', 'assistant', String(k), tt, d, S.form.assistant === k, () => { S.form.assistant = k; render(); })))]))];
+  if (!on) return h('div', {}, blocks);
+  const input = h('input', { type: 'file', multiple: true, accept: '.pdf,.docx,.txt,.md,.csv,image/*', style: 'display:none', onchange: (e) => { addKnowledge([...e.target.files]); e.target.value = ''; } });
+  const zone = h('div', { class: 'drop', onclick: () => input.click(), ondragover: (e) => { e.preventDefault(); zone.classList.add('over'); }, ondragleave: () => zone.classList.remove('over'), ondrop: (e) => { e.preventDefault(); zone.classList.remove('over'); addKnowledge([...e.dataTransfer.files]); } }, [h('b', { textContent: 'Drop files here, or click to choose' }), h('div', { class: 'hint', textContent: 'PDF, Word (.docx), text, CSV or pictures of printed pages. Up to 10 files.' }), input]);
+  blocks.push(field('How should the assistant work?', 'Both answer only from your information and send visitors to you when they do not know. The difference is the cost of running it.',
+    h('div', { class: 'tiles' }, [['standard', 'Careful (recommended)', 'More reliable in tricky cases, for example a visitor asking for a discount or comparing two of your services. It costs more to run.'], ['economy', 'Quick and thrifty', 'Much cheaper to run and just as good for everyday questions. In rare tricky cases it may answer less well, and you can correct it from your private page.']].map(([k, tt, d]) => tile('radio', 'assistantModel', k, tt, d, S.form.assistantModel === k, () => { S.form.assistantModel = k; render(); })))));
+  blocks.push(field('What should the assistant know? (optional)', 'You do not have to add anything: it always knows what you gave in this form (your items, prices, hours and contact). Add files only if you have more. Your FAQ, policies (delivery, returns, cancellations), details about your products or services. PDF, Word, text, CSV or pictures.', h('div', {}, [zone,
+    S.files.knowledge.length ? h('div', { class: 'thumbs' }, S.files.knowledge.map((f, i) => h('div', { class: 'thumb' }, [h('span', { textContent: f.name }), h('button', { title: 'Remove', textContent: '×', onclick: (e) => { e.stopPropagation(); S.files.knowledge.splice(i, 1); render(); } })]))) : null,
+    S.knowledgeMessage ? h('div', { class: 'note bad', style: 'margin-top:8px', textContent: S.knowledgeMessage }) : null])));
+  blocks.push(field('Rules for the assistant (optional)', 'Anything it must never talk about or do. One rule per line. For example: "Never talk about what we pay our suppliers." "Never promise a discount." "We do not deliver outside Beirut: say so politely."',
+    h('textarea', { ...bind('assistantRules'), rows: 5, maxlength: 3000, placeholder: 'Never ...' })));
+  blocks.push(h('div', { class: 'note warm' }, [h('b', { textContent: 'How it answers. ' }), 'If it does not know, it says sorry and gives your visitor a button to talk to someone on WhatsApp. If the question has nothing to do with your business, it says sorry, this is not our field. If it is something your visitors should not know, it politely declines. You can change what it knows and its rules at any time from your private page.']));
+  if (!waOk(S.form.whatsapp) && !S.form.phone.trim()) blocks.push(h('p', { class: 'hint', textContent: 'Please give your WhatsApp number or phone (in the step "How people reach you") so the assistant can send visitors to you.' }));
+  return h('div', {}, blocks);
+}
+
+function shopStepLook() {
+  return [
+    field('Your brand colors', 'Name them or paste codes. Leave empty if you have none yet.', h('input', { type: 'text', ...bind('brandColors', { placeholder: 'For example: gold and cream' }) })),
+    field('Describe the feeling of your brand in three words', '', h('input', { type: 'text', ...bind('feelingWords', { placeholder: 'For example: warm, elegant, simple' }) })),
+    S.formKind === 'services' ? field('Your booking link (optional)', 'If you already have one.', h('input', { type: 'url', ...bind('bookingUrl', { placeholder: 'https://' }) })) : null,
+    S.form.messagesTo !== undefined && (waOk(S.form.whatsapp) && mailOk(S.form.email)) ? messagesBlock() : null,
+    orderBlock(),
+    assistantBlock(),
+    field('Is there anything you would love to see on your home page?', `Optional. For example: ${L().wishes}. Our designer reads your wishes and tells you what was done with each one.`, h('textarea', bind('homeWishes'))),
+    field('Pictures made with AI', `We may create a few mood pictures (a table, flowers, a material) around ${L().own}. ${L().never} are never redrawn or invented, and you approve every picture before it is used.`, h('div', { class: 'tiles' }, [['allowed', 'Yes, I may approve a few'], ['photos-only', 'No, only my own photos']].map(([k, t]) => tile('radio', 'aiPictures', k, t, '', S.form.aiPictures === k, () => { S.form.aiPictures = k; render(); })))),
+    field('Anything else you would like us to know?', '', h('textarea', bind('notes'))),
+  ];
+}
+
+function shopStepReview() {
+  const items = namedItems(); const a = items.length ? shopAnalysis() : null;
+  const withPhoto = a ? items.filter((_, i) => a.byItem[i].length).length : 0;
+  const noPrice = items.filter((i) => !i.price.trim()).length;
+  const place = a ? a.photos.filter((p) => p.item == null && S.overrides[photoPath(S.files.photos[p.n])] !== undefined || p.item == null && p.m.kind === 'none').length : 0;
+  const open = unresolved();
+  const f = S.form;
+  const contact = [f.phone && `phone ${f.phone}`, f.whatsapp && `WhatsApp ${f.whatsapp}`, f.email && f.email, f.instagram && `Instagram ${f.instagram}`, f.address && f.address, f.hours && f.hours].filter(Boolean).join(' · ');
+  const rows = [[cap(V().place), `${f.businessName}${f.whatItDoes ? ` · ${f.whatItDoes}` : ''}`], [cap(V().items), S.formKind === 'intro' && !items.length ? 'None. Your website will present your business and your photos.' : `${num(items.length, V().item, V().items)}: ${withPhoto} with photos, ${items.length - withPhoto} without.${showsPrices() ? ` ${noPrice} without a price shown.` : ''}`],
+    ['Photos', `${num(S.files.photos.length, S.formKind === 'intro' ? 'photo' : `${V().item} photo`, S.formKind === 'intro' ? 'photos' : `${V().item} photos`)}${S.files.logo ? ', logo' : ', no logo yet'}. ${place} used as pictures of your place.`], ['How people reach you', contact || 'Nothing yet'], ['Pages', (S.formKind === 'intro' ? ['Home', 'About us', ...(items.length ? [V().pageName] : []), 'Contact'] : ['Home', V().pageName, ...(S.formKind === 'services' ? ['About us'] : isMenu() ? [] : ['How to order']), 'Contact']).join(', ')], ['Pictures made with AI', f.aiPictures === 'photos-only' ? 'No, only your own photos' : 'Yes, you approve each one']];
+  return [
+    h('p', { class: 'lead', textContent: `This is everything we will use. Nothing is created until you press the button. Anything not listed here will not appear on your website, and we never invent ${V().items}, prices or photos.` }),
+    h('dl', { class: 'review' }, rows.map(([k, v]) => h('div', {}, [h('dt', { textContent: k }), h('dd', { textContent: v || '—' })]))),
+    showsPrices() && items.some((i) => !i.price.trim()) ? h('div', { class: 'note warm' }, [h('b', { textContent: `${items.filter((i) => !i.price.trim()).length} of your ${items.length} ${V().items} have no price. ` }), `They will be shown without one. Go back to the "${V().stepName}" step to add it: `, items.filter((i) => !i.price.trim()).slice(0, 12).map((i) => i.name).join(', '), items.filter((i) => !i.price.trim()).length > 12 ? ', and more.' : '.']) : null,
+    items.length ? h('details', { class: 'itemsum' }, [h('summary', { textContent: `See the ${items.length} ${V().items}` }), ...items.map((it, i) => h('div', { class: 'hint', textContent: `${it.name} · ${it.price || 'no price'}${a?.byItem[i].length ? ` · ${a.byItem[i].length} photo${a.byItem[i].length === 1 ? '' : 's'}` : ' · no photo'}` }))]) : null,
+    open ? h('div', { class: 'note warm', textContent: `${open} thing${open === 1 ? '' : 's'} still to check on the "${V().stepName}" step. Go back and confirm the photo matches.` }) : null,
+    S.errors.length ? h('div', { class: 'note bad', textContent: S.errors.join(' ') }) : null,
+    h('div', { class: 'note good', textContent: 'Next, we will read your information and photos, then design all the pages of your website. It takes about 10 minutes. You can look at every page, ask for another version of any page, and tell us what to change.' }),
+  ];
+}
+
+// Every step can be opened at any time, in any order: nothing has to be filled in before looking at the next page.
+function stepNav(names) {
+  return h('div', { class: 'stepnav' }, names.map((name, i) => h('button', { type: 'button', class: i < S.step ? 'done' : i === S.step ? 'now' : '', title: name, ariaCurrent: i === S.step ? 'step' : null, onclick: () => { S.errors = []; S.step = i; render(); window.scrollTo(0, 0); } }, [h('i'), h('span', { textContent: name })])));
+}
+function viewShop() {
+  const builders = shopBuilders(); const names = shopSteps();
+  const last = S.step === builders.length - 1;
+  const card = h('div', { class: 'card' }, [
+    stepNav(names),
+    h('div', { class: 'stepname', textContent: `Step ${S.step + 1} of ${names.length}` }),
+    h('h2', { textContent: names[S.step] }),
+    ...builders[S.step](),
+    S.errors.length && !last ? h('div', { class: 'note bad', textContent: S.errors.join(' ') }) : null,
+    h('div', { class: 'row' }, [
+      h('button', { type: 'button', textContent: 'Back', onclick: () => { S.errors = []; if (S.step === 0) { S.kind = null; } else S.step--; render(); window.scrollTo(0, 0); } }),
+      h('button', { class: 'go', disabled: last && unresolved() > 0, textContent: last ? 'Create my sketches' : 'Continue', onclick: last ? submitShop : nextShop }),
+    ]),
+  ]);
+  return [h('div', { class: 'hint', style: 'margin-bottom:8px', textContent: `Kind of website: ${KINDS.find((k) => k[0] === S.formKind)?.[1] ?? 'Shop'}` }), card];
+}
+function nextShop() {
+  S.errors = [];
+  const cur = shopBuilders()[S.step];
+  if (S.step === 0 && S.form.businessName.trim().length < 2) S.errors.push(`Please tell us the name of your ${V().place}.`);
+  if (S.step === 0 && S.form.story.trim().length < STORY_MIN) S.errors.push('Please tell us your story in a few sentences: it is the inspiration for the About section of your website.');
+  if (S.step === 1 && !['phone', 'whatsapp', 'email', 'instagram', 'tiktok', 'facebook'].some((k) => S.form[k].trim())) S.errors.push('Please give at least one way for customers to order or contact you.');
+  if (cur === shopStepLook && S.formKind === 'services' && S.form.orderMode === 'panel' && (!S.form.openDays.length || S.form.openTo <= S.form.openFrom)) S.errors.push('Please tick the days you take appointments, and choose opening hours where "Until" is later than "From".');
+  if (cur === shopStepLook && LISTED_KINDS.includes(S.formKind) && !['none', 'panel'].includes(S.form.orderMode)) S.errors.push('Please choose whether your website is interactive or basic.');
+  if (cur === shopStepLook && typeof S.form.assistant !== 'boolean') S.errors.push('Please choose whether you want the chat assistant.');
+  if (cur === shopStepItems && S.formKind !== 'intro' && !namedItems().length) S.errors.push(`Please add at least one ${V().item} to your ${V().yourList}.`);
+  if (cur === shopStepItems && namedItems().length && unresolved()) S.errors.push('Please check the photos marked "please check" below the table before you continue.');
+  if (S.errors.length) return render();
+  S.step++; render(); window.scrollTo(0, 0);
+}
+
+async function submitShop() {
+  S.errors = [];
+  try {
+    setBusy('Sending your information...', 0);
+    const id = await ensureDraft();
+    const items = namedItems();
+    const a = items.length ? shopAnalysis() : { photos: [], byItem: [] };
+    const all = [...(S.files.logo ? [['logo', S.files.logo]] : []), ...S.files.photos.map((f) => ['photo', f]), ...(S.form.assistant === true ? S.files.knowledge.map((f) => ['knowledge', f]) : [])];
+    const saved = new Map();
+    for (const [i, [kind, file]] of all.entries()) {
+      setBusy(`Uploading your photos (${i + 1} of ${all.length})...`, (i / (all.length + 1)) * 100);
+      const r = await api(`/api/upload/${id}?kind=${kind}&name=${encodeURIComponent(file.name)}`, { method: 'PUT', headers: { 'Content-Type': 'application/octet-stream' }, body: file });
+      saved.set(file, r.saved);
+    }
+    setBusy('Almost there...', 95);
+    const form = {
+      ...S.form, siteType: 'shop', shopKind: S.formKind, hasLogo: Boolean(S.files.logo),
+      items: items.map((it, i) => ({ name: it.name, price: it.price, description: it.description, category: a.byItem[i]?.[0]?.category || it.category || '' })),
+      itemPhotos: a.photos.map((p) => ({ file: saved.get(S.files.photos[p.n]), item: p.item == null ? -1 : p.item })).filter((p) => p.file),
+    };
+    await post(`/api/submit/${id}`, { form });
+    S.id = id; rememberId(id); S.draftId = null;
+    try { localStorage.setItem('sketchRequestId', id); } catch { /* storage not available */ }
+    history.replaceState(null, '', `?id=${id}`);
+    setBusy(null);
+    S.view = 'working';
+    render(); watch();
+  } catch (e) {
+    setBusy(null);
+    S.errors = [e.message];
+    render();
+  }
+}
+
+// ---------- wizard (the general form) ----------
+function viewForm() { return S.kind === 'shop' ? viewShop() : viewKind(); }
+function next() {
+  S.errors = [];
+  if (S.step === 0 && S.form.businessName.trim().length < 2) S.errors.push('Please tell us the name of your business.');
+  if (S.step === 0 && S.form.story.trim().length < STORY_MIN) S.errors.push('Please tell us your story in a few sentences: it is the inspiration for the About section of your website.');
+  if (S.errors.length) return render();
+  if (S.step === 1 && softMissing().length && !S.softOk) { S.softAsked = true; return render(); }
+  S.step++; render(); window.scrollTo(0, 0);
+}
+
+// The kind of website decides the pages, and what the owner gave decides the features: nothing to tick.
+function deriveGeneral() {
+  const f = S.form;
+  f.goal = { menu: 'showcase', services: 'bookings', intro: 'trust' }[S.formKind] ?? 'showcase'; f.goalText = '';
+  const lines = f.products.split('\n').map((l) => l.trim()).filter(Boolean);
+  f.showPrices = !lines.length ? '' : lines.every((l) => /\d/.test(l)) ? 'yes' : lines.some((l) => /\d/.test(l)) ? 'some' : 'no';
+  f.pages = { menu: ['products', 'contact'], services: ['products', 'about', 'contact'], intro: namedItems().length ? ['about', 'products', 'contact'] : ['about', 'contact'] }[S.formKind] ?? ['products', 'about', 'contact'];
+  f.otherPages = '';
+  f.pageNames = { products: { menu: 'Menu', services: 'Services', intro: 'Our work' }[S.formKind] ?? 'Products' };
+  f.features = [(waOk(f.whatsapp) || mailOk(f.email)) && 'contact form', f.address.trim() && 'map', (f.instagram.trim() || f.tiktok.trim() || f.facebook.trim()) && 'social links', f.bookingUrl.trim() && 'booking link'].filter(Boolean);
+  if (f.features.includes('contact form') && !f.messagesTo) f.messagesTo = waOk(f.whatsapp) ? 'whatsapp' : 'email';
+}
+
+async function submit() {
+  S.errors = [];
+  try {
+    setBusy('Sending your information...', 0);
+    const { id } = await post('/api/start');
+    const all = [...(S.files.logo ? [['logo', S.files.logo]] : []), ...S.files.photos.map((f) => ['photo', f]), ...S.files.documents.map((f) => ['document', f])];
+    for (const [i, [kind, file]] of all.entries()) {
+      setBusy(`Uploading your files (${i + 1} of ${all.length})...`, (i / (all.length + 1)) * 100);
+      await api(`/api/upload/${id}?kind=${kind}&name=${encodeURIComponent(file.name)}`, { method: 'PUT', headers: { 'Content-Type': 'application/octet-stream' }, body: file });
+    }
+    setBusy('Almost there...', 95);
+    deriveGeneral();
+    await post(`/api/submit/${id}`, { form: S.form });
+    S.id = id; rememberId(id);
+    try { localStorage.setItem('sketchRequestId', id); } catch { /* storage not available */ }
+    history.replaceState(null, '', `?id=${id}`); // this link brings the customer back to their sketches
+    setBusy(null);
+    S.view = 'working';
+    render(); watch();
+  } catch (e) {
+    setBusy(null);
+    S.errors = [e.message];
+    render();
+  }
+}
+function setBusy(message, percent) {
+  document.querySelector('.busy')?.remove();
+  if (!message) return;
+  document.body.append(h('div', { class: 'busy' }, [h('div', {}, [h('h2', { textContent: message }), h('div', { class: 'bar' }, h('i', { style: `width:${percent}%` }))])]));
+}
+
+// ---------- after sending ----------
+function viewWorking() {
+  const st = S.status;
+  const queued = st && st.queuePosition > 0;
+  return [h('div', { class: 'card' }, [
+    h('h2', { textContent: 'We are on it' }),
+    h('p', { class: 'lead', textContent: queued ? 'You are in line. We will start in a moment.' : 'This takes about 6 minutes. You can keep this page open, or come back to this same link later.' }),
+    h('ul', { class: 'progress' }, (st?.steps ?? []).map((s) => h('li', { class: s.status }, [h('span', { class: 'dot', textContent: s.status === 'done' ? '✓' : '' }), s.label]))),
+    h('div', { class: 'hint', textContent: 'Tip: bookmark this page. This link brings you back to your sketches.' }),
+  ])];
+}
+
+function viewConfirm() {
+  const items = S.status.findings;
+  S.answers ??= {};
+  S.skip ??= {};
+  items.forEach((it) => { if (S.answers[it.index] === undefined) S.answers[it.index] = true; });
+  return [h('div', { class: 'card' }, [
+    h('h2', { textContent: 'Did we understand your business?' }),
+    h('p', { class: 'lead', textContent: 'We looked at your photos and found a few things. Please tell us what is right. Only the things you confirm will be used.' }),
+    ...items.map((it) => {
+      const value = it.kind === 'colors'
+        ? h('div', { class: 'swatches' }, it.value.map((c) => h('div', { class: 'swatch', style: `background:${c}`, title: c })))
+        : it.key === 'offerings.products' ? h('div', {}, it.value.map((v, k) => h('label', { style: 'display:flex;gap:10px;align-items:center;padding:5px 0;cursor:pointer' }, [h('input', { type: 'checkbox', checked: !(S.skip[it.index] ?? []).includes(k), style: 'width:18px;height:18px', onchange: (e) => { const set = new Set(S.skip[it.index] ?? []); if (e.target.checked) set.delete(k); else set.add(k); S.skip[it.index] = [...set]; } }), v])))
+        : Array.isArray(it.value) ? h('ul', {}, it.value.map((v) => h('li', { textContent: v }))) : h('div', { textContent: it.value });
+      const seg = h('div', { class: 'seg' });
+      const draw = () => seg.replaceChildren(
+        h('button', { class: `yes ${S.answers[it.index] ? 'on' : ''}`, textContent: 'Looks right', onclick: () => { S.answers[it.index] = true; draw(); } }),
+        h('button', { class: `no ${S.answers[it.index] ? '' : 'on'}`, textContent: 'Not right', onclick: () => { S.answers[it.index] = false; draw(); } }),
+      );
+      draw();
+      return h('div', { class: 'found' }, [h('h3', { textContent: it.label }), value, seg]);
+    }),
+    h('div', { class: 'row' }, [h('button', { class: 'go', textContent: 'Continue', onclick: async () => {
+      try {
+        const accept = items.filter((i) => S.answers[i.index]).map((i) => i.index);
+        const reject = items.filter((i) => !S.answers[i.index]).map((i) => i.index);
+        await post(`/api/confirm/${S.id}`, { accept, reject, skip: S.skip });
+        S.view = 'working'; S.answers = undefined; S.skip = undefined; render(); watch();
+      } catch (e) { alert(e.message); }
+    } })]),
+  ])];
+}
+
+// A design shown in a browser-like frame, with one tab per page and a link to open the page full size.
+function designCard({ title, desc, pages, extra }) {
+  const view = h('div', { class: 'view' });
+  const frame = h('iframe', { src: pages[0].url, title, loading: 'lazy', tabIndex: -1 });
+  view.append(frame);
+  const full = h('a', { href: pages[0].url, target: '_blank', rel: 'noopener', textContent: 'See this page full size', style: 'color:var(--accent);font-weight:600' });
+  const fit = () => { const w = view.clientWidth || 400; const scale = w / 1440; frame.style.transform = `scale(${scale})`; view.style.height = `${1900 * scale}px`; };
+  new ResizeObserver(fit).observe(view);
+  setTimeout(fit, 0);
+  const tabs = pages.length > 1 ? h('div', { class: 'pagetabs' }, pages.map((p, i) => h('button', {
+    class: `tab ${i === 0 ? 'on' : ''}`, textContent: p.title,
+    onclick: (e) => { frame.src = p.url; full.href = p.url; tabs.querySelectorAll('button').forEach((b) => b.classList.remove('on')); e.target.classList.add('on'); },
+  }))) : null;
+  const body = h('div', { class: 'body' }, [h('h3', { textContent: title }), h('p', { textContent: desc }), h('div', { class: 'row', style: 'margin-top:0' }, [full, ...(extra ?? [])])]);
+  return h('div', { class: 'sketch' }, [h('div', { class: 'chrome' }, [h('i'), h('i'), h('i')]), tabs, view, body]);
+}
+
+async function choose(n) {
+  try {
+    await post(`/api/choose/${S.id}`, { choice: n, note: S.note });
+    S.picked = n; S.view = 'building'; render(); watch();
+  } catch (e) { alert(e.message); }
+}
+async function askAnotherStyle() {
+  try { await post(`/api/another/${S.id}`); S.status.alt = 'working'; render(); watch(); } catch (e) { alert(e.message); }
+}
+
+// Pictures we arranged from the customer's own photos: nothing is added, but the customer decides if each one is used.
+function combinedPanel() {
+  const list = S.status.combined ?? [];
+  if (!list.length) return null;
+  const decide = async (assetId, approve) => {
+    try { S.status.combined = (await post(`/api/combined/${S.id}`, { assetId, approve })).combined; render(); } catch (e) { alert(e.message); }
+  };
+  return h('div', { class: 'card', style: 'margin-top:18px' }, [
+    h('h2', { textContent: 'Pictures we prepared for your pages' }),
+    h('p', { class: 'lead', textContent: 'To make your pages richer we prepared a few pictures. Please tell us which ones you want on your website.' }),
+    ...list.map((c) => h('div', { class: 'found' }, [
+      h('img', { src: c.picture, alt: 'A picture prepared for your website', style: 'width:100%;max-width:560px;border-radius:12px;display:block;margin-bottom:10px' }),
+      h('p', { class: 'hint', style: 'margin:0 0 10px', textContent: ({ collage: 'Several of your own photos side by side. Nothing was added or changed.', crop: 'One item cut out of your own photo. Nothing was added or changed.', composite: 'Your own items, cut out of your photos and placed together on a new background. The items themselves are not changed.', generated: c.photos > 0 ? 'A styled photo scene made with AI around your own items. Your items are exactly as in your photos; only the surroundings are new. It is only used if you choose it.' : 'A mood picture made with AI (a material or a quiet scene, never a product or text). It is only used if you choose it.' })[c.origin] ?? '' }),
+      h('div', { class: 'seg' }, [
+        h('button', { class: `yes ${c.approval === 'approved' ? 'on' : ''}`, textContent: 'Use this picture', onclick: () => decide(c.id, true) }),
+        h('button', { class: `no ${c.approval === 'rejected' ? 'on' : ''}`, textContent: 'Do not use it', onclick: () => decide(c.id, false) }),
+      ]),
+      c.approval === 'rejected' ? h('div', { class: 'hint', textContent: 'That place on your website will wait for a photo from you instead.' }) : null,
+    ])),
+  ]);
+}
+
+// What the designer did with each wish the owner wrote for the home page.
+function wishesPanel() {
+  const list = S.status.wishes ?? [];
+  if (!list.length) return null;
+  const label = { used: 'Done', adapted: 'Adapted', declined: 'Not this time' };
+  return h('div', { class: 'card', style: 'margin-top:18px' }, [
+    h('h2', { textContent: 'What you asked for' }),
+    ...list.map((w) => h('div', { class: 'found' }, [
+      h('div', { style: 'font-weight:600', textContent: w.wish }),
+      h('div', { class: 'hint', style: 'margin-top:4px' }, [h('b', { textContent: `${label[w.outcome] ?? w.outcome}: ` }), w.how]),
+    ])),
+  ]);
+}
+
+// Another version of any page: the customer asks, waits a couple of minutes, then picks the version they like.
+function versionsPanel() {
+  const st = S.status;
+  const pages = st.pages ?? [];
+  if (!pages.length) return null;
+  const states = st.variants ?? {};
+  const taken = Object.values(states).filter((v) => v === 'working' || v === 'ready').length;
+  const ask = async (slug) => {
+    try { await post(`/api/variant/${S.id}`, { slug }); S.status.variants = { ...states, [slug]: 'working' }; render(); watch(); } catch (e) { alert(e.message); }
+  };
+  const use = async (slug, screenId) => {
+    try { S.status = await post(`/api/version/${S.id}`, { slug, screenId }); render(); } catch (e) { alert(e.message); }
+  };
+  const thumb = (label, picture, url, extra) => h('div', { style: 'flex:1 1 200px;max-width:260px' }, [
+    h('a', { href: url, target: '_blank', rel: 'noopener' }, [h('img', { src: picture, alt: label, style: 'width:100%;height:230px;object-fit:cover;object-position:top;border-radius:10px;border:1px solid var(--line);display:block' })]),
+    h('div', { class: 'hint', style: 'margin:4px 0 6px;font-weight:600', textContent: label }), ...(extra ?? []),
+  ]);
+  return h('div', { class: 'card', style: 'margin-top:18px' }, [
+    h('h2', { textContent: 'Would you like to see another version of a page?' }),
+    h('p', { class: 'lead', textContent: 'We can draw a different layout and colour scheme of any page, with the same words and photos. It takes about two minutes. You then choose the version you like better, and you can switch back at any time.' }),
+    ...pages.map((p) => {
+      const other = p.other?.[0];
+      const state = states[p.slug];
+      const row = [thumb(other ? 'Your current version' : 'Your page', p.picture, p.url)];
+      if (other) row.push(thumb('Another version', other.picture, other.url, [h('button', { class: 'warm', style: 'padding:9px 16px;font-size:15px', textContent: 'Use this version instead', onclick: () => use(p.slug, other.screenId) })]));
+      else if (state === 'working') row.push(h('div', { class: 'hint', style: 'align-self:center;max-width:260px', textContent: 'Drawing another version of this page... about two minutes. You can keep looking around.' }));
+      else row.push(h('div', { style: 'align-self:center;max-width:260px' }, [
+        h('button', { style: 'padding:10px 18px;font-size:15px', textContent: state === 'failed' ? 'Try again' : 'Show me another version', disabled: taken >= (st.maxVersions ?? 4), onclick: () => ask(p.slug) }),
+        state === 'failed' ? h('div', { class: 'hint', style: 'margin-top:6px', textContent: 'We could not draw another version this time. You can try again, or keep this one.' }) : null,
+      ]));
+      return h('div', { class: 'found' }, [h('div', { style: 'font-weight:600;margin-bottom:8px', textContent: p.title }), h('div', { style: 'display:flex;gap:14px;flex-wrap:wrap' }, row)]);
+    }),
+    taken >= (st.maxVersions ?? 4) ? h('div', { class: 'hint', textContent: `You asked for ${taken} other versions, which is the most we can draw for one request.` }) : null,
+  ]);
+}
+
+function viewReady() {
+  const st = S.status;
+  const sketch1 = st.pages.length ? st.pages : [{ title: 'Home', url: st.sketches[1] }];
+  const alt = st.sketches[2];
+  const noteBox = h('div', { class: 'card', style: 'margin-top:20px' }, [
+    h('label', { class: 'f', textContent: 'Anything you would like to change? (optional)' }),
+    h('textarea', { placeholder: 'For example: make the logo bigger, or I prefer a lighter background.', value: S.note, oninput: (e) => { S.note = e.target.value; } }),
+  ]);
+  const photoNote = h('div', { class: 'note warm', style: 'margin-top:18px' }, [h('b', { textContent: 'Spots that say "Photo needed" ' }), 'are waiting for a photo from you. Wherever you gave us a good photo, it is already in place.']);
+
+  // one design: love it, or ask for a different style
+  if (!alt) {
+    const working = st.alt === 'working';
+    return [
+      h('h1', { textContent: 'Your website design is ready' }),
+      h('p', { class: 'lead', textContent: 'Here is your whole website, page by page, with your information and your own photos. Click the page names to look around, or open any page full size.' }),
+      h('div', { class: 'sketches single' }, [designCard({ title: 'Your website design', desc: 'Planned around your brand colors and your goal, with a carefully balanced layout.', pages: sketch1 })]),
+      st.longLists ? h('div', { class: 'note good', textContent: `Your list has ${st.longLists} items. To keep the drawing quick, these sketches show only a few of them in each section. Your finished website shows every item of your list, each with its own photo and its price.` }) : null,
+      photoNote, wishesPanel(), combinedPanel(), versionsPanel(), noteBox,
+      h('div', { class: 'row' }, [
+        h('button', { class: 'go', textContent: 'I love it: this is my design', onclick: () => choose(1) }),
+        working ? h('span', { class: 'hint', textContent: 'Drawing another style of your home page... about 2 minutes.' })
+          : h('button', { textContent: st.alt === 'failed' ? 'Try another style again' : 'Show me a different style', onclick: askAnotherStyle }),
+      ]),
+      st.alt === 'failed' ? h('div', { class: 'note bad', textContent: 'We could not draw another style this time. You can try again, or keep this design.' }) : null,
+    ];
+  }
+
+  // the customer asked for a different style: two to choose from
+  const cards = [[1, 'Style 1: Guided design', 'Planned around your brand colors, with a carefully balanced layout. Your whole website.', sketch1], [2, 'Style 2: A fresh, free take', 'A more free, creative interpretation. Only the home page is shown: if you pick it, we draw your other pages in this style.', [{ title: 'Home page', url: alt }]]];
+  const pickButtons = {}; const cardEls = {}; let confirmButton;
+  const updatePick = () => {
+    for (const n of [1, 2]) { cardEls[n].classList.toggle('picked', S.picked === n); pickButtons[n].className = S.picked === n ? 'go' : 'warm'; pickButtons[n].textContent = S.picked === n ? 'Chosen ✓' : 'I choose this one'; }
+    confirmButton.disabled = !S.picked; confirmButton.textContent = S.picked ? `Confirm style ${S.picked}` : 'Choose a style first';
+  };
+  const els = cards.map(([n, title, desc, pages]) => {
+    const pick = h('button', { class: S.picked === n ? 'go' : 'warm', textContent: S.picked === n ? 'Chosen ✓' : 'I choose this one' });
+    pick.addEventListener('click', () => { S.picked = n; updatePick(); });
+    pickButtons[n] = pick;
+    return (cardEls[n] = designCard({ title, desc, pages, extra: [pick] }));
+  });
+  return [
+    h('h1', { textContent: 'Two styles to choose from' }),
+    h('p', { class: 'lead', textContent: 'Both use your information and your own photos. Look at them, open them full size, and choose the one you like more.' }),
+    h('div', { class: 'sketches' }, els), photoNote, wishesPanel(), combinedPanel(), noteBox,
+    h('div', { class: 'row' }, [(confirmButton = h('button', { class: 'go', textContent: S.picked ? `Confirm style ${S.picked}` : 'Choose a style first', disabled: !S.picked, onclick: () => choose(S.picked) }))]),
+  ];
+}
+
+function viewBuilding() {
+  return [h('div', { class: 'card center' }, [
+    h('div', { class: 'dot', style: 'margin:0 auto 14px;width:44px;height:44px;border-color:var(--warm);border-top-color:transparent;animation:spin .9s linear infinite' }),
+    h('h2', { textContent: 'Great choice! We are finishing your design' }),
+    h('p', { class: 'lead', style: 'margin:8px auto 0', textContent: 'We are saving your choice and drawing any remaining pages in your style. This can take a few minutes. You can keep this page open.' }),
+  ])];
+}
+
+function viewChosen() {
+  return [h('div', { class: 'card center' }, [
+    h('div', { class: 'check', textContent: '🎉' }),
+    h('h2', { textContent: 'Your website design is approved' }),
+    h('p', { class: 'lead', style: 'margin:8px auto 16px', textContent: S.status?.siteReady ? 'Your real website is ready to look at. Click any text or picture to change it. Nothing is lost: you can always go back to the original.' : 'Thank you! Our team will now turn your design into your real, working website and get in touch with you.' }),
+    h('div', { class: 'row', style: 'justify-content:center' }, [S.status?.siteReady ? h('a', { class: 'go', href: `/site/${S.id}/?edit=1`, target: '_blank', style: 'display:inline-block;padding:12px 18px;border-radius:10px;text-decoration:none;color:#fff;background:#2f6fed', textContent: 'Look at and edit my website' }) : null, S.status?.siteReady ? h('a', { href: `/phone/${S.id}/`, target: '_blank', style: 'display:inline-block;padding:12px 18px;border-radius:10px;text-decoration:none;border:1px solid #2f6fed;color:#2f6fed', textContent: 'See it on a phone' }) : null, h('button', { textContent: 'I changed my mind', onclick: () => { S.view = 'ready'; render(); } }), h('button', { class: 'go', textContent: 'Start a new website', onclick: goHome })]),
+  ])];
+}
+
+function viewFailed() {
+  return [h('div', { class: 'card' }, [
+    h('h2', { textContent: 'We hit a small problem' }),
+    h('p', { class: 'lead', textContent: S.status?.message || 'Something went wrong. Please try again.' }),
+    h('div', { class: 'row' }, [h('button', { class: 'go', textContent: 'Try again', onclick: async () => { try { await post(`/api/retry/${S.id}`); S.view = 'working'; render(); watch(); } catch (e) { alert(e.message); } } })]),
+  ])];
+}
+
+// ---------- going back to the start ----------
+// Starts a brand new request. The old one keeps running safely in the background (its link still works).
+function goHome() {
+  S.kind = null; S.formKind = null; S.addTab = null; S.socials = null; S.items = []; S.overrides = {}; S.noPhoto = {}; S.draftId = null; S.docsUploaded = {}; S.listMessage = '';
+  S.id = null; S.status = null; S.view = 'form'; S.step = 0; S.form = empty(); S.files = { logo: null, photos: [], documents: [], knowledge: [] };
+  S.errors = []; S.softAsked = false; S.softOk = false; S.picked = 0; S.note = ''; S.fileMessage = ''; S.answers = undefined; S.skip = undefined; S.lastAlt = undefined; S.touched = false;
+  try { localStorage.removeItem('sketchRequestId'); } catch { /* storage not available */ }
+  history.replaceState(null, '', location.pathname);
+  render(); window.scrollTo(0, 0); loadMine();
+}
+
+// ---------- routing and polling ----------
+const PHASE_VIEW = { queued: 'working', analyzing: 'working', designing: 'working', confirm: 'confirm', ready: 'ready', building: 'building', chosen: 'chosen', failed: 'failed' };
+// a customer who pressed "I changed my mind" stays on the choice screen while the saved phase is still "chosen"
+const phaseView = (phase, before) => (phase === 'chosen' && before === 'ready' ? 'ready' : PHASE_VIEW[phase] ?? 'form');
+let watching = false;
+async function watch() {
+  if (watching) return;
+  watching = true;
+  try {
+    while (S.id) {
+      const st = await api(`/api/status/${S.id}`);
+      const before = S.view;
+      S.status = st;
+      const view = phaseView(st.phase, before);
+      if (st.choice && S.picked === 0) S.picked = st.choice.choice;
+      const altChanged = st.alt !== S.lastAlt;
+      S.lastAlt = st.alt;
+      const versionsKey = JSON.stringify(st.variants ?? {}) + (st.pages ?? []).map((p) => (p.other ?? []).length).join('');
+      const versionsChanged = versionsKey !== S.lastVersions;
+      S.lastVersions = versionsKey;
+      S.view = view;
+      if (view !== before || view === 'working' || altChanged || versionsChanged) render();
+      await sleep(['working', 'building'].includes(view) || st.alt === 'working' || Object.values(st.variants ?? {}).includes('working') ? 2500 : 8000);
+    }
+    watching = false;
+  } catch { watching = false; }
+}
+
+function render() {
+  const app = $('app');
+  $('topright').replaceChildren(S.view === 'form' ? '' : h('button', { class: 'quiet', textContent: '← Back to the start', onclick: goHome }));
+  const views = { form: viewForm, working: viewWorking, confirm: viewConfirm, ready: viewReady, building: viewBuilding, chosen: viewChosen, failed: viewFailed };
+  app.replaceChildren(...(views[S.view] ?? viewForm)());
+  const first = document.querySelector('input[type=text], textarea');
+  if (S.view === 'form' && S.step === 0 && first && !S.touched) { S.touched = true; first.focus(); }
+}
+
+async function boot() {
+  const query = new URLSearchParams(location.search);
+  if (query.get('id')) S.id = query.get('id'); // a link to a request: open it directly
+  if (S.id) {
+    try {
+      const st = await api(`/api/status/${S.id}`);
+      if (st.phase && st.phase !== 'new') { S.status = st; S.view = PHASE_VIEW[st.phase] ?? 'form'; rememberId(S.id); S.lastAlt = st.alt; if (st.choice) S.picked = st.choice.choice; render(); watch(); return; }
+    } catch { /* the saved request no longer exists: start fresh */ }
+  }
+  render(); loadMine();
+}
+$('brand').addEventListener('click', goHome);
+$('brand').addEventListener('keydown', (e) => { if (e.key === 'Enter') goHome(); });
+boot();
+</script>
+</body>
+</html>

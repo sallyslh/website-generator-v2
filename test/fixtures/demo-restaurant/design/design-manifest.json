@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "stitchProjectId": "4044680601076201931",
+  "designSystemId": null,
+  "pages": [
+    {
+      "slug": "home", "screenId": "abc123", "html": "design/home.html", "screenshot": "design/home.png",
+      "variants": [{ "screenId": "def456", "screenshot": "design/variants/home-def456.png", "html": "design/variants/home-def456.html" }],
+      "promptUsed": "(example prompt text)", "status": "generated"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+# Stage 4 evaluations
+
+| Date | Project | Mode | Auto checks | Scores | Average | Comments | Cost |
+|---|---|---|---|---|---|---|---|
+| 2026-10-09 | perfume-s4-20261009-184733 | isolated | 14/14 | 4, 4, 4, 5, 4 | 4.2 | SCORED BY CLAUDE, not a human; Missing facts (prices, delivery, payment) are marked NEEDS, not invented. Checks added during the audit: product/brand names from photos, step numbering, claim words, CTA targets.; Only 2 businesses tested; no business with a menu PDF or real prices yet. | n/a |
+| 2026-10-09 | mysweethome-s4-20261009-184900 | isolated | 14/14 | 4, 4, 4, 5, 4 | 4.2 | SCORED BY CLAUDE, not a human; Missing facts (prices, delivery, payment) are marked NEEDS, not invented. Checks added during the audit: product/brand names from photos, step numbering, claim words, CTA targets.; Only 2 businesses tested; no business with a menu PDF or real prices yet. | n/a |
+| 2026-10-09 | perfume-chain4-20261009-185000 | chain | 14/14 | 4, 4, 4, 5, 4 | 4.2 | SCORED BY CLAUDE, not a human; Missing facts (prices, delivery, payment) are marked NEEDS, not invented. Checks added during the audit: product/brand names from photos, step numbering, claim words, CTA targets.; Only 2 businesses tested; no business with a menu PDF or real prices yet. | n/a |
+| 2026-10-09 | mysweethome-chain4-20261009-185154 | chain | 14/14 | 4, 4, 4, 5, 4 | 4.2 | SCORED BY CLAUDE, not a human; Missing facts (prices, delivery, payment) are marked NEEDS, not invented. Checks added during the audit: product/brand names from photos, step numbering, claim words, CTA targets.; Only 2 businesses tested; no business with a menu PDF or real prices yet. | n/a |

@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "asset-001",
+      "file": "inputs/assets/logo.jpg",
+      "hash": "f02144efafa624d71418f464df898b5354c8c5ec7ac12374abcd0115a4fc2587",
+      "kind": "logo",
+      "category": "logo",
+      "description": "A logo featuring a large pink satin bow with gold edging above the pink text \"My Sweet Home\", surrounded by gold glitter rings and stars, with a gold number below.",
+      "quality": "medium",
+      "orientation": "landscape",
+      "width": 550,
+      "height": 510,
+      "dominantColors": [
+        "#F7C6D0",
+        "#C9A56A",
+        "#FFFFFF",
+        "#E8909F"
+      ],
+      "usableFor": [
+        "card",
+        "about"
+      ],
+      "notes": "Text visible: \"My Sweet Home\" and \"71-014463\". Gold rings are cropped at the edges, and the image looks like a low-resolution screenshot, so it should not be enlarged. The pink text on white has fairly low contrast. White background makes it easy to place on light pages."
+    },
+    {
+      "id": "asset-002",
+      "file": "inputs/assets/product 3.jpg",
+      "hash": "d766b5648e728c21c1d2ec1d98a8dbb7528ea41d80c9ca867dd6dacffb4f267f",
+      "kind": "image",
+      "category": "product",
+      "description": "A set of three red body care products (body lotion, hand cream and fragrance mist) stands on a white perforated table beside pink peonies and a handmade cream ceramic cup and saucer decorated with red hearts, with white blossoms blurred in the background.",
+      "quality": "high",
+      "orientation": "portrait",
+      "width": 1041,
+      "height": 1280,
+      "dominantColors": [
+        "#C8202B",
+        "#F2EEEA",
+        "#E8798A",
+        "#FFFFFF"
+      ],
+      "usableFor": [
+        "card",
+        "gallery",
+        "section-background"
+      ],
+      "notes": "Bright, soft natural lighting with a pleasant blurred floral background. Portrait format, so it needs cropping for wide hero use. Empty space in the upper right could hold text. Text visible: \"JAPANESE CHERRY BLOSSOM\", \"BATH & BODY WORKS\", \"DAILY NOURISHING BODY LOTION\", \"SHEA BUTTER HAND CREAM\", \"FINE FRAGRANCE MIST\", \"236 ml/8 fl oz\", \"1 FL OZ / 29 mL\". Third-party brand labels are prominent, so check the rights to use them."
+    },
+    {
+      "id": "asset-003",
+      "file": "inputs/assets/product 4.jpg",
+      "hash": "272927d6e47d81f03bd6929bb9a7553e5fa1afd7dc350f0b4299130c0bb6fade",
+      "kind": "image",
+      "category": "product",
+      "description": "Two water bottles with wildflower prints, one cream and one lavender, standing in a woven wicker basket with a linen lining on a white perforated table.",
+      "quality": "high",
+      "orientation": "portrait",
+      "width": 1053,
+      "height": 1280,
+      "dominantColors": [
+        "#F3EBD6",
+        "#9B7FD1",
+        "#D9B97A",
+        "#E8E0D4"
+      ],
+      "usableFor": [
+        "card",
+        "gallery",
+        "section-background"
+      ],
+      "notes": "Bright, soft natural light with a pleasant blurred floral background. The portrait crop is tight on the sides and the busy perforated pattern leaves little clean space for text. Not wide enough for a hero. Text visible: \"FLOWE\" (cream bottle, cut off), \"LACE F\" (purple bottle, cut off). There is a small light edge artifact on the right side of the frame."
+    },
+    {
+      "id": "asset-004",
+      "file": "inputs/assets/product 5.jpg",
+      "hash": "80e55fb437dfd6a9f6358bd0fa06c5aced7940f303d3568af98a60b4b89c7b63",
+      "kind": "image",
+      "category": "product",
+      "description": "A cream cushion cover with embroidered wildflowers, butterflies and a dandelion sits on a white perforated metal chair in front of white blossom branches.",
+      "quality": "medium",
+      "orientation": "portrait",
+      "width": 1049,
+      "height": 1280,
+      "dominantColors": [
+        "#F5EBC8",
+        "#FFFFFF",
+        "#E8A33D",
+        "#F2A7B5"
+      ],
+      "usableFor": [
+        "card",
+        "gallery"
+      ],
+      "notes": "Bright, soft lighting with a pleasant floral backdrop and the embroidery is clearly visible. A '1/2' slideshow counter overlay is in the top right corner, so it needs cropping or removal. It looks like a screenshot, so resolution may be limited. The portrait orientation makes it unsuitable for a wide hero. The white background is busy and low in contrast, leaving little clean space for text."
+    },
+    {
+      "id": "asset-005",
+      "file": "inputs/assets/product.jpg",
+      "hash": "4e7014ff813bc4cfa45a79e08d40c7992eb69fbb3aac31f66e3724a01a8cbc7a",
+      "kind": "image",
+      "category": "product",
+      "description": "Four floral-patterned insulated tumblers with handles, gold bands, colored lids and bow-shaped straw toppers stand on a white perforated metal table in front of white blossom branches.",
+      "quality": "medium",
+      "orientation": "portrait",
+      "width": 964,
+      "height": 1280,
+      "dominantColors": [
+        "#F3EEF0",
+        "#E9A9C0",
+        "#B79BD6",
+        "#D4A93C"
+      ],
+      "usableFor": [
+        "card",
+        "gallery"
+      ],
+      "notes": "Bright, soft, appealing styling with a blurred floral backdrop. A screenshot-style '1/3' counter badge is visible in the top-right corner and the image appears to be a social media capture, so it needs cropping before use. The tall portrait format limits wide hero use, and the busy table in the foreground is cluttered. Text visible: 'STANLEY', 'LoveShackFancy' (partly legible on the cups), '1/3'."
+    },
+    {
+      "id": "asset-006",
+      "file": "inputs/assets/product2.jpg",
+      "hash": "6c23aa1eed44eec548d02c718dfb43fbed66dac97483d4ee5935318f3091eb49",
+      "kind": "image",
+      "category": "product",
+      "description": "A white ornate mirrored tray holds a tulip-patterned espresso cup and saucer, surrounded by gift boxes of cream ceramic cups and saucers decorated with bows, hearts and stars.",
+      "quality": "medium",
+      "orientation": "portrait",
+      "width": 980,
+      "height": 1280,
+      "dominantColors": [
+        "#F2E6D8",
+        "#E8D3BC",
+        "#C9A27A",
+        "#F5F0EA"
+      ],
+      "usableFor": [
+        "card",
+        "gallery"
+      ],
+      "notes": "Warm, soft lighting with a cohesive pastel look. Scene is busy and cluttered at the edges, and the Instagram '2/3' counter badge in the top-right corner must be cropped out before use. Cropping tightly around the mirror tray would give a cleaner product shot. Little empty space for text, so not suited as a hero image."
+    }
+  ],
+  "logo": "asset-001",
+  "documents": [],
+  "gaps": [
+    {
+      "need": "high quality hero image",
+      "reason": "The Home page needs a strong, wide banner image that introduces the brand and its products. The current product photos are close-ups and none is clearly a hero shot.",
+      "priority": "high"
+    },
+    {
+      "need": "owner or maker photos",
+      "reason": "The About page should tell the story of the business and build trust. No photos of the people behind the products exist.",
+      "priority": "high"
+    },
+    {
+      "need": "workspace or handmade process photos",
+      "reason": "The About page needs visuals of how the products are made, packaged or prepared. This supports the handmade, personal feel of the brand.",
+      "priority": "medium"
+    },
+    {
+      "need": "packaging and gift-ready order photos",
+      "reason": "Customers ordering from the site need to see how products arrive, such as boxed or wrapped gifts. This supports the primary goal of ordering.",
+      "priority": "medium"
+    },
+    {
+      "need": "individual product photos on a plain background",
+      "reason": "The Products page needs consistent, clear shots of each item for catalog cards. The current photos are styled group scenes, and several are only medium quality.",
+      "priority": "medium"
+    },
+    {
+      "need": "close-up detail photos of products",
+      "reason": "Buyers need to see the embroidery, prints and materials to feel confident ordering. This supports the primary goal of ordering.",
+      "priority": "low"
+    },
+    {
+      "need": "storefront or location photo",
+      "reason": "The Contact page would be more trustworthy and easier to use with a photo of the shop or pickup location.",
+      "priority": "low"
+    }
+  ]
+}

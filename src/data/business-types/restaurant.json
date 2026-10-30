@@ -1,0 +1,43 @@
+{
+  "type": "restaurant",
+  "label": "Restaurant",
+  "kind": "menu",
+  "researchedAt": "2026-10-26",
+  "note": "Structure and style only. Never copy another restaurant's text, people, prices, photos or identity. evidence: 'seen' = found on real restaurant sites or templates in the research; 'idea' = plausible, not confirmed by the research, needs a person's review.",
+  "pages": [
+    { "id": "home", "title": "Home", "purpose": "An appetising first impression of the restaurant, with the main way to reserve or order.", "locked": true, "default": true, "evidence": "seen" },
+    { "id": "menu", "title": "Menu", "purpose": "The dishes by section, each with a photo, a description and a price.", "default": true, "evidence": "seen", "demoNeeds": ["price"] },
+    { "id": "reservations", "title": "Reserve a table", "purpose": "Choose a day, a time and the number of guests.", "default": true, "evidence": "seen", "feature": "booking" },
+    { "id": "story", "title": "Our story", "purpose": "How the restaurant started and what makes it special.", "default": true, "evidence": "seen" },
+    { "id": "contact", "title": "Contact", "purpose": "Address, map, opening hours, phone and social links.", "locked": true, "default": true, "evidence": "seen" },
+
+    { "id": "drinks", "title": "Drinks", "purpose": "The drinks you serve: coffee, juices, soft drinks, mocktails and more. Never assumes alcohol.", "default": false, "evidence": "seen", "demoNeeds": ["price"] },
+    { "id": "wine", "title": "Wine & cocktails", "purpose": "The wine list and cocktails, for restaurants that serve alcohol.", "default": false, "evidence": "seen", "demoNeeds": ["price"] },
+    { "id": "chef", "title": "Meet the chef", "purpose": "The chef and the kitchen team behind the food.", "default": false, "evidence": "seen", "demoNeeds": ["people"] },
+    { "id": "gallery", "title": "Gallery", "purpose": "Photos of the food, the room and the evenings.", "default": false, "evidence": "seen" },
+    { "id": "private", "title": "Private dining", "purpose": "Private rooms and group dining, with packages and an inquiry.", "default": false, "evidence": "seen", "demoNeeds": ["price"] },
+    { "id": "events", "title": "Events", "purpose": "What is on: tastings, live music, special evenings.", "default": false, "evidence": "seen" },
+    { "id": "catering", "title": "Catering", "purpose": "Food for groups and company events, with packages.", "default": false, "evidence": "seen", "demoNeeds": ["price"] },
+    { "id": "order", "title": "Order online", "purpose": "Order pickup or delivery from the menu.", "default": false, "evidence": "seen", "feature": "order", "demoNeeds": ["price"] },
+    { "id": "gifts", "title": "Gift cards", "purpose": "Give a dinner as a gift.", "default": false, "evidence": "seen" },
+    { "id": "reviews", "title": "Reviews", "purpose": "What guests say about the restaurant.", "default": false, "evidence": "seen", "demoNeeds": ["review"] },
+    { "id": "journal", "title": "News & press", "purpose": "News, press mentions and stories from the kitchen.", "default": false, "evidence": "seen" },
+    { "id": "careers", "title": "Careers", "purpose": "Join the team.", "default": false, "evidence": "seen" },
+
+    { "id": "tasting", "title": "Tasting menu", "purpose": "A chef's multi-course tasting experience.", "default": false, "evidence": "idea", "demoNeeds": ["price"] },
+    { "id": "specials", "title": "Seasonal specials", "purpose": "What is new this season.", "default": false, "evidence": "idea" },
+    { "id": "loyalty", "title": "Loyalty club", "purpose": "Rewards for regular guests.", "default": false, "evidence": "idea" },
+    { "id": "faq", "title": "Good to know", "purpose": "Parking, dietary needs, kids, dress code and opening details.", "default": false, "evidence": "idea" }
+  ],
+  "homeSectionIdeas": ["cinematic hero with the reserve button", "signature dishes", "the story in a few lines", "the chef", "the room and atmosphere", "upcoming events", "guest reviews", "gallery strip", "location and hours band"],
+  "styleNotes": ["appetising food photography", "warm light and texture", "menu and reservations are the main calls to action", "the restaurant's character comes through in type and colour"],
+  "sources": [
+    "https://www.framer.com/marketplace/templates/dining-reservation/",
+    "https://www.framer.com/marketplace/templates/restura/",
+    "https://www.framer.com/marketplace/templates/gourmethaven/",
+    "https://bowwe.com/blog/build-a-restaurant-website",
+    "https://www.menutiger.com/blog/restaurant-website",
+    "https://www.upmenu.com/blog/one-page-restaurant-websites/",
+    "https://www.webflow.com/blog/create-restaurant-website"
+  ]
+}

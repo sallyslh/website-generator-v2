@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "projectId": "mysweethome-s1-20261009-172321",
+  "business": {
+    "name": "My Sweet Home",
+    "type": "gift and home goods shop",
+    "description": "A shop offering body care sets, floral drinkware, embroidered cushion covers and decorative ceramic cups and saucers in gift boxes.",
+    "location": "",
+    "contact": {
+      "phone": "71-014463",
+      "email": "",
+      "address": "",
+      "hours": ""
+    },
+    "socialLinks": []
+  },
+  "goals": {
+    "primary": "Show my products and let customers order them",
+    "secondary": []
+  },
+  "audience": {
+    "description": "",
+    "needs": []
+  },
+  "offerings": [
+    {
+      "name": "Body care gift sets (lotion, hand cream, fragrance mist)",
+      "description": ""
+    },
+    {
+      "name": "Wildflower-print water bottles",
+      "description": ""
+    },
+    {
+      "name": "Floral insulated tumblers with bow straw toppers",
+      "description": ""
+    },
+    {
+      "name": "Embroidered cushion covers",
+      "description": ""
+    },
+    {
+      "name": "Ceramic cups and saucers in gift boxes",
+      "description": ""
+    }
+  ],
+  "pages": [
+    {
+      "slug": "home",
+      "title": "Home",
+      "purpose": "Introduce the business and highlight its products"
+    },
+    {
+      "slug": "products",
+      "title": "Products",
+      "purpose": "Show the products on offer"
+    },
+    {
+      "slug": "about",
+      "title": "About",
+      "purpose": "Tell visitors about the business"
+    },
+    {
+      "slug": "contact",
+      "title": "Contact",
+      "purpose": "Let visitors get in touch"
+    }
+  ],
+  "features": [],
+  "brand": {
+    "hasIdentity": true,
+    "colors": [
+      "#F7C6D0",
+      "#E8909F",
+      "#C9A56A"
+    ],
+    "personality": [
+      "sweet",
+      "feminine",
+      "elegant"
+    ]
+  },
+  "tone": "warm, friendly and charming",
+  "references": {
+    "liked": [],
+    "disliked": []
+  },
+  "language": "en",
+  "unknowns": [
+    "Location not provided",
+    "No email provided",
+    "No address provided",
+    "Opening hours not provided",
+    "No social media handles or URLs provided",
+    "Target customers not provided",
+    "Pages were not specified by the customer, defaults proposed",
+    "No features specified by the customer",
+    "requested but out of MVP scope: online ordering for customers",
+    "No liked reference websites provided",
+    "No disliked reference websites provided"
+  ],
+  "proposals": [
+    {
+      "path": "business.type",
+      "value": "gift and home goods shop",
+      "evidence": "asset-002 to asset-006 show body care sets, drinkware, a cushion cover and ceramic cups and saucers, and the logo asset-001 reads \"My Sweet Home\".",
+      "status": "accepted"
+    },
+    {
+      "path": "business.description",
+      "value": "A shop offering body care sets, floral drinkware, embroidered cushion covers and decorative ceramic cups and saucers in gift boxes.",
+      "evidence": "asset-002 (body care set), asset-003 and asset-005 (bottles and tumblers), asset-004 (cushion cover), asset-006 (ceramic cups and saucers in gift boxes).",
+      "status": "accepted"
+    },
+    {
+      "path": "offerings",
+      "value": [
+        "Body care gift sets (lotion, hand cream, fragrance mist)",
+        "Wildflower-print water bottles",
+        "Floral insulated tumblers with bow straw toppers",
+        "Embroidered cushion covers",
+        "Ceramic cups and saucers in gift boxes"
+      ],
+      "evidence": "asset-002 shows the body care set, asset-003 the water bottles, asset-005 the tumblers, asset-004 the cushion cover and asset-006 the ceramic cups and saucers.",
+      "status": "accepted"
+    },
+    {
+      "path": "brand.hasIdentity",
+      "value": true,
+      "evidence": "asset-001 is a logo file with a pink bow and the text \"My Sweet Home\".",
+      "status": "accepted"
+    },
+    {
+      "path": "brand.colors",
+      "value": [
+        "#F7C6D0",
+        "#E8909F",
+        "#C9A56A"
+      ],
+      "evidence": "Dominant colors of the logo asset-001: soft pink, deeper pink and gold.",
+      "status": "accepted"
+    },
+    {
+      "path": "brand.personality",
+      "value": [
+        "sweet",
+        "feminine",
+        "elegant"
+      ],
+      "evidence": "asset-001 has a pink satin bow and gold glitter, and the pastel floral styling in asset-002 to asset-006 matches.",
+      "status": "accepted"
+    },
+    {
+      "path": "tone",
+      "value": "warm, friendly and charming",
+      "evidence": "The soft pink bow logo in asset-001 and the pastel floral product photos in asset-002 to asset-006 suggest a sweet, gentle look.",
+      "status": "accepted"
+    },
+    {
+      "path": "business.contact.phone",
+      "value": "71-014463",
+      "evidence": "asset-001 (logo.jpg) shows the text \"71-014463\"",
+      "status": "accepted"
+    }
+  ]
+}

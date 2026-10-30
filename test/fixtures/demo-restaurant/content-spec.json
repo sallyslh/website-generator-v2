@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "language": "en",
+  "global": {
+    "siteTitle": "Cedar & Sumac",
+    "navigation": [
+      {
+        "label": "Menu",
+        "page": "menu"
+      },
+      {
+        "label": "About",
+        "page": "about"
+      },
+      {
+        "label": "Contact",
+        "page": "contact"
+      }
+    ],
+    "primaryCta": {
+      "label": "Reserve a table",
+      "target": "contact"
+    },
+    "footerText": "Cedar & Sumac, 12 Armenia Street, Gemmayzeh, Beirut.",
+    "formMessages": {
+      "success": "Thank you, we will get back to you soon.",
+      "error": "Sorry, your message was not sent. Please try again or call us."
+    }
+  },
+  "pages": [
+    {
+      "slug": "home",
+      "seo": {
+        "title": "Cedar & Sumac | Lebanese restaurant in Gemmayzeh",
+        "description": "Family-run Lebanese restaurant in Gemmayzeh, Beirut. Mezze made daily and charcoal grills."
+      },
+      "sections": [
+        {
+          "id": "home-hero",
+          "heading": "Mezze, made fresh every morning",
+          "subheading": "A family table in Gemmayzeh.",
+          "cta": {
+            "label": "Reserve a table",
+            "target": "contact"
+          },
+          "imageAlt": {
+            "home-hero-image": "Dining room of Cedar & Sumac with wooden tables"
+          }
+        },
+        {
+          "id": "home-highlights",
+          "heading": "From our kitchen",
+          "items": [
+            {
+              "title": "Mezze selection",
+              "text": "Hummus, moutabal, tabbouleh and warm bread, made daily."
+            },
+            {
+              "title": "Mixed grill",
+              "text": "Lamb, chicken and kafta over charcoal."
+            }
+          ],
+          "imageAlt": {
+            "home-highlights-image": "Table covered with mezze dishes"
+          }
+        },
+        {
+          "id": "home-visit",
+          "heading": "Save a seat for tonight",
+          "cta": {
+            "label": "Reserve a table",
+            "target": "contact"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "menu",
+      "seo": {
+        "title": "Menu | Cedar & Sumac",
+        "description": "Mezze and grilled dishes at Cedar & Sumac in Beirut."
+      },
+      "sections": [
+        {
+          "id": "menu-intro",
+          "heading": "The menu",
+          "subheading": "Shared plates and charcoal grills."
+        },
+        {
+          "id": "menu-dishes",
+          "heading": "Dishes",
+          "items": [
+            {
+              "title": "Mezze selection",
+              "text": "Hummus, moutabal, tabbouleh and warm bread."
+            },
+            {
+              "title": "Mixed grill",
+              "text": "Lamb, chicken and kafta over charcoal."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "about",
+      "seo": {
+        "title": "About | Cedar & Sumac",
+        "description": "The family behind Cedar & Sumac in Gemmayzeh, Beirut."
+      },
+      "sections": [
+        {
+          "id": "about-story",
+          "heading": "A family kitchen",
+          "body": [
+            "Cedar & Sumac is a family-run Lebanese restaurant in Gemmayzeh."
+          ],
+          "imageAlt": {
+            "about-story-image": "The family in the kitchen of Cedar & Sumac"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "contact",
+      "seo": {
+        "title": "Contact | Cedar & Sumac",
+        "description": "Find Cedar & Sumac on Armenia Street, Gemmayzeh. Opening hours and contact form."
+      },
+      "sections": [
+        {
+          "id": "contact-info",
+          "heading": "Find us",
+          "body": [
+            "12 Armenia Street, Gemmayzeh, Beirut",
+            "Tue-Sun 12:00-23:00, closed Monday"
+          ]
+        },
+        {
+          "id": "contact-form",
+          "heading": "Send us a message",
+          "cta": {
+            "label": "Send",
+            "target": "form"
+          }
+        }
+      ]
+    }
+  ]
+}

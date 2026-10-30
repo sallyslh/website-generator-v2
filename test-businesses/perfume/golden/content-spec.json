@@ -1,0 +1,395 @@
+{
+  "schemaVersion": 1,
+  "language": "en",
+  "global": {
+    "siteTitle": "Bonza",
+    "navigation": [
+      {
+        "label": "Perfumes",
+        "page": "perfumes"
+      },
+      {
+        "label": "How to Order",
+        "page": "how-to-order"
+      },
+      {
+        "label": "Contact",
+        "page": "contact"
+      }
+    ],
+    "primaryCta": {
+      "label": "Order by DM",
+      "target": "social:instagram"
+    },
+    "footerText": "Bonza, an online perfume shop. Orders are taken by DM."
+  },
+  "pages": [
+    {
+      "slug": "home",
+      "seo": {
+        "title": "Bonza | Online Perfume Shop",
+        "description": "Bonza is an online perfume shop for men's and women's eau de parfum, men's eau de toilette and eau de parfum gift sets. Browse and order by DM."
+      },
+      "sections": [
+        {
+          "id": "home-hero",
+          "heading": "Fine fragrance, delivered through a simple DM",
+          "subheading": "Bonza is an online perfume shop for eau de parfum, eau de toilette and gift sets. Browse the perfumes with their prices, then message us to order.",
+          "body": [
+            "Online perfume shop"
+          ],
+          "items": [],
+          "cta": {
+            "label": "View perfumes",
+            "target": "perfumes"
+          },
+          "imageAlt": {
+            "home-hero-image": "Perfume bottles in warm golden light (photo still to be supplied by the customer)"
+          }
+        },
+        {
+          "id": "home-collections",
+          "heading": "Four ways to find your scent",
+          "subheading": "Choose a collection and see the perfumes in it.",
+          "body": [],
+          "items": [
+            {
+              "title": "Men's eau de parfum",
+              "text": "Eau de parfum for men."
+            },
+            {
+              "title": "Women's eau de parfum",
+              "text": "Eau de parfum for women."
+            },
+            {
+              "title": "Eau de toilette for men",
+              "text": "A lighter eau de toilette for men."
+            },
+            {
+              "title": "Eau de parfum gift sets",
+              "text": "Eau de parfum sets, ready to give."
+            }
+          ],
+          "cta": {
+            "label": "Explore",
+            "target": "perfumes"
+          },
+          "imageAlt": {
+            "home-collections-image": "Four sealed, dark perfume boxes in a row on a wooden table, representing men's eau de parfum",
+            "home-collections-image-2": "Four sealed perfume boxes in a row on a dark wooden table, representing women's eau de parfum",
+            "home-collections-image-3": "Sealed perfume box on a polished wooden table, representing eau de toilette for men",
+            "home-collections-image-4": "A sealed, shrink-wrapped eau de parfum gift box with a pale iridescent finish, standing upright on a dark wooden table"
+          }
+        },
+        {
+          "id": "home-featured",
+          "heading": "Featured perfumes",
+          "subheading": "A first look at the Bonza collection.",
+          "body": [
+            "NEEDS: the names, sizes and prices of the two perfumes to feature here, from the customer. The full list with prices will be on the Perfumes page."
+          ],
+          "items": [],
+          "cta": {
+            "label": "Order by DM",
+            "target": "social:instagram"
+          },
+          "imageAlt": {
+            "home-featured-image": "Two boxed eau de parfum products standing side by side on a wooden table, one dark brown and one gold"
+          }
+        },
+        {
+          "id": "home-how-it-works",
+          "heading": "Ordering is as easy as a message",
+          "subheading": "",
+          "body": [
+            "NEEDS: the full ordering steps from the customer, including payment, delivery and how an order is confirmed."
+          ],
+          "items": [
+            {
+              "title": "Choose your perfume",
+              "text": "Browse the Perfumes page and see the prices."
+            },
+            {
+              "title": "Send us a DM",
+              "text": "Message Bonza on Instagram with the perfume you would like."
+            },
+            {
+              "title": "Finish your order",
+              "text": "The next steps are explained on the How to Order page."
+            }
+          ],
+          "cta": {
+            "label": "See how to order",
+            "target": "how-to-order"
+          },
+          "imageAlt": {}
+        },
+        {
+          "id": "home-brand-note",
+          "heading": "A good perfume speaks quietly.",
+          "subheading": "",
+          "body": [
+            "Bonza is an online perfume shop with men's and women's eau de parfum, eau de toilette for men and eau de parfum gift sets. Take your time with the list, then send us a message when you find one you like.",
+            "Find us on Instagram and TikTok at @bonza_perfumes."
+          ],
+          "items": [],
+          "cta": {
+            "label": "Follow on Instagram",
+            "target": "social:instagram"
+          },
+          "imageAlt": {}
+        }
+      ]
+    },
+    {
+      "slug": "perfumes",
+      "seo": {
+        "title": "Perfumes and Prices | Bonza Online Perfume Shop",
+        "description": "Browse Bonza's men's and women's eau de parfum, men's eau de toilette and eau de parfum gift sets, each with its price. Order by DM on Instagram."
+      },
+      "sections": [
+        {
+          "id": "perfumes-intro",
+          "heading": "Our perfumes, with prices",
+          "subheading": "Men's and women's eau de parfum, eau de toilette for men, and gift sets. Find the one you like and send us a DM to order.",
+          "body": [],
+          "items": [
+            {
+              "title": "Men's EDP",
+              "text": ""
+            },
+            {
+              "title": "Women's EDP",
+              "text": ""
+            },
+            {
+              "title": "Men's EDT",
+              "text": ""
+            },
+            {
+              "title": "Gift sets",
+              "text": ""
+            }
+          ],
+          "imageAlt": {}
+        },
+        {
+          "id": "perfumes-mens-edp",
+          "heading": "Men's eau de parfum",
+          "subheading": "Classic, lasting scents for him.",
+          "body": [
+            "NEEDS: the list of men's eau de parfum (names, sizes and prices) from the customer, plus product photos. Brand rights for any third-party names must also be confirmed with the customer."
+          ],
+          "items": [],
+          "cta": {
+            "label": "Order by DM",
+            "target": "social:instagram"
+          },
+          "imageAlt": {
+            "perfumes-mens-edp-image": "Product photo of a men's eau de parfum, box and bottle together on a clean warm background (photo still to be supplied)."
+          }
+        },
+        {
+          "id": "perfumes-womens-edp",
+          "heading": "Women's eau de parfum",
+          "subheading": "Elegant scents for her.",
+          "body": [
+            "NEEDS: the list of women's eau de parfum (names, sizes and prices) from the customer, plus product photos. Brand rights for any third-party names must also be confirmed with the customer."
+          ],
+          "items": [],
+          "cta": {
+            "label": "Order by DM",
+            "target": "social:instagram"
+          },
+          "imageAlt": {
+            "perfumes-womens-edp-image": "Product photo of a women's eau de parfum, box and bottle together on a clean warm background (photo still to be supplied)."
+          }
+        },
+        {
+          "id": "perfumes-mens-edt",
+          "heading": "Men's eau de toilette",
+          "subheading": "A lighter option for him.",
+          "body": [
+            "NEEDS: the list of men's eau de toilette (names, sizes and prices) from the customer, plus product photos. Brand rights for any third-party names must also be confirmed with the customer."
+          ],
+          "items": [],
+          "cta": {
+            "label": "Order by DM",
+            "target": "social:instagram"
+          },
+          "imageAlt": {
+            "perfumes-mens-edt-image": "Product photo of a men's eau de toilette, box and bottle together on a clean warm background (photo still to be supplied)."
+          }
+        },
+        {
+          "id": "perfumes-gift-sets",
+          "heading": "Eau de parfum gift sets",
+          "subheading": "Perfume, ready to give.",
+          "body": [
+            "NEEDS: the list of gift sets (names, what is inside each set, and prices) from the customer, plus a photo of each set."
+          ],
+          "items": [],
+          "cta": {
+            "label": "Order by DM",
+            "target": "social:instagram"
+          },
+          "imageAlt": {
+            "perfumes-gift-sets-image": "Photo of an eau de parfum gift set standing upright on a clean background (photo still to be supplied)."
+          }
+        },
+        {
+          "id": "perfumes-order-cta",
+          "heading": "Found your scent? Send us a DM.",
+          "subheading": "",
+          "body": [
+            "Message us on Instagram with the name of the perfume you want. You can also reach us on TikTok."
+          ],
+          "items": [],
+          "cta": {
+            "label": "Order on Instagram",
+            "target": "social:instagram"
+          },
+          "imageAlt": {}
+        }
+      ]
+    },
+    {
+      "slug": "how-to-order",
+      "seo": {
+        "title": "How to Order Perfume by DM | Bonza",
+        "description": "Ordering from Bonza is simple: pick your perfume, then send us a direct message on Instagram or TikTok. Here is how it works."
+      },
+      "sections": [
+        {
+          "id": "how-to-order-intro",
+          "heading": "Order your perfume by DM",
+          "subheading": "At Bonza, every order starts with a simple direct message: tell us which fragrance you would like, and we take it from there.",
+          "body": [],
+          "items": [],
+          "imageAlt": {}
+        },
+        {
+          "id": "how-to-order-steps",
+          "heading": "Three simple steps",
+          "subheading": "From first look to your order, all in one conversation.",
+          "body": [
+            "NEEDS: the exact steps after the first message from the customer (how the order is confirmed, accepted payment methods, delivery or pickup and timing), so the steps can be completed."
+          ],
+          "items": [
+            {
+              "title": "Choose your perfume",
+              "text": "Browse our men's and women's eau de parfum, eau de toilette for men and eau de parfum gift sets on the Perfumes page, and pick the one you like."
+            },
+            {
+              "title": "Send us a DM",
+              "text": "Message us on Instagram or TikTok at bonza_perfumes. Tell us the name of the perfume you would like to order."
+            },
+            {
+              "title": "Finish in the chat",
+              "text": "We continue the conversation with you directly in your DMs, so your order stays in one friendly place."
+            }
+          ],
+          "imageAlt": {
+            "how-to-order-steps-image": "Example of a direct message conversation in which a customer asks to order a perfume (screenshot or illustrated steps to be supplied by the owner)"
+          }
+        },
+        {
+          "id": "how-to-order-faq",
+          "heading": "Good to know",
+          "subheading": "",
+          "body": [
+            "NEEDS: answers from the customer on payment methods, delivery (areas, cost, timing), availability and returns, to add as further questions."
+          ],
+          "items": [
+            {
+              "title": "What can I order?",
+              "text": "Men's eau de parfum, women's eau de parfum, eau de toilette for men and eau de parfum gift sets."
+            },
+            {
+              "title": "Where do I send my message?",
+              "text": "You can reach us by DM on Instagram or TikTok, both under the name bonza_perfumes."
+            },
+            {
+              "title": "Where do I find the prices?",
+              "text": "Prices are shown with each perfume on the Perfumes page."
+            }
+          ],
+          "imageAlt": {}
+        },
+        {
+          "id": "how-to-order-cta",
+          "heading": "Ready to choose your fragrance?",
+          "subheading": "Send us a DM on Instagram or TikTok and tell us which perfume you would like.",
+          "body": [],
+          "items": [],
+          "cta": {
+            "label": "Order by DM on Instagram",
+            "target": "social:instagram"
+          },
+          "imageAlt": {}
+        }
+      ]
+    },
+    {
+      "slug": "contact",
+      "seo": {
+        "title": "Contact Bonza | Online Perfume Shop",
+        "description": "Get in touch with Bonza on Instagram or TikTok (@bonza_perfumes) to ask about our perfumes or place an order by DM."
+      },
+      "sections": [
+        {
+          "id": "contact-intro",
+          "heading": "Say hello to Bonza",
+          "subheading": "Questions about a fragrance, or ready to order? Send us a message and we will happily help.",
+          "body": [],
+          "items": [],
+          "imageAlt": {}
+        },
+        {
+          "id": "contact-channels",
+          "heading": "Find us online",
+          "subheading": "The easiest way to reach us is a direct message.",
+          "body": [
+            "NEEDS: email, phone or WhatsApp number, and opening hours from the customer, if they want them shown here. The Bonza badge logo shows a WhatsApp number that the customer must confirm before it is used."
+          ],
+          "items": [
+            {
+              "title": "@bonza_perfumes",
+              "text": "Instagram: send us a DM to ask a question or place an order."
+            },
+            {
+              "title": "@bonza_perfumes",
+              "text": "TikTok: follow Bonza and message us there."
+            }
+          ],
+          "cta": {
+            "label": "Order by DM",
+            "target": "social:instagram"
+          },
+          "imageAlt": {}
+        },
+        {
+          "id": "contact-cta",
+          "heading": "Not sure what to choose yet?",
+          "subheading": "",
+          "body": [],
+          "items": [
+            {
+              "title": "Browse the perfumes",
+              "text": "See the fragrances and their prices."
+            },
+            {
+              "title": "See how to order",
+              "text": "Learn how to order by DM."
+            }
+          ],
+          "cta": {
+            "label": "Browse the perfumes",
+            "target": "perfumes"
+          },
+          "imageAlt": {}
+        }
+      ]
+    }
+  ]
+}

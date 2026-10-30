@@ -1,0 +1,284 @@
+{
+  "type": "perfume-store",
+  "label": "perfume store",
+  "kind": "intro",
+  "researchedAt": "2026-10-26",
+  "draftedByModel": true,
+  "note": "A DRAFT written by the model from general knowledge (no web research). Every page is an idea until a person has read it.",
+  "pages": [
+    {
+      "id": "home",
+      "title": "Home",
+      "purpose": "Introduce the store, highlight featured fragrances and invite visitors to shop or visit.",
+      "default": true,
+      "feature": "",
+      "demoNeeds": [
+        "review"
+      ],
+      "evidence": "idea",
+      "locked": true
+    },
+    {
+      "id": "shop",
+      "title": "Shop All Perfumes",
+      "purpose": "Browse and buy the full range of fragrances with filters for brand, scent family and size.",
+      "default": true,
+      "feature": "order",
+      "demoNeeds": [
+        "price"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "women",
+      "title": "Women's Fragrances",
+      "purpose": "Showcase perfumes curated for women with notes, sizes and prices.",
+      "default": false,
+      "feature": "order",
+      "demoNeeds": [
+        "price"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "men",
+      "title": "Men's Fragrances",
+      "purpose": "Showcase colognes and perfumes curated for men with notes, sizes and prices.",
+      "default": false,
+      "feature": "order",
+      "demoNeeds": [
+        "price"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "unisex",
+      "title": "Unisex Fragrances",
+      "purpose": "Present gender-neutral scents for anyone to explore.",
+      "default": false,
+      "feature": "order",
+      "demoNeeds": [
+        "price"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "brands",
+      "title": "Brands",
+      "purpose": "List the designer and niche houses the store carries with links to each brand's products.",
+      "default": true,
+      "feature": "",
+      "demoNeeds": [],
+      "evidence": "idea"
+    },
+    {
+      "id": "new-arrivals",
+      "title": "New Arrivals",
+      "purpose": "Show the latest fragrances that have just come into the store.",
+      "default": false,
+      "feature": "order",
+      "demoNeeds": [
+        "price"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "best-sellers",
+      "title": "Best Sellers",
+      "purpose": "Highlight the most popular perfumes to help hesitant shoppers choose.",
+      "default": false,
+      "feature": "order",
+      "demoNeeds": [
+        "price",
+        "review"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "gift-sets",
+      "title": "Gift Sets",
+      "purpose": "Offer boxed sets and ready-made gift bundles for birthdays and holidays.",
+      "default": false,
+      "feature": "order",
+      "demoNeeds": [
+        "price"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "gift-cards",
+      "title": "Gift Cards",
+      "purpose": "Let visitors buy a gift card for a friend or family member.",
+      "default": false,
+      "feature": "order",
+      "demoNeeds": [
+        "price"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "samples",
+      "title": "Samples & Discovery Sets",
+      "purpose": "Sell small vials and sample sets so customers can try scents before buying a full bottle.",
+      "default": false,
+      "feature": "order",
+      "demoNeeds": [
+        "price"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "scent-guide",
+      "title": "Scent Guide",
+      "purpose": "Explain fragrance families, notes and how to choose a perfume that suits you.",
+      "default": false,
+      "feature": "",
+      "demoNeeds": [],
+      "evidence": "idea"
+    },
+    {
+      "id": "consultation",
+      "title": "Book a Fragrance Consultation",
+      "purpose": "Let visitors book a one-to-one session with a fragrance advisor in store.",
+      "default": false,
+      "feature": "booking",
+      "demoNeeds": [
+        "people"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "about",
+      "title": "About Us",
+      "purpose": "Tell the story of the store, its values and why it selects its fragrances.",
+      "default": true,
+      "feature": "",
+      "demoNeeds": [
+        "people"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "team",
+      "title": "Meet the Team",
+      "purpose": "Introduce the fragrance advisors and staff customers will meet in store.",
+      "default": false,
+      "feature": "",
+      "demoNeeds": [
+        "people"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "reviews",
+      "title": "Customer Reviews",
+      "purpose": "Collect testimonials and ratings from happy customers to build trust.",
+      "default": false,
+      "feature": "",
+      "demoNeeds": [
+        "review",
+        "people"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "blog",
+      "title": "Journal",
+      "purpose": "Share articles on fragrance trends, layering tips and seasonal picks.",
+      "default": false,
+      "feature": "",
+      "demoNeeds": [
+        "people"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "events",
+      "title": "Events & Workshops",
+      "purpose": "Promote in-store launches, scent workshops and tasting-style smelling evenings.",
+      "default": false,
+      "feature": "booking",
+      "demoNeeds": [
+        "people",
+        "price"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "engraving",
+      "title": "Personalization & Engraving",
+      "purpose": "Describe custom engraving and personalized gift packaging options.",
+      "default": false,
+      "feature": "order",
+      "demoNeeds": [
+        "price"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "care",
+      "title": "Perfume Care & Storage",
+      "purpose": "Give advice on making fragrances last and storing bottles properly.",
+      "default": false,
+      "feature": "",
+      "demoNeeds": [],
+      "evidence": "idea"
+    },
+    {
+      "id": "shipping-returns",
+      "title": "Shipping & Returns",
+      "purpose": "Explain delivery options, costs, timelines and the returns policy.",
+      "default": false,
+      "feature": "",
+      "demoNeeds": [
+        "price"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "faq",
+      "title": "FAQ",
+      "purpose": "Answer common questions about authenticity, ingredients, orders and sizes.",
+      "default": false,
+      "feature": "",
+      "demoNeeds": [],
+      "evidence": "idea"
+    },
+    {
+      "id": "store-locator",
+      "title": "Visit the Store",
+      "purpose": "Show the shop address, opening hours, map and parking or transit directions.",
+      "default": false,
+      "feature": "",
+      "demoNeeds": [],
+      "evidence": "idea"
+    },
+    {
+      "id": "contact",
+      "title": "Contact",
+      "purpose": "Give phone, email, address and a form for questions and special requests.",
+      "default": true,
+      "feature": "",
+      "demoNeeds": [],
+      "evidence": "idea",
+      "locked": true
+    }
+  ],
+  "homeSectionIdeas": [
+    "Hero banner with a signature fragrance and a shop now button",
+    "Featured and best-selling perfumes with prices",
+    "Shop by scent family (floral, woody, fresh, oriental)",
+    "Shop by brand logo strip",
+    "Gift sets and seasonal picks",
+    "Book a fragrance consultation call to action",
+    "Customer reviews and ratings",
+    "Store visit info with address, hours and map"
+  ],
+  "styleNotes": [
+    "Elegant and minimal layout with plenty of white space so bottles stand out",
+    "Soft, refined palette such as cream, blush, gold or deep charcoal accents",
+    "Large, high-quality product photography with clean backgrounds",
+    "Refined serif headings paired with a simple sans-serif for body text"
+  ],
+  "sources": []
+}

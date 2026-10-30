@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "direction": {
+    "summary": "Warm editorial table-side feel with deep cedar green and cream, like a handwritten family menu.",
+    "style": "editorial",
+    "mood": [
+      "warm",
+      "generous",
+      "traditional"
+    ]
+  },
+  "colors": {
+    "primary": "#1F4E3D",
+    "secondary": "#E9DCC9",
+    "accent": "#B8894A",
+    "background": "#FBF8F3",
+    "text": "#1C1C1C"
+  },
+  "typography": {
+    "headings": "Schibsted Grotesk: confident modern headings for short lines",
+    "body": "Atkinson Hyperlegible: very clear for menus and paragraphs",
+    "reason": "A confident modern grotesque keeps the restaurant looking professional and trustworthy, and the body font stays easy to read on menus.",
+    "scale": "Large confident headings, comfortable body size"
+  },
+  "layout": {
+    "principles": [
+      "Asymmetric hero",
+      "Large photography",
+      "Generous whitespace"
+    ],
+    "header": "Logo left, 3 links, reserve button right",
+    "footer": "Address, hours, map link, Instagram"
+  },
+  "pages": [
+    {
+      "slug": "home",
+      "sections": [
+        {
+          "id": "home-hero",
+          "type": "hero",
+          "purpose": "First impression and reserve CTA",
+          "layoutNotes": "Image right 60%, headline left",
+          "slots": [
+            {
+              "id": "home-hero-image",
+              "kind": "image",
+              "description": "Warm dining room",
+              "preferredCategory": "interior",
+              "aspect": "4:3",
+              "assignedAsset": "asset-001",
+              "recipe": {
+                "type": "use",
+                "sources": [
+                  "asset-001"
+                ],
+                "reason": ""
+              }
+            }
+          ]
+        },
+        {
+          "id": "home-highlights",
+          "type": "feature-list",
+          "purpose": "Show signature dishes",
+          "layoutNotes": "Image left, two dishes stacked right",
+          "slots": [
+            {
+              "id": "home-highlights-image",
+              "kind": "image",
+              "description": "Mezze spread",
+              "preferredCategory": "food",
+              "aspect": "1:1",
+              "assignedAsset": "asset-002",
+              "recipe": {
+                "type": "use",
+                "sources": [
+                  "asset-002"
+                ],
+                "reason": ""
+              }
+            }
+          ]
+        },
+        {
+          "id": "home-visit",
+          "type": "cta-band",
+          "purpose": "Invite to reserve",
+          "layoutNotes": "Full-width green band",
+          "slots": []
+        }
+      ]
+    },
+    {
+      "slug": "menu",
+      "sections": [
+        {
+          "id": "menu-intro",
+          "type": "page-header",
+          "purpose": "Introduce the menu",
+          "layoutNotes": "Left-aligned large heading",
+          "slots": []
+        },
+        {
+          "id": "menu-dishes",
+          "type": "menu-list",
+          "purpose": "List the dishes",
+          "layoutNotes": "Two columns, thin dividers",
+          "slots": []
+        }
+      ]
+    },
+    {
+      "slug": "about",
+      "sections": [
+        {
+          "id": "about-story",
+          "type": "story",
+          "purpose": "Tell the family story",
+          "layoutNotes": "Text left, tall image right",
+          "slots": [
+            {
+              "id": "about-story-image",
+              "kind": "image",
+              "description": "The family in the kitchen",
+              "preferredCategory": "team",
+              "aspect": "3:4",
+              "assignedAsset": null,
+              "recipe": {
+                "type": "needs-photo",
+                "sources": [],
+                "reason": ""
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "contact",
+      "sections": [
+        {
+          "id": "contact-info",
+          "type": "contact-details",
+          "purpose": "Address, hours and map",
+          "layoutNotes": "Details left, map right",
+          "slots": []
+        },
+        {
+          "id": "contact-form",
+          "type": "form",
+          "purpose": "Let guests send a message",
+          "layoutNotes": "Narrow centered form",
+          "slots": []
+        }
+      ]
+    }
+  ],
+  "avoid": [
+    "Purple or blue-to-purple gradients",
+    "Glassmorphism",
+    "Generic SaaS feature-card grids",
+    "Centered hero with two buttons as default",
+    "Stock-photo look",
+    "Excessive rounded corners and shadows"
+  ],
+  "styleBlock": "Warm editorial look. Deep cedar green (#1F4E3D) and cream (#E9DCC9) on an off-white page (#FBF8F3), with a brass accent (#B8894A). Large serif headings (Fraunces) over clean Inter body text. Asymmetric layouts, big photography, generous whitespace, thin dividers instead of boxes, small corner radii and almost no shadows. Feels like a handwritten family menu, not a template.",
+  "signature": {
+    "name": "Sumac dust",
+    "idea": "A scatter of tiny deep-red flecks, like sumac sprinkled over a plate of mezze, that spills past the edges of the photos and sections.",
+    "drawnWith": "simple SVG dots in the accent color",
+    "placements": [
+      "spilling over the edge of the hero photo",
+      "as a divider between menu sections"
+    ],
+    "interactions": [
+      "flecks drift slowly on scroll",
+      "a few more scatter when a dish is hovered"
+    ]
+  }
+}

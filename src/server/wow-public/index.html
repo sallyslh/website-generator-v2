@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Website Maker</title>
+<style>
+  :root { --bg:#f6f5f2; --card:#ffffff; --ink:#15171a; --soft:#5d636b; --line:#dedbd3; --brand:#1d4ed8; --brand-ink:#ffffff; --good:#157347; --bad:#b42318; --warm:#fff4d6; --shadow:0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.05); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#0e1013; --card:#171a1f; --ink:#f2f3f5; --soft:#9aa1ab; --line:#2a2f37; --brand:#6d8dff; --brand-ink:#0b1020; --good:#4cc38a; --bad:#ff7b72; --warm:#2b2514; --shadow:none; } }
+  :root[data-theme="dark"] { --bg:#0e1013; --card:#171a1f; --ink:#f2f3f5; --soft:#9aa1ab; --line:#2a2f37; --brand:#6d8dff; --brand-ink:#0b1020; --good:#4cc38a; --bad:#ff7b72; --warm:#2b2514; --shadow:none; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  .wrap { max-width:760px; margin:0 auto; padding:20px 16px 80px; }
+  header { display:flex; align-items:center; justify-content:space-between; margin-bottom:18px; }
+  .logo { font-weight:800; letter-spacing:-.02em; font-size:18px; }
+  .logo i { display:inline-block; width:10px; height:10px; border-radius:50%; background:var(--brand); margin-left:4px; }
+  .stepname { color:var(--soft); font-size:14px; }
+  .bar { height:6px; background:var(--line); border-radius:99px; overflow:hidden; margin-bottom:22px; }
+  .bar > div { height:100%; background:var(--brand); border-radius:99px; transition:width .4s; }
+  h1 { font-size:clamp(26px,6vw,36px); line-height:1.15; letter-spacing:-.02em; margin:0 0 6px; }
+  p.lead { color:var(--soft); margin:0 0 22px; }
+  label.f { display:block; font-weight:650; margin:20px 0 6px; }
+  .hint { color:var(--soft); font-size:14px; font-weight:400; }
+  input[type=text] { width:100%; padding:14px; font:inherit; border:1.5px solid var(--line); border-radius:12px; background:var(--card); color:var(--ink); }
+  input[type=text]:focus { outline:3px solid color-mix(in srgb,var(--brand) 35%,transparent); border-color:var(--brand); }
+  .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+  .chip { padding:10px 14px; border:1.5px solid var(--line); border-radius:99px; background:var(--card); color:var(--ink); font:inherit; cursor:pointer; min-height:44px; }
+  .chip[aria-pressed="true"] { background:var(--brand); border-color:var(--brand); color:var(--brand-ink); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:10px; margin-top:10px; }
+  .tile { text-align:left; padding:16px 14px; border:1.5px solid var(--line); border-radius:16px; background:var(--card); color:var(--ink); font:inherit; cursor:pointer; min-height:84px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:6px; }
+  .tile b { font-size:16px; }
+  .tile .mono { width:34px; height:34px; border-radius:10px; background:color-mix(in srgb,var(--brand) 14%,transparent); color:var(--brand); display:grid; place-items:center; font-weight:800; }
+  .tile[aria-pressed="true"] { border-color:var(--brand); outline:3px solid color-mix(in srgb,var(--brand) 30%,transparent); }
+  .pages { display:grid; gap:10px; margin-top:10px; }
+  .page { display:flex; gap:12px; align-items:flex-start; padding:14px; border:1.5px solid var(--line); border-radius:14px; background:var(--card); cursor:pointer; }
+  .page[aria-checked="true"] { border-color:var(--brand); background:color-mix(in srgb,var(--brand) 7%,var(--card)); }
+  .page.locked { cursor:default; opacity:.9; }
+  .box { flex:none; width:24px; height:24px; border-radius:7px; border:2px solid var(--line); display:grid; place-items:center; font-size:15px; font-weight:800; color:transparent; margin-top:2px; }
+  .page[aria-checked="true"] .box { background:var(--brand); border-color:var(--brand); color:var(--brand-ink); }
+  .page b { display:block; } .page span.d { color:var(--soft); font-size:14px; }
+  h2.tier { font-size:18px; margin:26px 0 2px; letter-spacing:-.01em; }
+  .page .inc { display:block; margin-top:4px; font-size:13px; }
+  .tag { font-size:12px; color:var(--soft); border:1px solid var(--line); border-radius:99px; padding:1px 8px; margin-left:6px; font-weight:500; }
+  .row { display:flex; gap:8px; } .row input { flex:1; }
+  button.go { width:100%; margin-top:26px; padding:16px; font:inherit; font-weight:700; font-size:17px; border:0; border-radius:14px; background:var(--brand); color:var(--brand-ink); cursor:pointer; min-height:54px; }
+  button.go:disabled { opacity:.45; cursor:not-allowed; }
+  button.ghost { padding:12px 16px; font:inherit; border:1.5px solid var(--line); border-radius:12px; background:transparent; color:var(--ink); cursor:pointer; min-height:44px; }
+  a.go { display:block; text-align:center; text-decoration:none; margin-top:20px; padding:16px; border-radius:14px; background:var(--brand); color:var(--brand-ink); font-weight:700; font-size:17px; }
+  .note { padding:12px 14px; border-radius:12px; background:var(--warm); margin-top:14px; font-size:15px; }
+  .bad { color:var(--bad); font-weight:600; margin-top:12px; }
+  .count { position:sticky; bottom:0; background:var(--bg); padding:10px 0; color:var(--soft); font-size:14px; }
+  .count b { color:var(--ink); }
+  ul.prog { list-style:none; padding:0; margin:18px 0 0; display:grid; gap:8px; }
+  ul.prog li { display:flex; align-items:center; gap:12px; padding:12px 14px; background:var(--card); border:1.5px solid var(--line); border-radius:12px; }
+  .dot { flex:none; width:22px; height:22px; border-radius:50%; border:2px solid var(--line); display:grid; place-items:center; font-size:13px; font-weight:800; }
+  li.done .dot { background:var(--good); border-color:var(--good); color:#fff; }
+  li.drawing .dot { border-color:var(--brand); border-top-color:transparent; animation:spin 1s linear infinite; }
+  li.failed .dot { border-color:var(--bad); color:var(--bad); }
+  @keyframes spin { to { transform:rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { li.drawing .dot { animation:none; } .bar > div { transition:none; } }
+  details.brand { margin-top:22px; border:1.5px solid var(--line); border-radius:14px; padding:4px 14px 14px; background:var(--card); }
+  details.brand summary { cursor:pointer; font-weight:650; min-height:44px; display:flex; align-items:center; }
+  details.brand .row { align-items:center; flex-wrap:wrap; margin-top:6px; }
+  .concept { font-style:italic; color:var(--soft); margin:6px 0 0; }
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<script>
+const app = document.getElementById('app');
+const h = (tag, props = {}, kids = []) => {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(props)) {
+    if (k === 'class') n.className = v; else if (k === 'text') n.textContent = v;
+    else if (k.startsWith('on')) n.addEventListener(k.slice(2), v);
+    else if (v === true) n.setAttribute(k, ''); else if (v !== false && v != null) n.setAttribute(k, v);
+  }
+  for (const c of [].concat(kids)) if (c != null && c !== false) n.append(c.nodeType ? c : document.createTextNode(c));
+  return n;
+};
+const S = { tastes: new Set(), notes: '', logoData: '', logoName: '', logoError: '', brandColors: '', brandOpen: false, view: 'who', name: '', domain: '', noDomain: false, type: null, otherLabel: '', types: [], pageData: null, picked: new Set(), extra: [], extraDraft: '', language: 'English', otherLang: '', error: '', busy: false, id: null, job: null };
+const LANGS = ['English', 'Arabic', 'French', 'Spanish', 'German'];
+
+const api = async (path, body) => {
+  const res = await fetch(path, body ? { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) } : {});
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(data.error || 'Something went wrong. Please try again.');
+  return data;
+};
+const shell = (stepIndex, kids) => {
+  const total = 2;
+  const pct = stepIndex == null ? 100 : Math.round((stepIndex / total) * 100);
+  return [
+    h('header', {}, [h('div', { class: 'logo' }, ['Website Maker', h('i')]), h('div', { class: 'stepname', text: stepIndex == null ? '' : `Step ${stepIndex} of ${total}` })]),
+    h('div', { class: 'bar', role: 'progressbar', 'aria-valuenow': pct, 'aria-valuemin': 0, 'aria-valuemax': 100 }, [h('div', { style: `width:${pct}%` })]),
+    ...kids,
+  ];
+};
+const set = (k, v) => { S[k] = v; };
+const minutes = (n) => { const m = 1.7 + 2.5 + Math.ceil(Math.max(0, n - 1) / 3) * 2.5 + 2; return `${Math.round(m * 0.8)} to ${Math.round(m * 1.3)}`; };
+
+// ---------- screen 1: who you are ----------
+function viewWho() {
+  const typeIsOther = S.type === 'other';
+  const ready = S.name.trim().length >= 2 && S.type && (!typeIsOther || S.otherLabel.trim().length >= 3);
+  return shell(1, [
+    h('h1', { text: 'Tell us who you are' }),
+    h('p', { class: 'lead', text: 'Three quick things. You can change everything later.' }),
+    h('label', { class: 'f', for: 'name' }, ['Business name']),
+    h('input', { type: 'text', id: 'name', value: S.name, placeholder: 'For example: Smash Point Padel', autocomplete: 'organization', oninput: (e) => { S.name = e.target.value; refreshGo(); } }),
+    h('label', { class: 'f', for: 'domain' }, ['Your website address ', h('span', { class: 'hint', text: '(domain)' })]),
+    h('input', { type: 'text', id: 'domain', value: S.noDomain ? '' : S.domain, disabled: S.noDomain, placeholder: 'For example: smashpoint.com', oninput: (e) => { S.domain = e.target.value; } }),
+    h('div', { class: 'chips' }, [h('button', { type: 'button', class: 'chip', 'aria-pressed': String(S.noDomain), text: "I don't have one yet", onclick: () => { S.noDomain = !S.noDomain; render(); } })]),
+    S.noDomain ? h('p', { class: 'hint', text: 'No problem. We will suggest available names before you go live.' }) : null,
+    h('label', { class: 'f' }, ['What kind of business is it?']),
+    h('div', { class: 'grid', role: 'group', 'aria-label': 'Business type' }, [...S.types, { id: 'other', label: 'Other' }].map((t) => h('button', { type: 'button', class: 'tile', 'aria-pressed': String(S.type === t.id), onclick: () => { S.type = t.id; render(); } }, [h('div', { class: 'mono', text: t.label.charAt(0) }), h('b', { text: t.label })]))),
+    typeIsOther ? [h('label', { class: 'f', for: 'other' }, ['What is your business?']), h('input', { type: 'text', id: 'other', value: S.otherLabel, placeholder: 'For example: driving school', oninput: (e) => { S.otherLabel = e.target.value; refreshGo(); } })] : null,
+    S.error ? h('div', { class: 'bad', role: 'alert', text: S.error }) : null,
+    h('button', { class: 'go', id: 'go', type: 'button', disabled: !ready || S.busy, text: S.busy ? 'Finding page ideas for you...' : 'Continue', onclick: toPages }),
+  ]);
+}
+function refreshGo() {
+  const typeIsOther = S.type === 'other';
+  const ready = S.name.trim().length >= 2 && S.type && (!typeIsOther || S.otherLabel.trim().length >= 3);
+  const go = document.getElementById('go'); if (go) go.disabled = !ready || S.busy;
+}
+async function toPages() {
+  S.error = ''; S.busy = true; render();
+  try {
+    const data = await api('/api/pages', { type: S.type === 'other' ? '' : S.type, label: S.otherLabel });
+    S.pageData = data; S.typeId = data.type;
+    S.picked = new Set(data.pages.filter((p) => p.default || p.locked).map((p) => p.id));
+    S.view = 'pages';
+  } catch (e) { S.error = e.message; }
+  S.busy = false; render(); window.scrollTo(0, 0);
+}
+
+// ---------- screen 2: pages and language ----------
+const totalPages = () => S.picked.size + S.extra.length;
+// ---------- the owner's brand (optional): a logo and/or brand colours ----------
+function shrinkLogo(url) {
+  return new Promise((resolve) => {
+    const im = new Image();
+    im.onload = () => { const k = Math.min(1, 1024 / Math.max(im.width, im.height)); const c = document.createElement('canvas'); c.width = Math.max(1, Math.round(im.width * k)); c.height = Math.max(1, Math.round(im.height * k)); c.getContext('2d').drawImage(im, 0, 0, c.width, c.height); resolve(c.toDataURL('image/png')); };
+    im.onerror = () => resolve(null);
+    im.src = url;
+  });
+}
+async function pickLogo(file) {
+  S.logoError = '';
+  if (!file) return;
+  if (!file.type.startsWith('image/')) { S.logoError = 'Please choose a picture file (PNG, JPG, WebP or SVG).'; return render(true); }
+  if (file.size > 12 * 1048576) { S.logoError = 'That file is too large. Please use one under 12 MB.'; return render(true); }
+  const url = await new Promise((r) => { const fr = new FileReader(); fr.onload = () => r(fr.result); fr.onerror = () => r(null); fr.readAsDataURL(file); });
+  const data = url && url.startsWith('data:image/svg') ? url : url ? await shrinkLogo(url) : null;
+  if (!data) { S.logoError = 'We could not read that file. Please try another one.'; return render(true); }
+  S.logoData = data; S.logoName = file.name; render(true);
+}
+function brandSection() {
+  const input = h('input', { type: 'file', accept: 'image/*', id: 'logo-file', style: 'display:none', onchange: (e) => { pickLogo(e.target.files[0]); e.target.value = ''; } });
+  return h('details', { class: 'brand', open: S.brandOpen || Boolean(S.logoData) || Boolean(S.brandColors), ontoggle: (e) => { S.brandOpen = e.target.open; } }, [
+    h('summary', { text: 'I already have a logo or brand colours (optional)' }),
+    h('p', { class: 'hint', text: 'We build the website around them. If you have neither, we choose the colours for you, and you can change them later.' }),
+    h('div', { class: 'row' }, [
+      S.logoData ? h('img', { src: S.logoData, alt: 'Your logo', style: 'height:56px;max-width:140px;object-fit:contain;border:1px solid var(--line);border-radius:10px;padding:6px;background:#fff' }) : null,
+      h('button', { type: 'button', class: 'ghost', text: S.logoData ? 'Change logo' : 'Add my logo', onclick: () => input.click() }),
+      S.logoData ? h('button', { type: 'button', class: 'ghost', text: 'Remove', onclick: () => { S.logoData = ''; S.logoName = ''; render(true); } }) : null,
+      input,
+    ]),
+    S.logoError ? h('div', { class: 'bad', role: 'alert', text: S.logoError }) : null,
+    h('label', { class: 'f', for: 'brand-colors' }, ['Your brand colours ', h('span', { class: 'hint', text: '(names or codes, for example: deep green and gold, or #1d4ed8)' })]),
+    h('input', { type: 'text', id: 'brand-colors', value: S.brandColors, maxlength: 120, placeholder: 'Leave empty if you have none', oninput: (e) => { S.brandColors = e.target.value; } }),
+  ]);
+}
+
+// ---------- the owner's taste (optional): a few taps and a free note ----------
+const TASTES = ['Bright and colourful', 'Dark and moody', 'Soft neutral tones', 'Minimal and clean', 'Warm and cosy', 'Luxury and elegant', 'Fun and playful', 'Bold and energetic'];
+const tasteText = () => [...S.tastes, S.notes.trim()].filter(Boolean).join('. ');
+function notesSection() {
+  return h('details', { class: 'brand', open: S.notesOpen || S.tastes.size > 0 || Boolean(S.notes), ontoggle: (e) => { S.notesOpen = e.target.open; } }, [
+    h('summary', { text: 'Tell us your taste (optional)' }),
+    h('p', { class: 'hint', text: 'For example the colours or the mood you like. Tap any that fit, and add your own words if you want.' }),
+    h('div', { class: 'chips' }, TASTES.map((t) => h('button', { type: 'button', class: 'chip', 'aria-pressed': String(S.tastes.has(t)), text: t, onclick: () => { S.tastes.has(t) ? S.tastes.delete(t) : S.tastes.add(t); render(true); } }))),
+    h('label', { class: 'f', for: 'taste-notes' }, ['Anything else we should know?']),
+    h('textarea', { id: 'taste-notes', rows: 3, maxlength: 400, placeholder: 'For example: I love nude tones and gold, nothing too dark, a calm feeling', style: 'width:100%;padding:12px;font:inherit;border:1.5px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink)', oninput: (e) => { S.notes = e.target.value; } }, [S.notes]),
+  ]);
+}
+
+function pageCard(p) {
+  const on = S.picked.has(p.id);
+  const toggle = () => { on ? S.picked.delete(p.id) : S.picked.add(p.id); render(true); };
+  return h('div', { class: 'page' + (p.locked ? ' locked' : ''), role: 'checkbox', tabindex: p.locked ? -1 : 0, 'aria-checked': String(on), 'aria-disabled': String(Boolean(p.locked)),
+    onclick: () => { if (!p.locked) toggle(); },
+    onkeydown: (e) => { if (!p.locked && (e.key === ' ' || e.key === 'Enter')) { e.preventDefault(); toggle(); } } },
+  [h('div', { class: 'box', text: '✓' }), h('div', {}, [h('b', {}, [p.title, p.locked ? h('span', { class: 'tag', text: 'always included' }) : null, p.feature === 'booking' ? h('span', { class: 'tag', text: 'booking' }) : null, p.feature === 'order' ? h('span', { class: 'tag', text: 'ordering' }) : null]), h('span', { class: 'd', text: p.purpose }), p.sections?.length ? h('span', { class: 'd inc', text: 'Includes: ' + p.sections.slice(0, 6).join(' · ') }) : null])]);
+}
+// the pages, most important first, in three groups; the last group shows a few ideas and the rest on request
+const SHOWN_OPTIONAL = 4;
+function pageGroups() {
+  const names = S.pageData.tiers ?? { essential: 'Most important', recommended: 'Also useful', optional: 'Extras' };
+  const hint = { essential: 'Where most businesses like yours start.', recommended: 'Many good websites of this kind have these.', optional: 'Extras that help a website stand out.' };
+  return ['essential', 'recommended', 'optional'].map((t) => {
+    const list = S.pageData.pages.filter((p) => (p.tier ?? 'optional') === t);
+    if (!list.length) return null;
+    const more = t === 'optional' && list.length > SHOWN_OPTIONAL && !S.showAllOptional;
+    const shown = more ? list.filter((p, i) => i < SHOWN_OPTIONAL || S.picked.has(p.id)) : list;
+    return h('div', {}, [
+      h('h2', { class: 'tier', text: names[t] }), h('p', { class: 'hint', style: 'margin:0 0 8px', text: hint[t] }),
+      h('div', { class: 'pages', role: 'group', 'aria-label': names[t] }, shown.map(pageCard)),
+      more ? h('button', { type: 'button', class: 'ghost', style: 'margin-top:10px', text: 'Show ' + (list.length - shown.length) + ' more ideas', onclick: () => { S.showAllOptional = true; render(true); } }) : null,
+    ]);
+  });
+}
+function viewPages() {
+  const n = totalPages();
+  const lang = S.language === 'Other' ? S.otherLang.trim() : S.language;
+  const ok = n >= 3 && n <= 14 && lang;
+  return shell(2, [
+    h('h1', { text: 'Choose your pages' }),
+    h('p', { class: 'lead', text: 'We suggest pages that fit your kind of business, the most important first. Remove any you do not want and add your own. You need at least 3 pages.' }),
+    ...pageGroups(),
+    h('label', { class: 'f', for: 'extra' }, ['Another page? ', h('span', { class: 'hint', text: '(up to 3)' })]),
+    h('div', { class: 'row' }, [
+      h('input', { type: 'text', id: 'extra', value: S.extraDraft, placeholder: 'For example: Our delivery areas', maxlength: 40, oninput: (e) => { S.extraDraft = e.target.value; }, onkeydown: (e) => { if (e.key === 'Enter') addExtra(); } }),
+      h('button', { type: 'button', class: 'ghost', text: 'Add', disabled: S.extra.length >= 3, onclick: addExtra }),
+    ]),
+    S.extra.length ? h('div', { class: 'chips' }, S.extra.map((t, i) => h('button', { type: 'button', class: 'chip', 'aria-pressed': 'true', title: 'Remove', text: `${t}  ×`, onclick: () => { S.extra.splice(i, 1); render(true); } }))) : null,
+    brandSection(),
+    notesSection(),
+    h('label', { class: 'f' }, ['Language of your website']),
+    h('div', { class: 'chips' }, [...LANGS, 'Other'].map((l) => h('button', { type: 'button', class: 'chip', 'aria-pressed': String(S.language === l), text: l, onclick: () => { S.language = l; render(true); } }))),
+    S.language === 'Other' ? h('div', { style: 'margin-top:10px' }, [h('input', { type: 'text', value: S.otherLang, placeholder: 'Which language?', 'aria-label': 'Language', oninput: (e) => { S.otherLang = e.target.value; refreshLang(); } })]) : null,
+    S.language === 'Arabic' ? h('div', { class: 'note', text: 'Arabic text is written for you, but the right-to-left layout is still being built, so the design may look mirrored imperfectly.' }) : null,
+    h('div', { class: 'count' }, [h('b', { text: `${n} page${n === 1 ? '' : 's'} chosen` }), n < 3 ? ' (choose at least 3)' : n > 14 ? ' (14 at most)' : ` · about ${minutes(n)} minutes to make (an estimate)`]),
+    S.error ? h('div', { class: 'bad', role: 'alert', text: S.error }) : null,
+    h('div', { class: 'row', style: 'margin-top:6px' }, [h('button', { type: 'button', class: 'ghost', text: 'Back', onclick: () => { S.view = 'who'; S.error = ''; render(); } })]),
+    h('button', { class: 'go', id: 'gen', type: 'button', disabled: !ok || S.busy, text: S.busy ? 'Starting...' : 'Generate my website', onclick: generate }),
+  ]);
+}
+function refreshLang() { const b = document.getElementById('gen'); if (b) b.disabled = !(totalPages() >= 3 && S.otherLang.trim()); }
+function addExtra() { const t = S.extraDraft.trim(); if (t.length >= 2 && S.extra.length < 3 && !S.extra.includes(t)) { S.extra.push(t); S.extraDraft = ''; render(true); } }
+async function generate() {
+  S.error = ''; S.busy = true; render(true);
+  try {
+    const language = S.language === 'Other' ? S.otherLang.trim() : S.language;
+    const { id } = await api('/api/generate', { name: S.name.trim(), domain: S.noDomain ? '' : S.domain.trim(), type: S.typeId, pages: [...S.picked], extraPages: S.extra, language, logo: S.logoData || undefined, brandColors: S.brandColors.trim(), notes: tasteText() });
+    S.id = id; S.view = 'working'; S.job = null; history.replaceState(null, '', `?id=${id}`); render(); poll();
+  } catch (e) { S.error = e.message; S.busy = false; render(true); }
+}
+
+// ---------- screen 3: making it ----------
+let timer = null;
+async function poll() {
+  clearTimeout(timer);
+  try { S.job = await api(`/api/status/${S.id}`); } catch (e) { S.error = e.message; }
+  if (S.view === 'working') render(true);
+  if (S.job && (S.job.state === 'queued' || S.job.state === 'working')) timer = setTimeout(poll, 3000);
+}
+const stateText = { waiting: 'Waiting', drawing: 'Designing...', done: 'Ready', retry: 'Trying again...', failed: 'Could not be made' };
+function viewWorking() {
+  const j = S.job;
+  if (!j) return shell(null, [h('h1', { text: 'One moment...' }), S.error ? h('div', { class: 'bad', role: 'alert', text: S.error }) : null]);
+  const done = j.pages.filter((p) => p.status === 'done').length;
+  const total = j.pages.length;
+  if (j.state === 'failed') return shell(null, [h('h1', { text: 'That did not work' }), h('p', { class: 'lead', text: j.error }), h('button', { class: 'go', type: 'button', text: 'Try again', onclick: () => { S.view = 'pages'; S.job = null; S.busy = false; history.replaceState(null, '', '/'); render(); } })]);
+  if (j.state === 'done') return shell(null, [
+    h('h1', { text: 'Your website is ready' }),
+    h('p', { class: 'lead', text: `${j.name}: ${done} of ${total} pages.` }),
+    j.concept ? h('p', { class: 'concept', text: j.concept }) : null,
+    h('a', { class: 'go', href: `/site/${j.id}/`, target: '_blank', rel: 'noopener', text: 'Open my website' }),
+    h('div', { class: 'note', text: 'This is a first draft with sample pictures, names and contact details. Next, you replace them with your real ones.' }),
+    approveBlock(j),
+    h('ul', { class: 'prog' }, j.pages.map((p) => h('li', { class: p.status }, [h('div', { class: 'dot', text: p.status === 'done' ? '✓' : p.status === 'failed' ? '!' : '' }), h('div', {}, [p.title, p.status === 'failed' ? h('span', { class: 'hint', text: '  could not be made' }) : null])]))),
+    h('button', { class: 'ghost', type: 'button', style: 'margin-top:18px', text: 'Make another website', onclick: () => { Object.assign(S, { view: 'who', id: null, job: null, name: '', domain: '', noDomain: false, type: null, otherLabel: '', picked: new Set(), extra: [], busy: false, error: '', logoData: '', logoName: '', brandColors: '', logoError: '', brandOpen: false, tastes: new Set(), notes: '', notesOpen: false }); history.replaceState(null, '', '/'); render(); } }),
+  ]);
+  const pct = j.state === 'queued' ? 3 : Math.max(8, Math.round(((done + (j.step === 'brief' ? 0 : 0.4)) / (total + 1)) * 100));
+  return [
+    h('header', {}, [h('div', { class: 'logo' }, ['Website Maker', h('i')]), h('div', { class: 'stepname', text: j.name })]),
+    h('div', { class: 'bar', role: 'progressbar', 'aria-valuenow': pct, 'aria-valuemin': 0, 'aria-valuemax': 100 }, [h('div', { style: `width:${pct}%` })]),
+    h('h1', { text: j.state === 'queued' ? 'You are in line' : 'Making your website' }),
+    h('p', { class: 'lead', text: j.state === 'queued' ? `${j.position > 1 ? `${j.position - 1} website${j.position - 1 === 1 ? '' : 's'} ahead of you. ` : ''}We make one at a time, so each gets our full attention.` : j.step === 'brief' ? 'First we write the creative idea for your site...' : `${done} of ${total} pages are ready. You can leave this page open, it updates by itself.` }),
+    j.concept ? h('p', { class: 'concept', text: j.concept }) : null,
+    j.previewReady ? h('a', { class: 'go', style: 'background:transparent;color:var(--brand);border:2px solid var(--brand)', href: `/site/${j.id}/`, target: '_blank', rel: 'noopener', text: 'See your home page so far' }) : null,
+    h('ul', { class: 'prog' }, j.pages.map((p) => h('li', { class: p.status }, [h('div', { class: 'dot', text: p.status === 'done' ? '✓' : p.status === 'failed' ? '!' : '' }), h('div', {}, [p.title, h('span', { class: 'hint', text: `  ${stateText[p.status] ?? ''}` })])]))),
+    j.step === 'finishing' ? h('p', { class: 'hint', text: 'Adding the finishing touches: sharpening the big pictures...' }) : null,
+  ];
+}
+
+// Steps 4 and 5 of the journey: the customer is happy with the design, it becomes code, and the owner edits in two ways.
+function approveBlock(j) {
+  if (j.approved) return h('div', { class: 'note', style: 'border-color:var(--brand)' }, [
+    h('strong', { text: 'Your website is now editable.' }), h('br'),
+    'Two ways to change your words, items and pictures:',
+    h('div', { style: 'display:flex;gap:10px;flex-wrap:wrap;margin-top:10px' }, [
+      h('a', { class: 'go', style: 'margin:0', href: '/p/' + j.id + '/index.html', target: '_blank', rel: 'noopener', text: 'Edit on the page (click what you want to change)' }),
+      h('a', { class: 'go', style: 'margin:0;background:transparent;color:var(--brand);border:2px solid var(--brand)', href: '/list/' + j.id + '/index.html', target: '_blank', rel: 'noopener', text: 'Edit as lists and forms (many items at once)' }),
+    ]),
+  ]);
+  return h('div', { class: 'note' }, [
+    h('strong', { text: 'Happy with the design?' }), h('br'),
+    'Press the button and your website becomes editable: you can change every word, price and picture, and add or remove items.',
+    S.approveError ? h('div', { class: 'bad', role: 'alert', text: S.approveError }) : null,
+    h('button', { class: 'go', type: 'button', style: 'margin-top:10px', disabled: S.approving, text: S.approving ? 'Making it editable... (about a minute)' : 'Yes, make it editable', onclick: async () => {
+      S.approving = true; S.approveError = ''; render(true);
+      try { const r = await fetch('/api/approve/' + j.id, { method: 'POST' }); const d = await r.json(); if (!r.ok) throw new Error(d.error || 'That did not work.'); S.job = { ...S.job, approved: true }; }
+      catch (e) { S.approveError = e.message; }
+      S.approving = false; render(true);
+    } }),
+  ]);
+}
+
+function render(keepScroll) {
+  const y = window.scrollY;
+  const focus = document.activeElement?.id;
+  const kids = S.view === 'who' ? viewWho() : S.view === 'pages' ? viewPages() : viewWorking();
+  app.replaceChildren(...kids.flat().filter(Boolean));
+  if (keepScroll) window.scrollTo(0, y);
+  if (focus) document.getElementById(focus)?.focus();
+}
+
+(async () => {
+  try { S.types = (await api('/api/types')).types; } catch { S.error = 'We could not load the page. Please refresh.'; }
+  const id = new URLSearchParams(location.search).get('id');
+  if (id) { S.id = id; S.view = 'working'; render(); poll(); } else render();
+})();
+</script>
+</body>
+</html>

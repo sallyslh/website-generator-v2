@@ -1,0 +1,821 @@
+{
+  "type": "clinic",
+  "label": "Clinic / dentist",
+  "kind": "services",
+  "researchedAt": "2026-10-29",
+  "draftedByModel": true,
+  "note": "Written by the model from general knowledge. Pages are ordered from the most to the least important; each has sections inside it. \"merges\" lists the draft pages that were joined because they said the same thing. A person should read it once.",
+  "draftPages": 36,
+  "pages": [
+    {
+      "id": "home",
+      "title": "Home",
+      "purpose": "Introduce the clinic, build trust and send visitors quickly to booking or emergency help.",
+      "default": true,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "people",
+        "review",
+        "contact"
+      ],
+      "uniqueContent": "The first impression of the practice: a clear book-now button, an emergency phone number and the main reasons to choose this clinic.",
+      "tier": "essential",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Welcome and book",
+          "content": "Short promise of gentle care with a prominent Book online button and phone number."
+        },
+        {
+          "title": "Emergency help",
+          "content": "A highlighted strip for toothache or a broken tooth that links to the Emergency dentist page."
+        },
+        {
+          "title": "Treatments preview",
+          "content": "A few icons for check-ups, repair, cosmetic and straightening that link to Dental treatments."
+        },
+        {
+          "title": "Meet the dentists",
+          "content": "Friendly photos of the team with a link to the Team page."
+        },
+        {
+          "title": "Patient reviews",
+          "content": "Star rating and two or three short quotes."
+        },
+        {
+          "title": "Opening hours and location",
+          "content": "Hours, address and a small map."
+        }
+      ],
+      "mergedFrom": [
+        "home"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "services",
+      "title": "Dental treatments",
+      "purpose": "Give one long overview of every treatment, grouped by need, so patients can find and understand what they need.",
+      "default": true,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "price",
+        "people",
+        "review",
+        "stat"
+      ],
+      "uniqueContent": "Every treatment the clinic offers, explained in one place: check-ups, fillings, root canal, implants, dentures, whitening, veneers, aligners, braces, wisdom teeth and sedation.",
+      "tier": "essential",
+      "layoutIdea": "One long page: an overview board at the top with a tile for each treatment group that jumps down to its block, then one block per group with the treatments, how they work and 'from' prices.",
+      "sections": [
+        {
+          "title": "Treatment overview",
+          "content": "Clickable board of the groups below so visitors can jump straight to what they need."
+        },
+        {
+          "title": "Routine care",
+          "content": "Check-ups, X-rays, scale and polish, gum care and how often to visit."
+        },
+        {
+          "title": "Repair and restoration",
+          "content": "Tooth-coloured fillings, inlays, crowns, bridges, root canal treatment and wisdom tooth removal with recovery notes."
+        },
+        {
+          "title": "Replacing missing teeth",
+          "content": "Dental implants from consultation and 3D scan to final crown, plus full, partial and implant-retained dentures with repairs and relines."
+        },
+        {
+          "title": "Cosmetic dentistry",
+          "content": "In-chair and take-home whitening, porcelain veneers and composite bonding."
+        },
+        {
+          "title": "Straightening",
+          "content": "Clear aligners (Invisalign) and braces for teenagers (metal, ceramic, lingual) with the treatment journey."
+        },
+        {
+          "title": "Anxiety and sedation",
+          "content": "Gentle techniques, relaxation and IV sedation for nervous patients."
+        }
+      ],
+      "mergedFrom": [
+        "services",
+        "check-ups-hygiene",
+        "fillings-crowns",
+        "root-canal",
+        "teeth-whitening",
+        "clear-aligners",
+        "braces-teens",
+        "dental-implants",
+        "dentures",
+        "veneers",
+        "wisdom-teeth",
+        "sedation"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "book-appointment",
+      "title": "Book online",
+      "purpose": "Let patients book any kind of visit by treatment, dentist and time slot.",
+      "default": true,
+      "feature": "booking",
+      "featureNote": "Check-up or treatment visit by dentist and time; same-day emergency slot; free consultation for implants and aligners",
+      "demoNeeds": [
+        "people",
+        "price"
+      ],
+      "uniqueContent": "The live booking flow for every type of visit, including same-day emergency slots and free consultations.",
+      "tier": "essential",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Check-up or treatment visit",
+          "content": "Choose treatment type, preferred dentist and an available time slot."
+        },
+        {
+          "title": "Same-day emergency slot",
+          "content": "Quick booking of today's urgent appointments for pain or broken teeth."
+        },
+        {
+          "title": "Free consultation",
+          "content": "No-obligation assessment visit for implants and clear aligners."
+        },
+        {
+          "title": "Existing patients",
+          "content": "Rebook, change or cancel an appointment and see the cancellation notice period."
+        },
+        {
+          "title": "Need help booking?",
+          "content": "Phone number and reception hours for anyone who prefers to call."
+        }
+      ],
+      "mergedFrom": [
+        "book-appointment",
+        "free-consultation"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "team",
+      "title": "Team",
+      "purpose": "Introduce the dentists and staff so patients know who will look after them.",
+      "default": true,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "people"
+      ],
+      "uniqueContent": "Profiles of each dentist, hygienist, nurse and receptionist with qualifications and special interests.",
+      "tier": "essential",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Our dentists",
+          "content": "Photo, qualifications, registration and special interests such as implants or orthodontics."
+        },
+        {
+          "title": "Hygienists and therapists",
+          "content": "Who they are and what they help with."
+        },
+        {
+          "title": "Nurses and reception",
+          "content": "The friendly faces who welcome patients."
+        }
+      ],
+      "mergedFrom": [
+        "team"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "prices",
+      "title": "Prices",
+      "purpose": "Show clear fees and the ways to pay so cost is never a surprise.",
+      "default": true,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "price"
+      ],
+      "uniqueContent": "The full fee list, the monthly membership plan, accepted insurers and interest-free finance.",
+      "tier": "essential",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Price list",
+          "content": "Fees for exams, hygiene visits, fillings, whitening and other common treatments."
+        },
+        {
+          "title": "Membership plan",
+          "content": "Monthly plan covering routine check-ups and hygiene for patients without insurance."
+        },
+        {
+          "title": "Insurance",
+          "content": "List of accepted insurers and how claims work."
+        },
+        {
+          "title": "Payment plans",
+          "content": "Interest-free finance for larger treatments with example monthly payments."
+        }
+      ],
+      "mergedFrom": [
+        "prices",
+        "membership-plan",
+        "insurance-finance"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "emergency-dentist",
+      "title": "Emergency dentist",
+      "purpose": "Help people in pain get same-day care and know what to do right now.",
+      "default": true,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "contact"
+      ],
+      "uniqueContent": "First-aid advice for toothache, a knocked-out tooth or a broken filling, and the fastest route to urgent care.",
+      "tier": "essential",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Call now",
+          "content": "Large emergency phone number with today's urgent opening hours."
+        },
+        {
+          "title": "What counts as an emergency",
+          "content": "Toothache, swelling, knocked-out or broken tooth, lost filling or crown."
+        },
+        {
+          "title": "First-aid tips",
+          "content": "Step-by-step advice for what to do until you are seen."
+        },
+        {
+          "title": "Get a same-day slot",
+          "content": "Link to the Book online page for urgent appointments."
+        }
+      ],
+      "mergedFrom": [
+        "emergency-dentist"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "contact",
+      "title": "Contact",
+      "purpose": "Give every way to reach and find the clinic, with an enquiry form.",
+      "default": true,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "contact"
+      ],
+      "uniqueContent": "Phone, address, map, opening hours, parking and public transport details.",
+      "tier": "essential",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Phone and email",
+          "content": "Reception number, email and emergency line."
+        },
+        {
+          "title": "Opening hours",
+          "content": "Weekly hours including late or weekend sessions."
+        },
+        {
+          "title": "Map and directions",
+          "content": "Address with an embedded map."
+        },
+        {
+          "title": "Parking and transport",
+          "content": "Nearby parking, bus and train information, step-free access."
+        },
+        {
+          "title": "Enquiry form",
+          "content": "A simple message form for non-urgent questions."
+        }
+      ],
+      "mergedFrom": [
+        "contact"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "new-patients",
+      "title": "New patients",
+      "purpose": "Take away the fear of a first visit and let patients prepare in advance.",
+      "default": false,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "review",
+        "contact"
+      ],
+      "uniqueContent": "A step-by-step guide to the first appointment with downloadable medical history and consent forms.",
+      "tier": "recommended",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "What happens at your first visit",
+          "content": "Step-by-step: welcome, health check, exam, X-rays and treatment plan."
+        },
+        {
+          "title": "What to bring",
+          "content": "ID, medication list, insurance details and previous X-rays."
+        },
+        {
+          "title": "How long it takes",
+          "content": "Typical duration and arrival time."
+        },
+        {
+          "title": "Patient forms",
+          "content": "Download or fill in medical history and consent forms before the visit."
+        },
+        {
+          "title": "Joining the practice",
+          "content": "Call-to-action to book a first appointment."
+        },
+        {
+          "title": "Pain and comfort",
+          "content": "Will it hurt, numbing and sedation options."
+        },
+        {
+          "title": "Safety and X-rays",
+          "content": "Radiation, hygiene and infection control."
+        }
+      ],
+      "mergedFrom": [
+        "new-patients",
+        "patient-forms",
+        "faq"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "reviews",
+      "title": "Reviews",
+      "purpose": "Reassure first-time visitors with real patient experiences.",
+      "default": false,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "review",
+        "people",
+        "stat"
+      ],
+      "uniqueContent": "Collected patient testimonials and ratings in one place.",
+      "tier": "recommended",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Rating summary",
+          "content": "Average score and number of reviews."
+        },
+        {
+          "title": "Patient stories",
+          "content": "Quotes grouped by check-ups, nervous patients, children and cosmetic work."
+        },
+        {
+          "title": "Leave a review",
+          "content": "Links for patients to share their experience."
+        }
+      ],
+      "mergedFrom": [
+        "reviews"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "smile-gallery",
+      "title": "Gallery",
+      "purpose": "Show real results so patients can picture their own outcome.",
+      "default": false,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "review"
+      ],
+      "uniqueContent": "Before-and-after photos of whitening, aligners, veneers and implant cases.",
+      "tier": "recommended",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Whitening results",
+          "content": "Before-and-after shades."
+        },
+        {
+          "title": "Aligner and braces cases",
+          "content": "Straightening results with treatment length."
+        },
+        {
+          "title": "Veneers and bonding",
+          "content": "Smile makeover cases."
+        },
+        {
+          "title": "Implants",
+          "content": "Missing tooth replaced, with a short case note."
+        }
+      ],
+      "mergedFrom": [
+        "smile-gallery"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "about",
+      "title": "About us",
+      "purpose": "Tell the clinic's story and show the standards behind the care.",
+      "default": false,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "people",
+        "stat"
+      ],
+      "uniqueContent": "The practice story, values and a tour of the technology and sterilisation standards.",
+      "tier": "recommended",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Our story",
+          "content": "How the practice started and who it serves."
+        },
+        {
+          "title": "Our values",
+          "content": "Gentle, patient-centred care in practice."
+        },
+        {
+          "title": "The practice in numbers",
+          "content": "Years open, patients cared for and team size."
+        },
+        {
+          "title": "Technology",
+          "content": "Digital X-rays, intraoral scanners and 3D imaging, and what they mean for patients."
+        },
+        {
+          "title": "Clinic tour and hygiene",
+          "content": "Photos of the surgeries and sterilisation standards."
+        }
+      ],
+      "mergedFrom": [
+        "about",
+        "technology"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "childrens-dentistry",
+      "title": "Children & family",
+      "purpose": "Show parents that the clinic is welcoming to kids and can look after the whole family.",
+      "default": false,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "review",
+        "price"
+      ],
+      "uniqueContent": "Child-friendly visits, preventive care for kids and family appointments with the same dentist.",
+      "tier": "recommended",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Your child's first visit",
+          "content": "What to expect and how the team puts children at ease."
+        },
+        {
+          "title": "Preventive care",
+          "content": "Fissure sealants and fluoride varnish."
+        },
+        {
+          "title": "Tips for anxious kids",
+          "content": "How parents can prepare their child."
+        },
+        {
+          "title": "Family appointments",
+          "content": "Back-to-back slots and the same dentist for everyone."
+        }
+      ],
+      "mergedFrom": [
+        "childrens-dentistry",
+        "family-dentistry"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "oral-health-advice",
+      "title": "Oral health advice",
+      "purpose": "Help patients look after their teeth at home and recover well after treatment.",
+      "default": false,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "people",
+        "contact"
+      ],
+      "uniqueContent": "Home-care guides and printable aftercare instructions for each treatment.",
+      "tier": "optional",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Everyday care",
+          "content": "Brushing, flossing and sugar advice."
+        },
+        {
+          "title": "Gum disease",
+          "content": "Signs to watch for and prevention."
+        },
+        {
+          "title": "Children's teeth",
+          "content": "Guidance for parents from the first tooth."
+        },
+        {
+          "title": "Aftercare instructions",
+          "content": "After extractions, fillings, implants, whitening and braces."
+        },
+        {
+          "title": "Who to call",
+          "content": "When aftercare symptoms need a phone call to the clinic."
+        }
+      ],
+      "mergedFrom": [
+        "oral-health-advice",
+        "aftercare"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "corporate-dental",
+      "title": "Corporate dental",
+      "purpose": "Offer employers dental benefits for their staff.",
+      "default": false,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "price"
+      ],
+      "uniqueContent": "Employee dental plans, priority appointments and on-site check-up days for companies.",
+      "tier": "optional",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Employee dental plans",
+          "content": "Plans and monthly cost per employee."
+        },
+        {
+          "title": "Priority appointments",
+          "content": "Faster access and flexible times for staff."
+        },
+        {
+          "title": "On-site check-up days",
+          "content": "How a workplace dental day works."
+        },
+        {
+          "title": "Enquire for your company",
+          "content": "Short form for HR and office managers."
+        }
+      ],
+      "mergedFrom": [
+        "corporate-dental"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "school-outreach",
+      "title": "Community",
+      "purpose": "Show the clinic's involvement in local oral health.",
+      "default": false,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "people",
+        "stat"
+      ],
+      "uniqueContent": "School tooth-brushing workshops and community oral health days.",
+      "tier": "optional",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "School workshops",
+          "content": "What the sessions cover and how schools can request one."
+        },
+        {
+          "title": "Community oral health days",
+          "content": "Free check-ups and advice events."
+        },
+        {
+          "title": "Impact so far",
+          "content": "Schools visited and children reached."
+        },
+        {
+          "title": "Get involved",
+          "content": "Contact for teachers and community groups."
+        }
+      ],
+      "mergedFrom": [
+        "school-outreach"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "shop",
+      "title": "Shop",
+      "purpose": "Let patients buy recommended oral care products.",
+      "default": false,
+      "feature": "order",
+      "featureNote": "Product order for collection; product order for delivery",
+      "demoNeeds": [
+        "price"
+      ],
+      "uniqueContent": "Online store for electric toothbrushes, interdental brushes, whitening kits and night guards.",
+      "tier": "optional",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Toothbrushes and cleaning",
+          "content": "Electric toothbrushes, interdental brushes and refills."
+        },
+        {
+          "title": "Whitening kits",
+          "content": "Take-home whitening products."
+        },
+        {
+          "title": "Night guards",
+          "content": "Protective guards, with a note on getting a fitted one from the dentist."
+        },
+        {
+          "title": "Collection and delivery",
+          "content": "Pick up at reception or have it delivered, with returns."
+        }
+      ],
+      "mergedFrom": [
+        "shop"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "careers",
+      "title": "Careers",
+      "purpose": "Attract dentists, nurses and receptionists to join the team.",
+      "default": false,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "people",
+        "contact"
+      ],
+      "uniqueContent": "Open roles and a look at the practice culture for job seekers.",
+      "tier": "optional",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Open positions",
+          "content": "Current vacancies for dentists, nurses and reception."
+        },
+        {
+          "title": "Life at the practice",
+          "content": "Team culture, training and benefits."
+        },
+        {
+          "title": "How to apply",
+          "content": "Send a CV or contact the practice manager."
+        }
+      ],
+      "mergedFrom": [
+        "careers"
+      ],
+      "evidence": "idea"
+    }
+  ],
+  "merges": [
+    {
+      "kept": "services",
+      "absorbed": [
+        "check-ups-hygiene",
+        "fillings-crowns",
+        "root-canal",
+        "teeth-whitening",
+        "clear-aligners",
+        "braces-teens",
+        "dental-implants",
+        "dentures",
+        "veneers",
+        "wisdom-teeth",
+        "sedation"
+      ],
+      "why": "Each treatment is one block of a single long treatments page with a jump board at the top, instead of a dozen thin pages."
+    },
+    {
+      "kept": "book-appointment",
+      "absorbed": [
+        "free-consultation"
+      ],
+      "why": "Every kind of booking belongs on one Book online page; the emergency slot is also a section here and the Emergency page links to it."
+    },
+    {
+      "kept": "prices",
+      "absorbed": [
+        "membership-plan",
+        "insurance-finance"
+      ],
+      "why": "Fees, membership, insurance and finance all answer the question of what it costs and how to pay."
+    },
+    {
+      "kept": "new-patients",
+      "absorbed": [
+        "patient-forms"
+      ],
+      "why": "Forms are part of preparing for a first visit."
+    },
+    {
+      "kept": "about",
+      "absorbed": [
+        "technology"
+      ],
+      "why": "Technology and clinic tour support the practice story and standards."
+    },
+    {
+      "kept": "childrens-dentistry",
+      "absorbed": [
+        "family-dentistry"
+      ],
+      "why": "Parents look for children and family care together, and both serve the same audience."
+    },
+    {
+      "kept": "oral-health-advice",
+      "absorbed": [
+        "aftercare"
+      ],
+      "why": "Home-care guides and aftercare instructions are both practical patient advice."
+    }
+  ],
+  "review": {
+    "rounds": 3,
+    "applied": {
+      "removedSections": [
+        {
+          "page": "Team",
+          "section": "Our approach",
+          "ownedBy": "About us"
+        },
+        {
+          "page": "Emergency dentist",
+          "section": "Emergency fees",
+          "ownedBy": "Prices"
+        },
+        {
+          "page": "Children & family",
+          "section": "Family pricing",
+          "ownedBy": "Prices"
+        },
+        {
+          "page": "FAQ",
+          "section": "Costs and payment",
+          "ownedBy": "Prices"
+        },
+        {
+          "page": "FAQ",
+          "section": "Emergencies",
+          "ownedBy": "Emergency dentist"
+        },
+        {
+          "page": "FAQ",
+          "section": "Appointments and cancellations",
+          "ownedBy": "Book online"
+        }
+      ],
+      "merged": [
+        {
+          "kept": "New patients",
+          "absorbed": "FAQ",
+          "why": "Only two sections (pain and comfort, safety and X-rays). Cost, cancellations and emergencies are promised but not shown, and those topics are already covered on Prices, Book online and Emergency dentist."
+        }
+      ],
+      "renamed": []
+    },
+    "remaining": [
+      "repeated: Sedation and numbing options for nervous patients",
+      "repeated: Hygiene, sterilisation and infection control standards"
+    ],
+    "note": ""
+  },
+  "homeSectionIdeas": [
+    "Hero with a welcoming photo, 'Book an appointment' button and emergency phone number",
+    "Quick-access tiles: check-up, emergency, whitening, aligners, children",
+    "Meet your dentists strip with friendly portraits",
+    "How your first visit works in three steps",
+    "Featured treatments with starting prices",
+    "Before-and-after smile highlights",
+    "Patient reviews with star rating",
+    "Opening hours, location map and new-patient welcome offer"
+  ],
+  "styleNotes": [
+    "Clean, bright layout with lots of white space that feels hygienic and calm.",
+    "Soft blues, teals or fresh greens with one warm accent for buttons, avoiding clinical harshness.",
+    "Real, smiling photos of the team and clinic rather than stock imagery, with rounded shapes to feel gentle.",
+    "Large readable type and sticky phone and booking buttons so anxious or urgent visitors act easily on mobile."
+  ],
+  "sources": []
+}

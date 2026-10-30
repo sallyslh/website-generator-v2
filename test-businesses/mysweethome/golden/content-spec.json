@@ -1,0 +1,418 @@
+{
+  "schemaVersion": 1,
+  "language": "en",
+  "global": {
+    "siteTitle": "My Sweet Home",
+    "navigation": [
+      {
+        "label": "Products",
+        "page": "products"
+      },
+      {
+        "label": "About",
+        "page": "about"
+      },
+      {
+        "label": "Contact",
+        "page": "contact"
+      }
+    ],
+    "primaryCta": {
+      "label": "Order a gift",
+      "target": "contact"
+    },
+    "footerText": "Sweet little gifts for you and your home: body care sets, floral drinkware, embroidered cushion covers and ceramic cups."
+  },
+  "pages": [
+    {
+      "slug": "home",
+      "seo": {
+        "title": "My Sweet Home | Gift and Home Goods Shop",
+        "description": "Body care gift sets, floral drinkware, embroidered cushion covers and ceramic cups and saucers in gift boxes. See the pieces and order from My Sweet Home."
+      },
+      "sections": [
+        {
+          "id": "home-hero",
+          "heading": "Sweet little things for home and gifting",
+          "subheading": "Body care sets, floral drinkware, embroidered cushions and pretty ceramics, chosen to be given or kept.",
+          "body": [],
+          "items": [],
+          "cta": {
+            "label": "See the products",
+            "target": "products"
+          },
+          "imageAlt": {
+            "home-hero-image": "Two wildflower-print water bottles, one cream and one lavender, standing in a woven wicker basket with a linen lining against a soft floral background"
+          }
+        },
+        {
+          "id": "home-categories",
+          "heading": "Five sweet ways to say it with a gift",
+          "subheading": "",
+          "body": [],
+          "items": [
+            {
+              "title": "Body care gift sets",
+              "text": "Lotion, hand cream and fragrance mist, together in one set."
+            },
+            {
+              "title": "Wildflower water bottles",
+              "text": "Bottles printed with wildflowers."
+            },
+            {
+              "title": "Floral tumblers with bow toppers",
+              "text": "Insulated floral tumblers, finished with a bow straw topper."
+            },
+            {
+              "title": "Embroidered cushion covers",
+              "text": "Cushion covers with embroidered detail."
+            },
+            {
+              "title": "Ceramic cups and saucers",
+              "text": "Decorative cups and saucers, packed in gift boxes."
+            }
+          ],
+          "cta": {
+            "label": "See all products",
+            "target": "products"
+          },
+          "imageAlt": {}
+        },
+        {
+          "id": "home-featured",
+          "heading": "Two pieces we love for the home",
+          "subheading": "A cushion cover with embroidery, and cups and saucers that arrive in a gift box.",
+          "body": [],
+          "items": [
+            {
+              "title": "Embroidered cushion covers",
+              "text": "Embroidered detail to soften a favourite chair, sofa or bed."
+            },
+            {
+              "title": "Ceramic cups and saucers in gift boxes",
+              "text": "Decorative cups and saucers, boxed and ready to hand to someone you care about."
+            }
+          ],
+          "cta": {
+            "label": "Ask about this piece",
+            "target": "contact"
+          },
+          "imageAlt": {
+            "home-featured-image": "A cream cushion cover with embroidered wildflowers, butterflies and a dandelion on a white chair in front of white blossom branches",
+            "home-featured-image-2": "A white ornate mirrored tray with a tulip-patterned espresso cup and saucer, surrounded by gift boxes of cream ceramic cups and saucers decorated with bows, hearts and stars"
+          }
+        },
+        {
+          "id": "home-gifting",
+          "heading": "A little something sweet, ready to give",
+          "subheading": "Found something you like? Getting it to you starts with a message or a call.",
+          "body": [
+            "Call us on 71-014463 or use the contact page to place your order.",
+            "NEEDS: how an order is confirmed, paid for and delivered or collected, from the customer."
+          ],
+          "items": [
+            {
+              "title": "Choose",
+              "text": "Pick the piece or set you love from our products."
+            },
+            {
+              "title": "Tell us",
+              "text": "Get in touch with what you would like to order."
+            },
+            {
+              "title": "Give",
+              "text": "Our ceramic cups and saucers come in gift boxes, ready to hand over."
+            }
+          ],
+          "cta": {
+            "label": "Order a gift",
+            "target": "contact"
+          },
+          "imageAlt": {}
+        }
+      ]
+    },
+    {
+      "slug": "products",
+      "seo": {
+        "title": "Products | My Sweet Home Gift & Home Goods Shop",
+        "description": "Body care gift sets, floral tumblers, wildflower water bottles, embroidered cushion covers and ceramic cups and saucers in gift boxes. Order by phone."
+      },
+      "sections": [
+        {
+          "id": "products-intro",
+          "heading": "Our products",
+          "subheading": "Pretty things for giving and for keeping, from body care sets to floral drinkware and cosy home touches.",
+          "body": [],
+          "items": [
+            {
+              "title": "Body care gift sets",
+              "text": "Lotion, hand cream and fragrance mist"
+            },
+            {
+              "title": "Tumblers and bottles",
+              "text": "Floral tumblers and wildflower water bottles"
+            },
+            {
+              "title": "Cushions and cups",
+              "text": "Embroidered covers and ceramic cups in gift boxes"
+            }
+          ],
+          "imageAlt": {}
+        },
+        {
+          "id": "products-bodycare",
+          "heading": "Body care gift sets",
+          "subheading": "Three soft little pieces, ready to be given.",
+          "body": [
+            "Each set brings together a body lotion, a hand cream and a fragrance mist, a sweet way to say thank you or simply treat someone.",
+            "Price on request.",
+            "NEEDS: prices for the body care sets from the customer, and confirmation of the rights and authenticity of the brands shown in the photo."
+          ],
+          "items": [
+            {
+              "title": "Body lotion",
+              "text": "One of the three pieces in the set."
+            },
+            {
+              "title": "Hand cream",
+              "text": "One of the three pieces in the set."
+            },
+            {
+              "title": "Fragrance mist",
+              "text": "One of the three pieces in the set."
+            }
+          ],
+          "cta": {
+            "label": "Order this set",
+            "target": "contact"
+          },
+          "imageAlt": {
+            "products-bodycare-image": "A set of three red body care products, a body lotion, a hand cream and a fragrance mist, beside pink peonies and a cream ceramic cup and saucer decorated with red hearts, with white blossoms blurred behind."
+          }
+        },
+        {
+          "id": "products-drinkware",
+          "heading": "Drinkware in full bloom",
+          "subheading": "Flowers for your morning coffee and your day out.",
+          "body": [
+            "Sip from floral insulated tumblers topped with bow straw toppers, or carry a wildflower-print water bottle wherever you go.",
+            "Price on request.",
+            "NEEDS: prices for the tumblers and water bottles from the customer, a clean individual photo of the wildflower water bottle, and confirmation of the rights and authenticity of the brands shown in the tumbler photo."
+          ],
+          "items": [
+            {
+              "title": "Floral insulated tumblers",
+              "text": "Finished with bow straw toppers."
+            },
+            {
+              "title": "Wildflower-print water bottles",
+              "text": "A little garden to carry with you."
+            }
+          ],
+          "cta": {
+            "label": "Ask about drinkware",
+            "target": "contact"
+          },
+          "imageAlt": {
+            "products-drinkware-image": "Four floral-patterned insulated tumblers with handles, gold bands, coloured lids and bow-shaped straw toppers on a white table in front of white blossom branches.",
+            "products-drinkware-image-2": "A wildflower-print water bottle on a soft blush background."
+          }
+        },
+        {
+          "id": "products-home",
+          "heading": "Soft touches for the home",
+          "subheading": "Embroidered cushions and ceramic cups, made to be admired.",
+          "body": [
+            "Price on request.",
+            "NEEDS: prices for the cushion covers and the cup and saucer sets from the customer, plus individual photos: a close-up of the embroidery and a cup and saucer in its gift box."
+          ],
+          "items": [
+            {
+              "title": "Embroidered cushion covers",
+              "text": "Cushion covers with embroidered detail, to give a sofa or bed a sweeter look."
+            },
+            {
+              "title": "Ceramic cups and saucers in gift boxes",
+              "text": "Decorative ceramic cups and saucers, presented in gift boxes and ready to give."
+            }
+          ],
+          "cta": {
+            "label": "Order by message",
+            "target": "contact"
+          },
+          "imageAlt": {
+            "products-home-image": "A close-up of an embroidered cushion cover showing stitched wildflowers and the texture of the fabric.",
+            "products-home-image-2": "A ceramic cup and saucer set presented in its gift box."
+          }
+        },
+        {
+          "id": "products-order",
+          "heading": "Call 71-014463",
+          "subheading": "To order, call us or send a message and tell us which pieces you would like.",
+          "body": [],
+          "items": [],
+          "cta": {
+            "label": "Send us a message",
+            "target": "contact"
+          },
+          "imageAlt": {}
+        }
+      ]
+    },
+    {
+      "slug": "about",
+      "seo": {
+        "title": "About My Sweet Home | Gift and Home Goods Shop",
+        "description": "My Sweet Home is a gift and home goods shop for body care sets, floral drinkware, embroidered cushions and ceramic cups in gift boxes."
+      },
+      "sections": [
+        {
+          "id": "about-story",
+          "heading": "A little shop full of sweet things",
+          "subheading": "The story behind My Sweet Home",
+          "body": [
+            "My Sweet Home is a gift and home goods shop for pretty things that make a day feel softer. On our shelves you will find body care sets with lotion, hand cream and fragrance mist, wildflower-print water bottles, and floral insulated tumblers with bow straw toppers.",
+            "For the home, there are embroidered cushion covers, and ceramic cups and saucers that arrive in their own gift boxes, ready to be given.",
+            "Everything here is chosen with the same idea in mind: a gift should look lovely and feel personal, and your home should feel like yours.",
+            "NEEDS: the owner's name, a short account of how My Sweet Home began and why, and a portrait photo of the owner with the products."
+          ],
+          "items": [],
+          "imageAlt": {
+            "about-story-image": "A smiling shop owner holding a gift box and a floral tumbler, in soft natural light"
+          }
+        },
+        {
+          "id": "about-craft",
+          "heading": "Made ready for giving",
+          "subheading": "From the first pick to the final ribbon, each piece is treated like a present.",
+          "body": [
+            "NEEDS: photos of gift boxes being prepared or the place where orders are packed, plus any details from the owner on how pieces are selected and wrapped."
+          ],
+          "items": [
+            {
+              "title": "Choosing",
+              "text": "We pick pieces that feel sweet and elegant, from soft florals to delicate ceramics, so each one is worth giving."
+            },
+            {
+              "title": "Preparing",
+              "text": "Each piece is looked over with care before it goes to you, so it is ready to be enjoyed or gifted."
+            },
+            {
+              "title": "Gifting",
+              "text": "Cups and saucers come in gift boxes, and every set is meant to be handed over with a smile."
+            }
+          ],
+          "imageAlt": {
+            "about-craft-image": "Gift boxes with ceramic cups and saucers, body care sets and ribbons laid out on a table, ready to be wrapped"
+          }
+        },
+        {
+          "id": "about-values",
+          "heading": "What you can expect from us",
+          "subheading": "",
+          "body": [],
+          "items": [
+            {
+              "title": "Sweet in every detail",
+              "text": "Florals, bows and soft touches throughout."
+            },
+            {
+              "title": "Elegant, never fussy",
+              "text": "Pieces that look graceful in your home or in a gift box."
+            },
+            {
+              "title": "Warm, from our shop to your door",
+              "text": "Friendly help whenever you want to choose a gift."
+            }
+          ],
+          "cta": {
+            "label": "Get in touch to order a gift",
+            "target": "contact"
+          },
+          "imageAlt": {}
+        }
+      ]
+    },
+    {
+      "slug": "contact",
+      "seo": {
+        "title": "Contact My Sweet Home | Call or Order a Gift",
+        "description": "Call My Sweet Home on 71-014463 or send a message to ask about body care sets, floral drinkware, cushion covers and ceramic cups in gift boxes."
+      },
+      "sections": [
+        {
+          "id": "contact-main",
+          "heading": "Let's find the perfect gift",
+          "subheading": "Call us or send a note about what caught your eye. We'd love to help you choose.",
+          "body": [
+            "Call us on 71-014463",
+            "NEEDS: email address, shop address and opening hours from the customer"
+          ],
+          "items": [
+            {
+              "title": "Your name",
+              "text": "So we know who we're talking to"
+            },
+            {
+              "title": "Phone or email",
+              "text": "Where we can reach you"
+            },
+            {
+              "title": "What would you like to order?",
+              "text": "A body care set, a tumbler, cushion covers, a cup and saucer..."
+            },
+            {
+              "title": "Message",
+              "text": "Anything else you'd like to tell us"
+            }
+          ],
+          "cta": {
+            "label": "Send my message",
+            "target": "form"
+          },
+          "imageAlt": {}
+        },
+        {
+          "id": "contact-how-to-order",
+          "heading": "Ordering is as easy as 1, 2, 3",
+          "subheading": "",
+          "body": [
+            "NEEDS: delivery or pickup details and payment information from the customer"
+          ],
+          "items": [
+            {
+              "title": "Choose your favorites",
+              "text": "Browse our body care sets, floral drinkware, embroidered cushion covers and boxed cups and saucers."
+            },
+            {
+              "title": "Tell us what you'd like",
+              "text": "Call 71-014463 or fill in the form with the items you have in mind."
+            },
+            {
+              "title": "Leave your contact details",
+              "text": "Add your name and a phone number or email so we can get back to you about your order."
+            }
+          ],
+          "cta": {
+            "label": "See the products",
+            "target": "products"
+          },
+          "imageAlt": {}
+        },
+        {
+          "id": "contact-location",
+          "heading": "Where to find us",
+          "subheading": "",
+          "body": [
+            "NEEDS: shop or pickup address and a storefront photo from the customer"
+          ],
+          "items": [],
+          "imageAlt": {
+            "contact-location-image": "The shop front of My Sweet Home, a gift and home goods shop, seen from the street"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "projectId": "demo-restaurant",
+  "business": {
+    "name": "Cedar & Sumac",
+    "type": "Lebanese restaurant",
+    "description": "Family-run Lebanese restaurant serving mezze and grilled dishes.",
+    "location": "Gemmayzeh, Beirut, Lebanon",
+    "contact": {
+      "phone": "+961 1 000 000",
+      "email": "hello@cedarandsumac.example",
+      "address": "12 Armenia Street, Gemmayzeh, Beirut",
+      "hours": "Tue-Sun 12:00-23:00, closed Monday"
+    },
+    "socialLinks": [{ "platform": "instagram", "url": "https://instagram.com/cedarandsumac" }]
+  },
+  "goals": {
+    "primary": "Get more table reservations",
+    "secondary": ["Show the menu clearly", "Share the family story"]
+  },
+  "audience": {
+    "description": "Locals and visitors looking for authentic Lebanese food",
+    "needs": ["See the menu", "Find the address and hours", "Reserve a table"]
+  },
+  "offerings": [
+    { "name": "Mezze selection", "description": "Hummus, moutabal, tabbouleh and warm bread, made daily." },
+    { "name": "Mixed grill", "description": "Lamb, chicken and kafta over charcoal." }
+  ],
+  "pages": [
+    { "slug": "home", "title": "Home", "purpose": "Create appetite and drive reservations" },
+    { "slug": "menu", "title": "Menu", "purpose": "Show the dishes" },
+    { "slug": "about", "title": "About", "purpose": "Tell the family story" },
+    { "slug": "contact", "title": "Contact", "purpose": "Make it easy to find and reach us" }
+  ],
+  "features": [{ "type": "contact-form" }, { "type": "map-embed" }, { "type": "social-links" }],
+  "brand": {
+    "hasIdentity": true,
+    "colors": ["#1F4E3D", "#E9DCC9"],
+    "personality": ["warm", "generous", "traditional"]
+  },
+  "tone": "Warm and welcoming, like being invited to a family table",
+  "references": { "liked": [], "disliked": [] },
+  "language": "en",
+  "unknowns": ["No prices provided for menu items", "No team photos yet"]
+}

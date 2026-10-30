@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "projectId": "lawyer-s1-20261009-165044",
+  "business": {
+    "name": "Haddad & Partners Law Office",
+    "type": "Law firm",
+    "description": "Law firm handling commercial law, real estate and family law (personal status, inheritance). Three lawyers. Cases before Lebanese courts, and advises companies and expats.",
+    "location": "Sin el Fil, Beirut, Lebanon",
+    "contact": {
+      "phone": "+961 1 489 000",
+      "email": "info@haddadlaw.example",
+      "address": "Horsh Tabet, Ghazal building 4th floor, Sin el Fil, Beirut",
+      "hours": "Monday to Friday 9 to 5"
+    },
+    "socialLinks": []
+  },
+  "goals": {
+    "primary": "Clients trust the firm and call for a first consultation",
+    "secondary": []
+  },
+  "audience": {
+    "description": "Small and medium companies, families dealing with inheritance or property, Lebanese living abroad",
+    "needs": []
+  },
+  "offerings": [
+    {
+      "name": "Commercial contracts",
+      "description": ""
+    },
+    {
+      "name": "Company formation",
+      "description": ""
+    },
+    {
+      "name": "Real estate transactions and disputes",
+      "description": ""
+    },
+    {
+      "name": "Inheritance and family law",
+      "description": ""
+    },
+    {
+      "name": "First consultation",
+      "description": ""
+    }
+  ],
+  "pages": [
+    {
+      "slug": "home",
+      "title": "Home",
+      "purpose": "Introduce the firm and encourage visitors to call for a first consultation"
+    },
+    {
+      "slug": "practice-areas",
+      "title": "Practice Areas",
+      "purpose": "Present the firm's services: commercial law, real estate, and family law"
+    },
+    {
+      "slug": "our-team",
+      "title": "Our Team",
+      "purpose": "Present the three lawyers of the firm"
+    },
+    {
+      "slug": "contact",
+      "title": "Contact",
+      "purpose": "Give contact details, hours and location, and let visitors get in touch"
+    }
+  ],
+  "features": [
+    {
+      "type": "contact-form"
+    },
+    {
+      "type": "map-embed"
+    },
+    {
+      "type": "social-links"
+    }
+  ],
+  "brand": {
+    "hasIdentity": true,
+    "colors": [
+      "dark navy",
+      "gold"
+    ],
+    "personality": [
+      "serious",
+      "trustworthy",
+      "modern"
+    ]
+  },
+  "tone": "Serious, professional and reassuring; clear and modern, not flashy",
+  "references": {
+    "liked": [],
+    "disliked": []
+  },
+  "language": "en",
+  "unknowns": [
+    "Price of first consultation not provided (to be discussed by phone)",
+    "No LinkedIn URL provided",
+    "No liked reference websites provided",
+    "No disliked reference websites provided",
+    "Fonts not specified",
+    "Gold is only a tentative brand color (owner said 'maybe')",
+    "No photos of the lawyers yet, owner will take them",
+    "Requested but out of MVP scope: Arabic language version (planned for later)",
+    "No offering descriptions provided",
+    "Names and details of the three lawyers not provided",
+    "Secondary goals not provided",
+    "Specific audience needs not provided"
+  ]
+}

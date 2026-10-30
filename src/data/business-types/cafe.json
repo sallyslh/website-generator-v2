@@ -1,0 +1,270 @@
+{
+  "type": "cafe",
+  "label": "Café",
+  "kind": "menu",
+  "researchedAt": "2026-10-26",
+  "draftedByModel": true,
+  "note": "A DRAFT written by the model from general knowledge (no web research). Every page is an idea until a person has read it.",
+  "pages": [
+    {
+      "id": "home",
+      "title": "Home",
+      "purpose": "Introduces the café with its atmosphere, signature items, opening hours and a clear path to the menu and location.",
+      "default": true,
+      "feature": "",
+      "demoNeeds": [
+        "review"
+      ],
+      "evidence": "idea",
+      "locked": true
+    },
+    {
+      "id": "menu",
+      "title": "Menu",
+      "purpose": "Lists coffee, tea, food and pastries with descriptions and prices so visitors know what to expect.",
+      "default": true,
+      "feature": "",
+      "demoNeeds": [
+        "price"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "about",
+      "title": "About Us",
+      "purpose": "Tells the story of the café, its values and why the owners opened it.",
+      "default": true,
+      "feature": "",
+      "demoNeeds": [
+        "people"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "gallery",
+      "title": "Gallery",
+      "purpose": "Shows photos of the space, drinks, food and daily life in the café.",
+      "default": true,
+      "feature": "",
+      "demoNeeds": [],
+      "evidence": "idea"
+    },
+    {
+      "id": "contact",
+      "title": "Contact & Location",
+      "purpose": "Gives the address, map, opening hours, phone number and a contact form or email.",
+      "default": true,
+      "feature": "",
+      "demoNeeds": [],
+      "evidence": "idea",
+      "locked": true
+    },
+    {
+      "id": "order-online",
+      "title": "Order Online",
+      "purpose": "Lets customers order drinks and food for pickup or delivery.",
+      "default": false,
+      "feature": "order",
+      "demoNeeds": [
+        "price"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "reserve-table",
+      "title": "Reserve a Table",
+      "purpose": "Lets visitors book a table for a chosen date, time and party size.",
+      "default": false,
+      "feature": "booking",
+      "demoNeeds": [],
+      "evidence": "idea"
+    },
+    {
+      "id": "drinks-menu",
+      "title": "Coffee & Drinks",
+      "purpose": "Details the coffee, tea and specialty drinks, including milk alternatives and sizes.",
+      "default": false,
+      "feature": "",
+      "demoNeeds": [
+        "price"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "food-menu",
+      "title": "Food & Pastries",
+      "purpose": "Showcases breakfast, lunch, sandwiches and baked goods, with dietary labels.",
+      "default": false,
+      "feature": "",
+      "demoNeeds": [
+        "price"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "specials",
+      "title": "Daily Specials",
+      "purpose": "Highlights the seasonal and daily offers that change regularly.",
+      "default": false,
+      "feature": "",
+      "demoNeeds": [
+        "price"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "reviews",
+      "title": "Reviews",
+      "purpose": "Collects customer testimonials and ratings to build trust with new visitors.",
+      "default": false,
+      "feature": "",
+      "demoNeeds": [
+        "review",
+        "people"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "team",
+      "title": "Meet the Team",
+      "purpose": "Introduces the baristas, bakers and owners behind the counter.",
+      "default": false,
+      "feature": "",
+      "demoNeeds": [
+        "people"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "events",
+      "title": "Events",
+      "purpose": "Announces live music, open mic nights, book clubs and other gatherings at the café.",
+      "default": false,
+      "feature": "booking",
+      "demoNeeds": [],
+      "evidence": "idea"
+    },
+    {
+      "id": "private-hire",
+      "title": "Private Events & Hire",
+      "purpose": "Explains how to hire the café or a section of it for parties and meetings.",
+      "default": false,
+      "feature": "booking",
+      "demoNeeds": [
+        "price"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "catering",
+      "title": "Catering",
+      "purpose": "Offers coffee, sandwiches and pastries for offices and events, with packages and enquiry details.",
+      "default": false,
+      "feature": "",
+      "demoNeeds": [
+        "price"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "gift-cards",
+      "title": "Gift Cards",
+      "purpose": "Sells gift cards or vouchers that people can give to friends and family.",
+      "default": false,
+      "feature": "order",
+      "demoNeeds": [
+        "price"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "shop",
+      "title": "Shop Beans & Merchandise",
+      "purpose": "Sells coffee beans, tea, mugs and other merchandise.",
+      "default": false,
+      "feature": "order",
+      "demoNeeds": [
+        "price"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "loyalty",
+      "title": "Loyalty Program",
+      "purpose": "Explains how regulars earn rewards, stamps or discounts.",
+      "default": false,
+      "feature": "",
+      "demoNeeds": [],
+      "evidence": "idea"
+    },
+    {
+      "id": "our-coffee",
+      "title": "Our Coffee & Suppliers",
+      "purpose": "Shares where the beans, milk and ingredients come from and how they are roasted or prepared.",
+      "default": false,
+      "feature": "",
+      "demoNeeds": [
+        "people"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "workshops",
+      "title": "Workshops & Classes",
+      "purpose": "Offers barista classes, latte art sessions or baking workshops that visitors can sign up for.",
+      "default": false,
+      "feature": "booking",
+      "demoNeeds": [
+        "price",
+        "people"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "blog",
+      "title": "Blog & News",
+      "purpose": "Shares news, recipes, seasonal updates and stories from the café.",
+      "default": false,
+      "feature": "",
+      "demoNeeds": [
+        "people"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "jobs",
+      "title": "Careers",
+      "purpose": "Lists open positions and how to apply to join the team.",
+      "default": false,
+      "feature": "",
+      "demoNeeds": [],
+      "evidence": "idea"
+    },
+    {
+      "id": "faq",
+      "title": "FAQ",
+      "purpose": "Answers common questions about Wi-Fi, pets, accessibility, dietary options and opening times.",
+      "default": false,
+      "feature": "",
+      "demoNeeds": [],
+      "evidence": "idea"
+    }
+  ],
+  "homeSectionIdeas": [
+    "Hero with a welcoming photo, café name and a button to the menu",
+    "Signature drinks and favorite items with photos",
+    "Opening hours and address with a small map",
+    "Short story about the café and its people",
+    "Today's specials or seasonal highlights",
+    "Customer reviews and ratings",
+    "Photo gallery or social feed preview",
+    "Call to action for ordering, booking or visiting"
+  ],
+  "styleNotes": [
+    "Warm, inviting colors such as cream, coffee brown and soft green or terracotta",
+    "Large, appetizing photography of drinks, food and the cozy interior",
+    "Friendly, readable typography, perhaps a handwritten or soft serif accent for headings",
+    "Mobile-first layout with quick access to menu, hours and directions"
+  ],
+  "sources": []
+}

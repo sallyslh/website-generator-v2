@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "asset-001", "file": "inputs/assets/interior.png", "kind": "image", "category": "interior",
+      "description": "Warm dining room with wooden tables", "quality": "high", "orientation": "landscape",
+      "width": 400, "height": 300, "dominantColors": ["#F2EDE4", "#8B5A2B"],
+      "usableFor": ["hero", "about", "gallery"], "notes": ""
+    },
+    {
+      "id": "asset-002", "file": "inputs/assets/mezze-table.png", "kind": "image", "category": "food",
+      "description": "Table covered with mezze dishes", "quality": "high", "orientation": "square",
+      "width": 300, "height": 300, "dominantColors": ["#C8783C", "#5A2814"],
+      "usableFor": ["card", "gallery"], "notes": ""
+    },
+    {
+      "id": "asset-003", "file": "inputs/assets/blurry-street.png", "kind": "image", "category": "exterior",
+      "description": "Blurry shot of the street outside", "quality": "low", "orientation": "landscape",
+      "width": 40, "height": 30, "dominantColors": ["#787878"],
+      "usableFor": ["none"], "notes": "Too small and blurry to use"
+    },
+    {
+      "id": "asset-004", "file": "inputs/assets/logo.png", "kind": "logo", "category": "logo",
+      "description": "Green and cream restaurant logo", "quality": "high", "orientation": "square",
+      "width": 200, "height": 200, "dominantColors": ["#1F4E3D", "#E9DCC9"],
+      "usableFor": ["none"], "notes": ""
+    }
+  ],
+  "logo": "asset-004",
+  "documents": [],
+  "gaps": [{ "need": "team photos", "reason": "The about page tells the family story", "priority": "medium" }]
+}

@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "direction": {
+    "summary": "Bonza is a small online perfume shop selling by DM, so the site feels like a warm, gold-and-cream boutique counter: classic serif type, generous cream space, and prices set clearly like a printed fragrance menu.",
+    "style": "warm-classic boutique",
+    "mood": [
+      "elegant",
+      "warm",
+      "classic",
+      "inviting",
+      "refined"
+    ]
+  },
+  "colors": {
+    "primary": "#5A3A1C",
+    "secondary": "#9A6B35",
+    "accent": "#B88A4E",
+    "background": "#F3EADF",
+    "text": "#2E1D0E"
+  },
+  "typography": {
+    "headings": "Libre Caslon Display: large, light-feeling classic serif for page titles, collection names and prices; sentence case, with italic for short emphasis words.",
+    "body": "Jost: clean geometric sans for descriptions, navigation, buttons and labels; small caps-style uppercase with wide letter-spacing for category labels and buttons.",
+    "scale": "Generous contrast: hero title 64-88px on desktop (40px on mobile), section titles 40px, product names 22px serif, prices 20px serif in #9A6B35, body 17px with 1.65 line height, labels 12-13px uppercase with 0.14em tracking."
+  },
+  "layout": {
+    "principles": [
+      "Asymmetric hero: large serif headline left on cream, tall image panel bleeding off the right edge, overlapped by a thin gold rule",
+      "Thin gold hairlines (1px #B88A4E) separate sections and frame product cards, like a printed perfume menu, instead of shadows",
+      "Products are shown as a list-style catalogue: photo, name, size and a clearly aligned price, with a 'Order by DM' link on every item",
+      "Alternating rhythm between wide cream sections and one deep-brown (#5A3A1C) band per page for emphasis",
+      "Photos sit in tall 4:5 frames with small corner radius (max 4px) and are always tightly cropped to the boxes to hide cluttered rooms"
+    ],
+    "header": "Slim cream header with the circular Bonza badge logo (asset-006) at left at about 56px, centered or right-aligned text navigation (Home, Perfumes, How to Order, Contact) in uppercase Jost, and a small brown 'Order by DM' button at right. It stays sticky with a thin gold bottom line.",
+    "footer": "Deep brown (#5A3A1C) footer with the Bonza badge logo, a short tagline, the four page links, Instagram and TikTok links (@bonza_perfumes), a short 'Orders are taken by DM' note, and a small copyright line in cream and gold."
+  },
+  "pages": [
+    {
+      "slug": "home",
+      "sections": [
+        {
+          "id": "home-hero",
+          "type": "hero",
+          "purpose": "Introduce Bonza as a warm, elegant online perfume shop and send visitors to the perfumes and to ordering by DM.",
+          "layoutNotes": "Two-column split, 55% text and 45% image. The text is left-aligned on cream: small uppercase label, large serif headline, one short line, then a solid brown 'View perfumes' button next to a text link 'How to order'. The image is a tall 4:5 panel bleeding off the right and top edges. No suitable hero photo exists (all customer photos are medium-quality snapshots of branded boxes in a home setting), so this slot stays a placeholder. If no photo arrives, the panel is a solid #9A6B35 block with a large gold line-art monogram. The logo is NOT used here.",
+          "slots": [
+            {
+              "id": "home-hero-image",
+              "kind": "image",
+              "description": "Atmospheric, polished lifestyle or still-life shot of perfume bottles in warm golden light, to be supplied by the customer.",
+              "preferredCategory": "lifestyle",
+              "aspect": "4:5",
+              "assignedAsset": null
+            }
+          ]
+        },
+        {
+          "id": "home-collections",
+          "type": "category-grid",
+          "purpose": "Show the four offerings: men's eau de parfum, women's eau de parfum, men's eau de toilette and eau de parfum gift sets, each linking to the Perfumes page.",
+          "layoutNotes": "Section title left-aligned with a short intro on the right. Below, four equal tall tiles in a row (2x2 on mobile), each with a thin gold border, a 4:5 photo, the collection name in serif and an uppercase 'Explore' link. Every photo is cropped tight to the boxes to remove the cluttered room, windows and furniture. Asset-004 has cropped box tops and a busy wood foreground, so crop to the box row. Asset-005 has a cropped left box, so crop to the three right boxes if needed. Asset-001 has a box close to the top edge, so crop it centered with the box low. Asset-003 shows an Issey Miyake eau de toilette box, so crop to it. The photos show third-party brand names (Dior, Valentino, Armani, Gucci, Burberry, Chanel, Creed, Issey Miyake, Kay Ali), so rights and authenticity must be confirmed with the customer before publishing.",
+          "slots": [
+            {
+              "id": "home-collections-image",
+              "kind": "image",
+              "description": "Men's eau de parfum: four dark sealed boxes (Dior Sauvage, Dior Homme Parfum, Valentino Born in Roma, Armani Stronger With You) in a row, cropped tight.",
+              "preferredCategory": "product",
+              "aspect": "4:5",
+              "assignedAsset": "asset-004"
+            },
+            {
+              "id": "home-collections-image-2",
+              "kind": "image",
+              "description": "Women's eau de parfum: four sealed boxes (Gucci Bloom, Armani In Love With You, Armani Sì, Burberry Her) in a row, cropped tighter.",
+              "preferredCategory": "product",
+              "aspect": "4:5",
+              "assignedAsset": "asset-005"
+            },
+            {
+              "id": "home-collections-image-3",
+              "kind": "image",
+              "description": "Men's eau de toilette: three sealed boxes (Creed Aventus, Bleu de Chanel, Issey Miyake L'Eau d'Issey Pour Homme) on a polished table, cropped to the Issey Miyake box.",
+              "preferredCategory": "product",
+              "aspect": "4:5",
+              "assignedAsset": "asset-003"
+            },
+            {
+              "id": "home-collections-image-4",
+              "kind": "image",
+              "description": "Eau de parfum gift set: a shrink-wrapped iridescent gift box (Kay Ali Déjà Vu White Flower, 30ml x 4), upright and centered.",
+              "preferredCategory": "product",
+              "aspect": "4:5",
+              "assignedAsset": "asset-001"
+            }
+          ]
+        },
+        {
+          "id": "home-featured",
+          "type": "featured-product",
+          "purpose": "Highlight featured perfumes, with the place for their prices, as a first taste of the catalogue.",
+          "layoutNotes": "Deep brown (#5A3A1C) full-width band. The photo is on the left, about 50% wide, in a 4:5 crop with a thin gold frame offset by 12px. On the right are a cream serif title, two featured perfume entries in list style (name, size, and a gold price placeholder aligned right with a dotted leader line) and a cream outline button 'Order by DM'. Asset-002 is tilted, with glare and a cluttered background (glassware, window), so crop tight to the two boxes (Tom Ford Tobacco Vanille and Black Orchid) and straighten slightly. Boxes sit near the frame edges, so keep a small safety margin. Third-party brand (Tom Ford) rights and authenticity must be confirmed with the customer.",
+          "slots": [
+            {
+              "id": "home-featured-image",
+              "kind": "image",
+              "description": "Two boxed Tom Ford eau de parfum 100 ml products side by side: a dark brown box (Tobacco Vanille) and a gold ridged box (Black Orchid).",
+              "preferredCategory": "product",
+              "aspect": "4:5",
+              "assignedAsset": "asset-002"
+            }
+          ]
+        },
+        {
+          "id": "home-how-it-works",
+          "type": "steps-teaser",
+          "purpose": "Show in three quick steps that ordering is easy by DM, linking to the How to Order page.",
+          "layoutNotes": "Cream background. Three columns separated by vertical gold hairlines, each with a large serif numeral (01, 02, 03) in #B88A4E, a short title and one line. A centered text link 'See how to order' sits below. No photos and no card shadows.",
+          "slots": []
+        },
+        {
+          "id": "home-brand-note",
+          "type": "brand-statement",
+          "purpose": "Close with a short, warm statement of what Bonza stands for and links to Instagram and TikTok.",
+          "layoutNotes": "Narrow centered column (max 640px) with a large italic serif quote-style sentence, a short paragraph, and small Instagram and TikTok text links underneath. The circular Bonza badge logo (asset-006) sits small above the statement as a brand mark, not as a photo. Thin gold hairlines above and below.",
+          "slots": []
+        }
+      ]
+    },
+    {
+      "slug": "perfumes",
+      "sections": [
+        {
+          "id": "perfumes-intro",
+          "type": "page-header",
+          "purpose": "Introduce the catalogue and let visitors jump to a category.",
+          "layoutNotes": "Left-aligned large serif title with a short line of intro, and a row of four anchor links (Men's EDP, Women's EDP, Men's EDT, Gift sets) as uppercase text tabs with a gold underline on hover. Plenty of top and bottom space. No image.",
+          "slots": []
+        },
+        {
+          "id": "perfumes-mens-edp",
+          "type": "product-list",
+          "purpose": "List men's eau de parfum with names, sizes and prices.",
+          "layoutNotes": "Section label at left (sticky on desktop, 25% width), with a 3-column product grid on the right. Each product has a 4:5 photo, serif name, small size line, a price right-aligned in #9A6B35 (price from the customer, never invented) and a 'Order by DM' text link. Hairline dividers, no shadows. Product photos are to be supplied by the customer, since the existing group shots are already used on Home. Third-party brand rights must be confirmed with the customer.",
+          "slots": [
+            {
+              "id": "perfumes-mens-edp-image",
+              "kind": "image",
+              "description": "Individual product photos for each men's eau de parfum, ideally box and bottle on a clean warm background.",
+              "preferredCategory": "product",
+              "aspect": "4:5",
+              "assignedAsset": null
+            }
+          ]
+        },
+        {
+          "id": "perfumes-womens-edp",
+          "type": "product-list",
+          "purpose": "List women's eau de parfum with names, sizes and prices.",
+          "layoutNotes": "Same grid as the men's section but mirrored: the sticky label is on the right and the grid on the left, to give the page a rhythm. Cream-tinted band (slightly darker than the background, about #EBDDCB) behind the section.",
+          "slots": [
+            {
+              "id": "perfumes-womens-edp-image",
+              "kind": "image",
+              "description": "Individual product photos for each women's eau de parfum, ideally box and bottle on a clean warm background.",
+              "preferredCategory": "product",
+              "aspect": "4:5",
+              "assignedAsset": null
+            }
+          ]
+        },
+        {
+          "id": "perfumes-mens-edt",
+          "type": "product-list",
+          "purpose": "List men's eau de toilette with names, sizes and prices.",
+          "layoutNotes": "Standard layout (label left, grid right) on the cream background. Same card style: photo, name, size, price, DM link.",
+          "slots": [
+            {
+              "id": "perfumes-mens-edt-image",
+              "kind": "image",
+              "description": "Individual product photos for each men's eau de toilette, ideally box and bottle on a clean warm background.",
+              "preferredCategory": "product",
+              "aspect": "4:5",
+              "assignedAsset": null
+            }
+          ]
+        },
+        {
+          "id": "perfumes-gift-sets",
+          "type": "product-list",
+          "purpose": "List eau de parfum gift sets with contents and prices.",
+          "layoutNotes": "Deep brown band with cream text and gold prices. Two or three larger cards in a row, each with a 4:5 photo, the set name, a line on what is inside (for example the number of miniatures) and the price. The customer supplies prices.",
+          "slots": [
+            {
+              "id": "perfumes-gift-sets-image",
+              "kind": "image",
+              "description": "Individual photos of each eau de parfum gift set, shown upright on a clean background.",
+              "preferredCategory": "product",
+              "aspect": "4:5",
+              "assignedAsset": null
+            }
+          ]
+        },
+        {
+          "id": "perfumes-order-cta",
+          "type": "cta-band",
+          "purpose": "Tell visitors how to buy after browsing: send a DM with the perfume name.",
+          "layoutNotes": "Full-width cream section with a thin gold border. A serif line at left and two buttons at right: a solid brown 'Order on Instagram' and an outline 'Message on TikTok'. Short text line underneath.",
+          "slots": []
+        }
+      ]
+    },
+    {
+      "slug": "how-to-order",
+      "sections": [
+        {
+          "id": "how-to-order-intro",
+          "type": "page-header",
+          "purpose": "Explain in one friendly sentence that Bonza takes orders by direct message.",
+          "layoutNotes": "Left-aligned large serif title with a short intro in a 60% column. A right-hand column holds a small gold line-art envelope or chat-bubble icon, not a photo. Generous whitespace.",
+          "slots": []
+        },
+        {
+          "id": "how-to-order-steps",
+          "type": "steps",
+          "purpose": "Walk through the DM ordering process step by step in clear, simple wording.",
+          "layoutNotes": "Vertical timeline: a thin gold vertical line with large serif numerals on the left (01 to 04) and the step title and text on the right, each separated by generous spacing. On desktop, a chat-screenshot panel sits at the right (about 35%) to illustrate the process; the customer supplies a screenshot or illustrated steps, otherwise it is a placeholder. No icon grid and no card shadows.",
+          "slots": [
+            {
+              "id": "how-to-order-steps-image",
+              "kind": "image",
+              "description": "Sample DM or WhatsApp order conversation screenshot, or illustrated steps, supplied by the customer.",
+              "preferredCategory": "lifestyle",
+              "aspect": "3:4",
+              "assignedAsset": null
+            }
+          ]
+        },
+        {
+          "id": "how-to-order-faq",
+          "type": "faq",
+          "purpose": "Answer common questions (payment, delivery, availability) in short items; the details come from the customer.",
+          "layoutNotes": "Two-column layout: title left, accordion list right with hairline separators and a plus icon in gold. Questions in serif, answers in Jost.",
+          "slots": []
+        },
+        {
+          "id": "how-to-order-cta",
+          "type": "cta-band",
+          "purpose": "Invite the visitor to start the order by DM now.",
+          "layoutNotes": "Deep brown band with a centered-left serif line, cream text and two buttons for Instagram and TikTok. Compact height.",
+          "slots": []
+        }
+      ]
+    },
+    {
+      "slug": "contact",
+      "sections": [
+        {
+          "id": "contact-intro",
+          "type": "page-header",
+          "purpose": "Invite customers to get in touch with Bonza.",
+          "layoutNotes": "Large serif title at left with a warm, short line of text. A thin gold rule underneath. No image.",
+          "slots": []
+        },
+        {
+          "id": "contact-channels",
+          "type": "contact-details",
+          "purpose": "Show the ways to reach Bonza: Instagram and TikTok (@bonza_perfumes), plus any other details the customer confirms.",
+          "layoutNotes": "Two-column layout. On the left are large list-style channel rows (Instagram, TikTok), each with the handle in serif, a small uppercase label and an arrow link, separated by hairlines. On the right is the circular Bonza badge logo (asset-006) in a round frame about 280px wide with a thin gold ring, used as a brand mark, not a photo. The logo shows a WhatsApp number, but it is not in the brief, so it must be confirmed by the customer before use. No address, phone, email or hours are provided, so no map and no form with invented details.",
+          "slots": []
+        },
+        {
+          "id": "contact-cta",
+          "type": "cta-band",
+          "purpose": "Point visitors back to the catalogue or to the How to Order page.",
+          "layoutNotes": "Cream section with a short serif line and two text links with arrows, with a hairline above. Compact.",
+          "slots": []
+        }
+      ]
+    }
+  ],
+  "avoid": [
+    "Purple or blue-to-purple gradients",
+    "Glassmorphism",
+    "Generic SaaS feature-card grids",
+    "Centered hero with two buttons as default",
+    "Stock-photo look",
+    "Excessive rounded corners and shadows",
+    "Showing the customer's snapshots uncropped with the cluttered home interior, windows and furniture visible",
+    "Cold white, clinical or neon nightclub styling that clashes with the warm gold-and-cream brand",
+    "Invented prices, discount badges, ratings or checkout/cart UI, since orders are placed by DM",
+    "Using the circular logo badge as a hero or product photo"
+  ],
+  "styleBlock": "Warm classic perfume boutique. Palette: cream #F3EADF background, deep brown #5A3A1C primary for buttons and dark bands, bronze #9A6B35 for prices and links, gold #B88A4E for hairlines and numerals, near-black brown #2E1D0E text. Headings in Libre Caslon Display (large, sentence case, occasional italic), body and uppercase tracked labels in Jost. Generous whitespace, asymmetric layouts, 1px gold hairlines instead of shadows, corners max 4px. Product photos are tall 4:5 frames, tightly cropped, warm-toned, thin gold border. Catalogue is a menu-like list: name, size, right-aligned price. Mood: elegant, inviting, quietly luxurious."
+}

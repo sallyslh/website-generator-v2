@@ -1,0 +1,38 @@
+node_modules
+.env
+projects/*
+!projects/.gitkeep
+
+# temporary logs from background runs
+.*.log
+.stage5-id
+
+# scratch scripts and logs from working sessions
+.fix*.cjs
+*.log
+
+# customers photos used as local test inputs: never committed
+test-businesses/*/assets/*.jpg
+test-businesses/*/assets/*.jpeg
+test-businesses/*/assets/*.png
+test-businesses/*/assets/*.webp
+test-businesses/*/assets/*.pdf
+
+# scratch files from working sessions (pictures, scripts, notes): never committed
+.*.jpg
+.*.png
+.*.mjs
+.*.cjs
+.*.txt
+.*.json
+
+# generated comparison page (it holds screenshots with customers photos): never committed
+docs/restaurant-comparison.html
+docs/restaurant-comparison/
+
+# phone screenshots of real customers sites (they hold customers photos): never committed
+docs/phone-previews/
+
+# orders received by the order service (customers' names, phones, addresses): never committed
+orders-data/
+tools/chat-eval/last-run.json

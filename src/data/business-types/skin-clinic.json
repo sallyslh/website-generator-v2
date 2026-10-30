@@ -1,0 +1,834 @@
+{
+  "type": "skin-clinic",
+  "label": "Skin clinic / beauty studio",
+  "kind": "services",
+  "researchedAt": "2026-10-29",
+  "draftedByModel": true,
+  "note": "Written by the model from general knowledge. Pages are ordered from the most to the least important; each has sections inside it. \"merges\" lists the draft pages that were joined because they said the same thing. A person should read it once.",
+  "draftPages": 35,
+  "pages": [
+    {
+      "id": "home",
+      "title": "Home",
+      "purpose": "Introduces the clinic, its signature treatments and an easy path to booking.",
+      "default": true,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "review",
+        "price",
+        "contact"
+      ],
+      "uniqueContent": "A first impression of the clinic with signature treatments, a rating snapshot and a clear booking button.",
+      "tier": "essential",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Intro",
+          "content": "Short welcome line, a strong photo of the clinic and a main 'Book online' button."
+        },
+        {
+          "title": "Signature treatments",
+          "content": "Three or four popular treatments with starting prices, each linking to Treatments."
+        },
+        {
+          "title": "Client reviews",
+          "content": "A few short testimonials with the average star rating."
+        },
+        {
+          "title": "New to the clinic",
+          "content": "A short pointer to the free consultation and the First visit page."
+        },
+        {
+          "title": "Contact strip",
+          "content": "Phone, address, opening hours and a map link."
+        }
+      ],
+      "mergedFrom": [
+        "home"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "treatments",
+      "title": "Treatments",
+      "purpose": "One long page covering every facial, skin, laser, injectable and beauty service the clinic offers.",
+      "default": true,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "price",
+        "people",
+        "review"
+      ],
+      "uniqueContent": "The detailed description of each treatment: what it does, who it suits, session length, downtime and what to expect.",
+      "tier": "essential",
+      "layoutIdea": "One long page: an overview board at the top with a tile per category that jumps down to its block, then one block per category with its treatments listed in detail.",
+      "sections": [
+        {
+          "title": "Overview board",
+          "content": "Tiles for every category that jump to the matching block below."
+        },
+        {
+          "title": "Facials",
+          "content": "HydraFacial, deep cleansing, LED light therapy and dermaplaning with what each one does."
+        },
+        {
+          "title": "Peels, microneedling & rejuvenation",
+          "content": "Chemical peels, microneedling and mesotherapy with expected results and downtime."
+        },
+        {
+          "title": "Laser hair removal",
+          "content": "Treatment areas, the patch test, how many sessions are needed and what happens between them."
+        },
+        {
+          "title": "Anti-wrinkle & dermal filler",
+          "content": "Injectable treatments, who performs them and how the consultation works (shown only if the clinic offers them)."
+        },
+        {
+          "title": "Brows & lashes",
+          "content": "Lash lifts, extensions, brow lamination, tinting and microblading."
+        },
+        {
+          "title": "Waxing, nails & body",
+          "content": "Waxing, manicures, pedicures and body treatments."
+        }
+      ],
+      "mergedFrom": [
+        "treatments",
+        "facials",
+        "advanced-treatments",
+        "laser-hair-removal",
+        "injectables",
+        "brows-lashes",
+        "nails-waxing"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "book-appointment",
+      "title": "Book online",
+      "purpose": "Lets visitors book every kind of visit in one place.",
+      "default": true,
+      "feature": "booking",
+      "featureNote": "treatment appointment with chosen therapist; free consultation or skin analysis; bridal trial or consultation; group session request; workshop seat",
+      "demoNeeds": [
+        "people",
+        "price",
+        "contact"
+      ],
+      "uniqueContent": "The booking flow itself: choose the service, the therapist and a time slot, or send a request for groups and workshops.",
+      "tier": "essential",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Treatment appointment",
+          "content": "Choose a treatment, a therapist and an available time slot."
+        },
+        {
+          "title": "Free consultation",
+          "content": "Book a short introductory chat or skin analysis slot."
+        },
+        {
+          "title": "Bridal trial",
+          "content": "Book a bridal skin consultation or makeup trial."
+        },
+        {
+          "title": "Group session request",
+          "content": "Request form for pamper parties, hen parties and team events."
+        },
+        {
+          "title": "Workshop seat",
+          "content": "Pick a date and reserve a seat in a masterclass."
+        },
+        {
+          "title": "Before you book",
+          "content": "Short note on deposits and patch tests, linking to the policies in FAQ."
+        }
+      ],
+      "mergedFrom": [
+        "book-appointment",
+        "free-consultation"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "prices",
+      "title": "Prices",
+      "purpose": "A clear price menu for every treatment, add-on and course package.",
+      "default": true,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "price"
+      ],
+      "uniqueContent": "The full price list with course package pricing and add-ons.",
+      "tier": "essential",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Facials & skin treatments",
+          "content": "Prices and durations for facials, peels and microneedling."
+        },
+        {
+          "title": "Laser & injectables",
+          "content": "Prices per area, patch test fee and course savings."
+        },
+        {
+          "title": "Brows, lashes, waxing & nails",
+          "content": "Prices for the beauty studio services."
+        },
+        {
+          "title": "Add-ons",
+          "content": "Extras that can be added to any treatment."
+        },
+        {
+          "title": "Course packages",
+          "content": "Multi-session packages and what they save."
+        }
+      ],
+      "mergedFrom": [
+        "prices"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "team",
+      "title": "Team",
+      "purpose": "Introduces the people who will treat the client.",
+      "default": true,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "people"
+      ],
+      "uniqueContent": "Profiles of each therapist, aesthetician and clinician with qualifications and specialties.",
+      "tier": "essential",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Meet the team",
+          "content": "Photo and short bio for each practitioner."
+        },
+        {
+          "title": "Qualifications",
+          "content": "Training, certifications and years of experience."
+        },
+        {
+          "title": "Specialties",
+          "content": "Which treatments each person focuses on."
+        },
+        {
+          "title": "Book with a therapist",
+          "content": "A link from each profile to the booking page."
+        }
+      ],
+      "mergedFrom": [
+        "team"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "before-after",
+      "title": "Before & after",
+      "purpose": "Shows real client results.",
+      "default": true,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "stat",
+        "review"
+      ],
+      "uniqueContent": "Before-and-after photos with treatment type and number of sessions.",
+      "tier": "essential",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Filter by treatment",
+          "content": "Buttons to browse results by treatment or skin concern."
+        },
+        {
+          "title": "Before & after gallery",
+          "content": "Paired photos with the treatment used and the number of sessions."
+        },
+        {
+          "title": "Results notes",
+          "content": "A reminder that results vary and photos are shared with client consent."
+        }
+      ],
+      "mergedFrom": [
+        "before-after"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "contact",
+      "title": "Contact",
+      "purpose": "Tells visitors where the clinic is and how to reach it.",
+      "default": true,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "contact"
+      ],
+      "uniqueContent": "Address, map, phone, opening hours, parking and the enquiry form.",
+      "tier": "essential",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Address & map",
+          "content": "Clinic location with an embedded map and directions."
+        },
+        {
+          "title": "Opening hours",
+          "content": "Weekly hours and any holiday changes."
+        },
+        {
+          "title": "Phone & messaging",
+          "content": "Phone number, email and messaging options."
+        },
+        {
+          "title": "Parking & access",
+          "content": "Where to park and how to reach the clinic."
+        },
+        {
+          "title": "Enquiry form",
+          "content": "A simple form for questions that are not bookings."
+        }
+      ],
+      "mergedFrom": [
+        "contact"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "reviews",
+      "title": "Reviews",
+      "purpose": "Builds trust with feedback from real clients.",
+      "default": false,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "review",
+        "stat"
+      ],
+      "uniqueContent": "The full collection of client testimonials and ratings.",
+      "tier": "recommended",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Rating summary",
+          "content": "Average score and number of reviews."
+        },
+        {
+          "title": "Client testimonials",
+          "content": "Written reviews with the treatment each client had."
+        },
+        {
+          "title": "Leave a review",
+          "content": "A link to the review platform."
+        }
+      ],
+      "mergedFrom": [
+        "reviews"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "skin-concerns",
+      "title": "Skin concerns",
+      "purpose": "Helps visitors find the right care by concern or by who it is for.",
+      "default": false,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "review",
+        "price"
+      ],
+      "uniqueContent": "A guide organised by problem and audience (acne, pigmentation, rosacea, men's skin, teen skin) plus a skin type quiz.",
+      "tier": "recommended",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Find by concern",
+          "content": "Acne, pigmentation, rosacea, ageing and sensitivity, each with suggested treatments."
+        },
+        {
+          "title": "Skin type quiz",
+          "content": "A short quiz that suggests a skin type and matching treatments."
+        },
+        {
+          "title": "Men's skin & grooming",
+          "content": "Care for shaving irritation and men's skin routines."
+        },
+        {
+          "title": "Teen skin & acne care",
+          "content": "Gentle programs for teenagers with parent information and consent guidance."
+        },
+        {
+          "title": "Not sure where to start",
+          "content": "A link to book a free consultation."
+        }
+      ],
+      "mergedFrom": [
+        "skin-concerns",
+        "skin-quiz",
+        "mens-skin",
+        "teen-skin"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "about",
+      "title": "About us",
+      "purpose": "Explains who the clinic is and why clients can trust it.",
+      "default": false,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "people",
+        "stat"
+      ],
+      "uniqueContent": "The clinic's story and philosophy, the brands and devices it uses, and its hygiene and safety standards.",
+      "tier": "recommended",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Our story",
+          "content": "How and why the clinic started."
+        },
+        {
+          "title": "Philosophy & values",
+          "content": "The approach to skin health and client care."
+        },
+        {
+          "title": "Brands & technology",
+          "content": "Product brands and devices used and why they were chosen."
+        },
+        {
+          "title": "Hygiene & safety",
+          "content": "Sterilisation, practitioner qualifications and clinic standards."
+        },
+        {
+          "title": "The clinic in numbers",
+          "content": "Years open, clients treated and certifications."
+        }
+      ],
+      "mergedFrom": [
+        "about",
+        "brands",
+        "hygiene-safety"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "first-visit",
+      "title": "First visit",
+      "purpose": "Takes away the worry for new clients.",
+      "default": false,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "review"
+      ],
+      "uniqueContent": "A step-by-step walkthrough of a first appointment from arrival to leaving.",
+      "tier": "recommended",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Before you arrive",
+          "content": "What to bring and how to prepare your skin."
+        },
+        {
+          "title": "Skin assessment",
+          "content": "How the first consultation and assessment work."
+        },
+        {
+          "title": "The treatment",
+          "content": "What happens in the room and how long it takes."
+        },
+        {
+          "title": "After your visit",
+          "content": "What follows and a link to the aftercare guides."
+        }
+      ],
+      "mergedFrom": [
+        "first-visit"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "faq",
+      "title": "FAQ",
+      "purpose": "Answers common questions and states the clinic's rules in one place.",
+      "default": false,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "contact",
+        "price"
+      ],
+      "uniqueContent": "Questions on safety, pain, downtime, pregnancy and results, plus deposit, cancellation and patch-test policies.",
+      "tier": "recommended",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Safety & suitability",
+          "content": "Pregnancy, skin conditions and who should not have certain treatments."
+        },
+        {
+          "title": "Pain, downtime & results",
+          "content": "What to expect during and after treatments."
+        },
+        {
+          "title": "Booking & cancellation policy",
+          "content": "Deposits, rescheduling and late arrivals."
+        },
+        {
+          "title": "Patch tests",
+          "content": "When a patch test is required and how it works."
+        },
+        {
+          "title": "Still have a question?",
+          "content": "A link to the contact page."
+        }
+      ],
+      "mergedFrom": [
+        "faq",
+        "booking-policy"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "offers",
+      "title": "Offers",
+      "purpose": "Brings together current deals and regular-client plans.",
+      "default": false,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "price"
+      ],
+      "uniqueContent": "Seasonal promotions, new-client deals, monthly skin plans and loyalty points.",
+      "tier": "recommended",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Current offers",
+          "content": "Seasonal promotions and treatment bundles with end dates."
+        },
+        {
+          "title": "New client deal",
+          "content": "The welcome offer for a first treatment."
+        },
+        {
+          "title": "Memberships",
+          "content": "Monthly skin plans with what is included and the price."
+        },
+        {
+          "title": "Loyalty points",
+          "content": "How regular clients earn and use points."
+        }
+      ],
+      "mergedFrom": [
+        "offers",
+        "memberships"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "bridal",
+      "title": "Bridal",
+      "purpose": "Serves brides planning skin and makeup for the wedding.",
+      "default": false,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "price",
+        "review",
+        "people"
+      ],
+      "uniqueContent": "Pre-wedding skin plans, trial sessions and wedding-day makeup packages.",
+      "tier": "recommended",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Pre-wedding skin plan",
+          "content": "A timeline of treatments in the months before the wedding."
+        },
+        {
+          "title": "Trial session",
+          "content": "What happens in a makeup or skin trial."
+        },
+        {
+          "title": "Wedding-day packages",
+          "content": "Makeup and beauty packages for the bride and party."
+        },
+        {
+          "title": "Enquire",
+          "content": "A link to book a bridal trial or consultation."
+        }
+      ],
+      "mergedFrom": [
+        "bridal"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "skincare-shop",
+      "title": "Shop",
+      "purpose": "Sells home-care products and gift vouchers online.",
+      "default": false,
+      "feature": "order",
+      "featureNote": "skincare products for pickup or delivery; gift voucher by treatment or amount",
+      "demoNeeds": [
+        "price",
+        "review"
+      ],
+      "uniqueContent": "Recommended skincare products and treatment or amount vouchers that can be ordered online.",
+      "tier": "recommended",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Skincare products",
+          "content": "Home-care products grouped by skin type or concern."
+        },
+        {
+          "title": "Gift vouchers",
+          "content": "Treatment or amount vouchers sent by email or as a printed card."
+        },
+        {
+          "title": "Pickup & delivery",
+          "content": "Collect at the clinic or have the order delivered."
+        },
+        {
+          "title": "Product advice",
+          "content": "Recommendations from the team on which product suits whom."
+        }
+      ],
+      "mergedFrom": [
+        "skincare-shop",
+        "gift-vouchers"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "aftercare",
+      "title": "Aftercare",
+      "purpose": "Gives clients clear care instructions after each treatment.",
+      "default": false,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "contact"
+      ],
+      "uniqueContent": "Treatment-by-treatment instructions for the days after a visit.",
+      "tier": "recommended",
+      "layoutIdea": "One long page: a list at the top that jumps to each treatment's instructions below.",
+      "sections": [
+        {
+          "title": "Choose your treatment",
+          "content": "A jump list to each set of instructions."
+        },
+        {
+          "title": "Facials, peels & microneedling",
+          "content": "What to do and avoid in the days after."
+        },
+        {
+          "title": "Laser & injectables",
+          "content": "Sun care, skin care and warning signs."
+        },
+        {
+          "title": "Brows, lashes & waxing",
+          "content": "Care to make results last."
+        },
+        {
+          "title": "When to call us",
+          "content": "Symptoms that need advice and the contact number."
+        }
+      ],
+      "mergedFrom": [
+        "aftercare"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "events",
+      "title": "Events",
+      "purpose": "Presents group experiences for parties, companies and learners.",
+      "default": false,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "price",
+        "review",
+        "people"
+      ],
+      "uniqueContent": "Pamper parties, corporate team events and workshops, with what each includes.",
+      "tier": "optional",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Pamper parties",
+          "content": "Birthday, hen party and friends' afternoon packages."
+        },
+        {
+          "title": "Corporate & team events",
+          "content": "Mini-facials, hand treatments and workshops for offices."
+        },
+        {
+          "title": "Workshops & masterclasses",
+          "content": "Upcoming skincare routine and makeup classes."
+        },
+        {
+          "title": "Request a group session",
+          "content": "A link to the group and workshop booking."
+        }
+      ],
+      "mergedFrom": [
+        "pamper-parties",
+        "corporate-wellness",
+        "workshops"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "journal",
+      "title": "Blog",
+      "purpose": "Shares skincare knowledge from the team.",
+      "default": false,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "people"
+      ],
+      "uniqueContent": "Articles and seasonal skincare tips written by the clinic's practitioners.",
+      "tier": "optional",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Latest articles",
+          "content": "The newest posts with images and short summaries."
+        },
+        {
+          "title": "Seasonal tips",
+          "content": "Skincare advice for summer, winter and other seasons."
+        },
+        {
+          "title": "Categories",
+          "content": "Browse by skin concern or treatment."
+        }
+      ],
+      "mergedFrom": [
+        "journal"
+      ],
+      "evidence": "idea"
+    }
+  ],
+  "merges": [
+    {
+      "kept": "treatments",
+      "absorbed": [
+        "facials",
+        "advanced-treatments",
+        "laser-hair-removal",
+        "injectables",
+        "brows-lashes",
+        "nails-waxing"
+      ],
+      "why": "Each treatment or service of a clinic is a block of one long Treatments page with an overview board at the top."
+    },
+    {
+      "kept": "book-appointment",
+      "absorbed": [
+        "free-consultation"
+      ],
+      "why": "Every kind of booking belongs to one Book page, so the free consultation is a section there."
+    },
+    {
+      "kept": "skin-concerns",
+      "absorbed": [
+        "skin-quiz",
+        "mens-skin",
+        "teen-skin"
+      ],
+      "why": "They are all ways to find the right care by concern or audience, so they sit as sections of one guide."
+    },
+    {
+      "kept": "about",
+      "absorbed": [
+        "brands",
+        "hygiene-safety"
+      ],
+      "why": "Brands, technology and hygiene standards support the clinic's story and trust, so they live in About us."
+    },
+    {
+      "kept": "faq",
+      "absorbed": [
+        "booking-policy"
+      ],
+      "why": "Rules, policies and questions form one page."
+    },
+    {
+      "kept": "offers",
+      "absorbed": [
+        "memberships"
+      ],
+      "why": "Memberships and loyalty are ongoing offers, so they sit with promotions."
+    },
+    {
+      "kept": "skincare-shop",
+      "absorbed": [
+        "gift-vouchers"
+      ],
+      "why": "All online ordering sits in one page, with vouchers as a section next to products."
+    },
+    {
+      "kept": "events",
+      "absorbed": [
+        "pamper-parties",
+        "corporate-wellness",
+        "workshops"
+      ],
+      "why": "Group experiences share one audience and one enquiry route, so they become sections of one Events page. Their booking forms live in Book online."
+    }
+  ],
+  "review": {
+    "rounds": 2,
+    "applied": {
+      "removedSections": [
+        {
+          "page": "Bridal",
+          "section": "Bridal reviews",
+          "ownedBy": "Reviews"
+        }
+      ],
+      "merged": [],
+      "renamed": [
+        {
+          "from": "Our work",
+          "to": "Before & after"
+        }
+      ]
+    },
+    "remaining": [],
+    "note": ""
+  },
+  "homeSectionIdeas": [
+    "Hero with a calm studio photo and a Book Now button",
+    "Signature treatments with prices from",
+    "Skin concern finder (acne, pigmentation, dullness, ageing)",
+    "Meet the therapists",
+    "Before-and-after results strip",
+    "Client reviews with star ratings",
+    "First visit steps and free consultation invitation",
+    "Opening hours, location map and current offer"
+  ],
+  "styleNotes": [
+    "Soft, clean palette of warm neutrals, sage or blush with one deeper accent for buttons",
+    "Generous white space and light, elegant serif headings paired with a simple sans-serif body",
+    "Real, natural-light photography of skin, treatment rooms and team, avoiding heavy retouching",
+    "Reassuring clinical details (qualifications, hygiene) shown calmly, with clear and prominent booking buttons on mobile"
+  ],
+  "sources": []
+}

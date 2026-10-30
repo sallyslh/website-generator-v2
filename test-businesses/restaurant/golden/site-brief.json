@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "projectId": "restaurant-s1-20261009-165050",
+  "business": {
+    "name": "Beit el Zaatar",
+    "type": "restaurant",
+    "description": "Lebanese restaurant in Batroun serving mostly manakish in the morning and grills and mezze at night, based on the owner's mother's recipes. It has a terrace facing the sea.",
+    "location": "Batroun old souk, near the church",
+    "contact": {
+      "phone": "03 456 789",
+      "email": "beitelzaatar.batroun@gmail.com",
+      "address": "Batroun old souk, near the church",
+      "hours": "Every day 8am to midnight; in winter closes at 10pm"
+    },
+    "socialLinks": [
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/beitelzaatar.batroun"
+      }
+    ]
+  },
+  "goals": {
+    "primary": "Get people to book tables for the weekend, so the restaurant stops losing bookings on WhatsApp",
+    "secondary": [
+      "Show the terrace"
+    ]
+  },
+  "audience": {
+    "description": "Families from Beirut on weekends, tourists, and people from Batroun coming for breakfast",
+    "needs": [
+      "Book a table for the weekend",
+      "See the terrace and the food"
+    ]
+  },
+  "offerings": [
+    {
+      "name": "Manakish zaatar",
+      "description": ""
+    },
+    {
+      "name": "Manakish cheese",
+      "description": ""
+    },
+    {
+      "name": "Kafta grill",
+      "description": ""
+    },
+    {
+      "name": "Mixed grill",
+      "description": ""
+    },
+    {
+      "name": "Mezze platter for 4",
+      "description": ""
+    },
+    {
+      "name": "Fattoush",
+      "description": ""
+    },
+    {
+      "name": "Hummus",
+      "description": ""
+    },
+    {
+      "name": "Knefe",
+      "description": ""
+    }
+  ],
+  "pages": [
+    {
+      "slug": "home",
+      "title": "Home",
+      "purpose": "Introduce the restaurant, show the sea-facing terrace and encourage weekend table bookings"
+    },
+    {
+      "slug": "menu",
+      "title": "Menu",
+      "purpose": "Present the dishes (manakish, grills, mezze and more) without prices"
+    },
+    {
+      "slug": "about",
+      "title": "About Us",
+      "purpose": "Tell the story of the restaurant and the owner's mother's recipes"
+    },
+    {
+      "slug": "contact",
+      "title": "Contact",
+      "purpose": "Give phone, email, address, opening hours, map and a contact form"
+    }
+  ],
+  "features": [
+    {
+      "type": "contact-form"
+    },
+    {
+      "type": "map-embed"
+    },
+    {
+      "type": "social-links"
+    },
+    {
+      "type": "gallery"
+    }
+  ],
+  "brand": {
+    "hasIdentity": true,
+    "colors": [
+      "green",
+      "orange"
+    ],
+    "personality": [
+      "warm",
+      "homey",
+      "sea"
+    ]
+  },
+  "tone": "Warm, welcoming and homey, like being invited to a family table by the sea; friendly and simple rather than formal or luxurious",
+  "references": {
+    "liked": [],
+    "disliked": [
+      {
+        "why": "Looks like hotel websites, all black and gold"
+      }
+    ]
+  },
+  "language": "en",
+  "unknowns": [
+    "Prices not to be shown (owner does not want prices on the site)",
+    "No dish descriptions provided",
+    "No liked reference websites provided",
+    "No fonts provided",
+    "No exact hex codes for green and orange provided",
+    "No booking link provided; the owner wants weekend table bookings, but a booking-embed was not requested (idea: add a booking link or WhatsApp booking later)",
+    "Dates when winter hours (closing at 10pm) apply were not provided",
+    "requested but out of MVP scope: catering for weddings (owner is unsure whether to include it)"
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "projectId": "perfume-s1-20261009-171107",
+  "business": {
+    "name": "Bonza",
+    "type": "Online perfume shop",
+    "description": "Online perfume shop",
+    "location": "",
+    "contact": {
+      "phone": "",
+      "email": "",
+      "address": "",
+      "hours": ""
+    },
+    "socialLinks": [
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/bonza_perfumes"
+      },
+      {
+        "platform": "tiktok",
+        "url": "https://www.tiktok.com/@bonza_perfumes"
+      }
+    ]
+  },
+  "goals": {
+    "primary": "A website that shows the perfumes with their prices, and to sell them online",
+    "secondary": [
+      "Customers can order by DM"
+    ]
+  },
+  "audience": {
+    "description": "",
+    "needs": []
+  },
+  "offerings": [
+    {
+      "name": "Men's eau de parfum",
+      "description": ""
+    },
+    {
+      "name": "Women's eau de parfum",
+      "description": ""
+    },
+    {
+      "name": "Eau de toilette for men",
+      "description": ""
+    },
+    {
+      "name": "Eau de parfum gift sets",
+      "description": ""
+    }
+  ],
+  "pages": [
+    {
+      "slug": "home",
+      "title": "Home",
+      "purpose": "Introduce Bonza and highlight featured perfumes"
+    },
+    {
+      "slug": "perfumes",
+      "title": "Perfumes",
+      "purpose": "Show the perfumes with their prices"
+    },
+    {
+      "slug": "how-to-order",
+      "title": "How to Order",
+      "purpose": "Explain how customers can order by DM"
+    },
+    {
+      "slug": "contact",
+      "title": "Contact",
+      "purpose": "Let customers get in touch with Bonza"
+    }
+  ],
+  "features": [],
+  "brand": {
+    "hasIdentity": true,
+    "colors": [
+      "#F3EADF",
+      "#9A6B35",
+      "#B88A4E",
+      "#5A3A1C"
+    ],
+    "personality": [
+      "elegant",
+      "warm",
+      "classic"
+    ]
+  },
+  "tone": "Warm, elegant and inviting, with clear and simple wording",
+  "references": {
+    "liked": [],
+    "disliked": []
+  },
+  "language": "en",
+  "unknowns": [
+    "No location or contact details provided",
+    "No phone number provided",
+    "No email provided",
+    "No address provided",
+    "Opening hours not provided",
+    "Customer description not provided",
+    "Customer needs not provided",
+    "Pages were not specified by the customer, defaults proposed",
+    "No features specified by the customer",
+    "requested but out of MVP scope: online selling / online ordering (online shop checkout)",
+    "No liked reference websites provided",
+    "No disliked reference websites provided"
+  ],
+  "proposals": [
+    {
+      "path": "business.contact.phone",
+      "value": "81 526 765",
+      "evidence": "logo asset-006 shows the text 'WhatsApp: 81 526 765'.",
+      "status": "rejected"
+    },
+    {
+      "path": "business.socialLinks",
+      "value": [
+        "instagram:bonza_perfumes",
+        "tiktok:bonza_perfumes"
+      ],
+      "evidence": "logo asset-006 shows 'Instagram: bonza_perfumes' and 'TikTok: bonza_perfumes'.",
+      "status": "accepted"
+    },
+    {
+      "path": "offerings",
+      "value": [
+        "Men's eau de parfum",
+        "Women's eau de parfum",
+        "Eau de toilette for men",
+        "Eau de parfum gift sets"
+      ],
+      "evidence": "assets 002, 003, 004 and 005 show sealed boxes of men's and women's eau de parfum and eau de toilette, and asset-001 shows a 4-piece eau de parfum gift box.",
+      "status": "accepted"
+    },
+    {
+      "path": "brand.hasIdentity",
+      "value": true,
+      "evidence": "asset-006 is a logo file, a circular BONZA badge with a gold monogram B.",
+      "status": "accepted"
+    },
+    {
+      "path": "brand.colors",
+      "value": [
+        "#F3EADF",
+        "#9A6B35",
+        "#B88A4E",
+        "#5A3A1C"
+      ],
+      "evidence": "dominant colors of logo asset-006: cream background with gold and brown tones.",
+      "status": "accepted"
+    },
+    {
+      "path": "brand.personality",
+      "value": [
+        "elegant",
+        "warm",
+        "classic"
+      ],
+      "evidence": "asset-006 has a gold-rimmed badge on cream with a monogram and leaf motifs, and the perfume boxes in assets 001-005 have a refined look.",
+      "status": "accepted"
+    }
+  ]
+}

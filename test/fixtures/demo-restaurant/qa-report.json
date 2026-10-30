@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "passed": false,
+  "checks": [
+    { "name": "build", "status": "pass", "details": "" },
+    { "name": "broken-internal-links", "status": "fail", "details": "/servcies linked from home" }
+  ],
+  "manualChecklist": [{ "item": "Looks right on a phone (375px)", "status": "pending" }]
+}

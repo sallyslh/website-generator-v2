@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "projectId": "salon-s1-20261009-165104",
+  "business": {
+    "name": "Studio Lina",
+    "type": "hair salon",
+    "description": "Hair salon offering cuts, color, balayage, keratin, bridal hair, and also nails.",
+    "location": "Hamra, Beirut",
+    "contact": {
+      "phone": "70 123 456",
+      "email": "",
+      "address": "",
+      "hours": "Tue-Sat 10-7"
+    },
+    "socialLinks": []
+  },
+  "goals": {
+    "primary": "bookings",
+    "secondary": []
+  },
+  "audience": {
+    "description": "Women 20-45",
+    "needs": []
+  },
+  "offerings": [
+    {
+      "name": "Haircut",
+      "description": "",
+      "price": "from $25"
+    },
+    {
+      "name": "Color",
+      "description": ""
+    },
+    {
+      "name": "Balayage",
+      "description": ""
+    },
+    {
+      "name": "Keratin treatment",
+      "description": ""
+    },
+    {
+      "name": "Bridal hair",
+      "description": ""
+    },
+    {
+      "name": "Manicure and pedicure",
+      "description": ""
+    }
+  ],
+  "pages": [
+    {
+      "slug": "home",
+      "title": "Home",
+      "purpose": "Introduce Studio Lina and encourage visitors to book an appointment"
+    },
+    {
+      "slug": "services",
+      "title": "Services",
+      "purpose": "List the hair and nail services offered"
+    },
+    {
+      "slug": "gallery",
+      "title": "Gallery",
+      "purpose": "Show photos of the salon's work"
+    },
+    {
+      "slug": "contact",
+      "title": "Contact",
+      "purpose": "Location, opening hours and ways to get in touch"
+    }
+  ],
+  "features": [
+    {
+      "type": "booking-embed",
+      "url": "https://studiolina.example/book"
+    },
+    {
+      "type": "social-links"
+    },
+    {
+      "type": "gallery"
+    }
+  ],
+  "brand": {
+    "hasIdentity": false,
+    "colors": [
+      "pink (not too much)"
+    ],
+    "personality": [
+      "fresh",
+      "feminine",
+      "trendy"
+    ]
+  },
+  "tone": "Fresh, friendly and stylish, speaking warmly to women with a modern, upbeat voice",
+  "references": {
+    "liked": [
+      {
+        "url": "https://www.example-salon.com",
+        "why": "the photos are beautiful"
+      }
+    ],
+    "disliked": []
+  },
+  "language": "en",
+  "unknowns": [
+    "Pages were not specified by the customer, defaults proposed",
+    "No email provided",
+    "No street address provided beyond Hamra, Beirut",
+    "Phone number given as WhatsApp; WhatsApp is not a supported feature, number listed as phone",
+    "Prices only given for Haircut (from $25); other prices not provided",
+    "No offering descriptions provided",
+    "Instagram requested but no handle provided",
+    "No disliked reference websites provided",
+    "No fonts provided",
+    "No logo yet",
+    "requested but out of MVP scope: online shop for hair products (maybe later)"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "type": "padel",
+  "label": "Padel / sports club",
+  "kind": "services",
+  "researchedAt": "2026-10-26",
+  "note": "Structure and style only. Never copy another club's text, people, prices, photos or identity. evidence: 'seen' = found on real club sites or templates in the research; 'idea' = plausible for a club, not confirmed by the research, needs a person's review.",
+  "pages": [
+    { "id": "home", "title": "Home", "purpose": "A cinematic first impression of the club, with the main way to book.", "locked": true, "default": true, "evidence": "seen" },
+    { "id": "courts", "title": "Our courts", "purpose": "The courts, indoor and outdoor, with the atmosphere and facilities.", "default": true, "evidence": "seen" },
+    { "id": "coaches", "title": "Coaches & team", "purpose": "The people behind the club and the levels they coach.", "default": true, "evidence": "seen", "demoNeeds": ["people"] },
+    { "id": "book", "title": "Book a court", "purpose": "Pick a day and a time and reserve a court.", "default": true, "evidence": "seen", "feature": "booking" },
+    { "id": "contact", "title": "Contact", "purpose": "Location, WhatsApp, opening hours and social links.", "locked": true, "default": true, "evidence": "seen" },
+
+    { "id": "academy", "title": "Academy & lessons", "purpose": "Private, semi-private and group lessons for adults and kids, by level.", "default": false, "evidence": "seen" },
+    { "id": "clinics", "title": "Clinics & courses", "purpose": "Single-session clinics and multi-week courses by skill level.", "default": false, "evidence": "seen" },
+    { "id": "kids", "title": "Junior programs", "purpose": "Kids' groups and junior training.", "default": false, "evidence": "seen" },
+    { "id": "memberships", "title": "Memberships", "purpose": "Plans and benefits such as off-peak court time and earlier booking.", "default": false, "evidence": "seen" },
+    { "id": "tournaments", "title": "Tournaments & leagues", "purpose": "Competitions by level, with dates and how to join.", "default": false, "evidence": "seen" },
+    { "id": "social", "title": "Social play & Americano", "purpose": "Open play, mixers and Americano evenings for meeting players.", "default": false, "evidence": "seen" },
+    { "id": "events", "title": "Events", "purpose": "What is on at the club, by date.", "default": false, "evidence": "seen" },
+    { "id": "cafe", "title": "Café & lounge", "purpose": "Food, drinks and the social space on site.", "default": false, "evidence": "seen", "demoNeeds": ["price"] },
+    { "id": "proshop", "title": "Pro shop & rentals", "purpose": "Rackets, balls and gear to buy, and rackets to rent.", "default": false, "evidence": "seen", "demoNeeds": ["price"] },
+    { "id": "gallery", "title": "Gallery", "purpose": "Photos and moments from the club.", "default": false, "evidence": "seen" },
+    { "id": "community", "title": "Community", "purpose": "The club's players, stories and social side.", "default": false, "evidence": "seen" },
+    { "id": "blog", "title": "News & tips", "purpose": "Club news and padel tips.", "default": false, "evidence": "seen" },
+    { "id": "pricing", "title": "Prices", "purpose": "Court rates by time of day, rentals and lessons.", "default": false, "evidence": "seen", "demoNeeds": ["price"] },
+    { "id": "rules", "title": "Booking rules", "purpose": "Cancellation windows, how far ahead to book, and house rules.", "default": false, "evidence": "seen" },
+
+    { "id": "partner", "title": "Find a partner", "purpose": "Players looking for a match at their level.", "default": false, "evidence": "idea" },
+    { "id": "leaderboard", "title": "Leaderboard", "purpose": "Rankings for the club's leagues and tournaments.", "default": false, "evidence": "idea", "demoNeeds": ["people", "stat"] },
+    { "id": "corporate", "title": "Corporate events", "purpose": "Team events and company days at the club.", "default": false, "evidence": "idea" },
+    { "id": "parties", "title": "Birthday parties", "purpose": "Party packages with court time.", "default": false, "evidence": "idea", "demoNeeds": ["price"] },
+    { "id": "vouchers", "title": "Gift vouchers", "purpose": "Gift a game or a lesson.", "default": false, "evidence": "idea" },
+    { "id": "reviews", "title": "Reviews", "purpose": "What players say about the club.", "default": false, "evidence": "seen", "demoNeeds": ["review"] }
+  ],
+  "homeSectionIdeas": ["cinematic hero with booking button", "courts preview", "coaches", "upcoming events", "membership teaser", "gallery strip", "reviews", "location and hours band"],
+  "styleNotes": ["high-energy sport look", "floodlit courts at dusk", "booking is the main call to action", "memberships and court booking buttons are prominent"],
+  "sources": [
+    "https://playtomic.com/clubs/core-padel-nuneaton",
+    "https://playtomic.com/clubs/chalke-valley-padel-club",
+    "https://playtomic.com/kingdom-of-padel/60593fff-bd33-425e-a32f-90bd63aedf91",
+    "https://www.framer.com/marketplace/templates/padelix/",
+    "https://templates.webflow.com/html/rally-padel-website-template",
+    "https://wrapmarket.com/item/eliteclub-tennis-padel-sports-club-html-template-WB0K74PN8",
+    "https://padelusa.org/?p=6933",
+    "https://www.miamilivingmagazine.com/post/best-padel-clubs-miami-2026"
+  ]
+}

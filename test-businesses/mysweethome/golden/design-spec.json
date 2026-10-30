@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "direction": {
+    "summary": "A gift-boutique look built on the bow from My Sweet Home's logo: blush and rose on warm cream, with fine gold hairlines like ribbon edging, so every page feels like a gift being unwrapped.",
+    "style": "boutique-romantic editorial",
+    "mood": [
+      "sweet",
+      "feminine",
+      "elegant",
+      "warm",
+      "charming"
+    ]
+  },
+  "colors": {
+    "primary": "#E8909F",
+    "secondary": "#F7C6D0",
+    "accent": "#C9A56A",
+    "background": "#FFFAF8",
+    "text": "#4A2C33"
+  },
+  "typography": {
+    "headings": "Instrument Serif: large, light display serif. Use roman for page titles and italic for one emphasised word per heading.",
+    "body": "Figtree: friendly, rounded-geometric sans for paragraphs, navigation, buttons and product labels, in regular and medium weights.",
+    "scale": "Hero heading 64-80px desktop and 44px mobile, section headings 40px, subheads 22px, body 17px with 1.65 line height. Small uppercase letter-spaced labels at 12px in Figtree for categories. Optional: a handwritten touch in Caveat, used only for tiny captions such as 'made for gifting', never for paragraphs."
+  },
+  "layout": {
+    "principles": [
+      "Asymmetric, gift-card-like compositions: text on a cream ground at one side, a tall photo in a narrow column on the other. The photo sits slightly off-grid and overlaps a blush block behind it.",
+      "Thin gold (#C9A56A) hairline borders and small bow or star ornaments divide sections, echoing the ribbon edging of the logo, instead of heavy cards or shadows.",
+      "Alternate backgrounds between cream and soft blush bands so the pages read like layered tissue paper. Keep generous vertical spacing of 96-128px between sections.",
+      "Because the photos are tall portraits, the design is built around portrait crops (4:5 and 3:4) in staggered two- and three-column rhythms, never stretched wide.",
+      "Ordering is by contact: every product area ends in a clear 'Order by phone or message' call to action that leads to the Contact page, with no cart UI."
+    ],
+    "header": "White header with a thin gold bottom line. The logo (asset-001) sits left at about 64px high and is not enlarged because it is low resolution. Navigation (Home, Products, About, Contact) in Figtree medium, centered or right. A small rose pill button 'Order a gift' links to Contact. On mobile it collapses to the logo plus a simple menu.",
+    "footer": "Blush (#F7C6D0) footer with a gold hairline on top. The logo sits in a white panel to avoid a visible box, with the phone number 71-014463, the four page links, and a short charming sign-off line. Email, address, hours and social links appear only once provided. Small copyright line at the bottom."
+  },
+  "pages": [
+    {
+      "slug": "home",
+      "sections": [
+        {
+          "id": "home-hero",
+          "type": "hero",
+          "purpose": "Introduce My Sweet Home as a sweet, giftable shop and send visitors to the products or to order.",
+          "layoutNotes": "Asymmetric split: left 55% holds a large Instrument Serif headline with one italic word, a short line, and two buttons of different weight (a solid rose 'See the products' and a text link 'How to order'). Right 45% holds the tall 4:5 photo, cropped slightly on the right edge to remove the light edge artifact, and bleeding off the top and right of the viewport. A blush block sits offset behind the photo, with a small gold bow ornament overlapping its corner. The tall photo is deliberately used in a narrow column rather than a wide banner. The cut-off bottle lettering is not a concern at this crop.",
+          "slots": [
+            {
+              "id": "home-hero-image",
+              "kind": "image",
+              "description": "Two wildflower-print water bottles, one cream and one lavender, in a woven wicker basket with linen lining, against a soft blurred floral background.",
+              "preferredCategory": "product",
+              "aspect": "4:5",
+              "assignedAsset": "asset-003"
+            }
+          ]
+        },
+        {
+          "id": "home-categories",
+          "type": "category-strip",
+          "purpose": "Give a quick overview of the five product families so visitors know what the shop offers.",
+          "layoutNotes": "Horizontal band on blush. Five items in a single row on desktop (scrolling carousel on mobile). Each is a small label with a gold-line numeral, a short name and an arrow link to the Products page. No images in this strip, so it stays light. Names are exactly the offerings: body care gift sets, wildflower water bottles, floral tumblers with bow toppers, embroidered cushion covers, ceramic cups and saucers in gift boxes.",
+          "slots": []
+        },
+        {
+          "id": "home-featured",
+          "type": "featured-products",
+          "purpose": "Highlight the most charming home pieces with photos: the embroidered cushion cover and the boxed ceramic cups.",
+          "layoutNotes": "Two portrait photos in a staggered layout, the second dropped about 80px lower than the first. Each has a short caption block beside or below it, with a gold hairline and a 'Ask about this piece' link. The cushion photo has a '1/2' counter in the top-right corner, which must be cropped out (crop tight on the cushion and chair seat, 4:5). The ceramics photo has a '2/3' counter in the top-right corner, which must be cropped out too, with a tight crop around the white mirrored tray and boxed cups. Both are medium-quality screenshots, so keep them at moderate display size.",
+          "slots": [
+            {
+              "id": "home-featured-image",
+              "kind": "image",
+              "description": "A cream cushion cover embroidered with wildflowers, butterflies and a dandelion on a white chair in front of white blossom branches, with the counter overlay cropped out.",
+              "preferredCategory": "product",
+              "aspect": "4:5",
+              "assignedAsset": "asset-004"
+            },
+            {
+              "id": "home-featured-image-2",
+              "kind": "image",
+              "description": "A white ornate mirrored tray with a tulip-patterned espresso cup and saucer, surrounded by gift boxes of cream ceramic cups and saucers with bows, hearts and stars, cropped tightly around the tray.",
+              "preferredCategory": "product",
+              "aspect": "4:5",
+              "assignedAsset": "asset-006"
+            }
+          ]
+        },
+        {
+          "id": "home-gifting",
+          "type": "story-band",
+          "purpose": "Explain the 'gift-ready' idea in warm words and push visitors toward ordering.",
+          "layoutNotes": "Full-width rose-tinted band with centered Instrument Serif pull-quote in italic, framed above and below by gold hairlines and tiny stars. Under it, three short text steps (choose, tell us, receive a gift-ready piece) in a row, with no icons and only numerals. The final solid button leads to Contact. No photo, because no packaging photos exist yet.",
+          "slots": []
+        }
+      ]
+    },
+    {
+      "slug": "products",
+      "sections": [
+        {
+          "id": "products-intro",
+          "type": "page-header",
+          "purpose": "Open the catalogue and give a short anchor-link menu to each product family.",
+          "layoutNotes": "Left-aligned large title on cream with a short intro line. On the right, a vertical list of anchor links to the sections below, with gold numerals. Compact height, about 40vh, with a thin gold line underneath.",
+          "slots": []
+        },
+        {
+          "id": "products-bodycare",
+          "type": "product-feature",
+          "purpose": "Present the body care gift sets (lotion, hand cream, fragrance mist) and let visitors enquire to order.",
+          "layoutNotes": "Photo on the left in a 5/12 column, 4:5 crop, with the empty upper-right area kept as breathing room. Text on the right: heading, a short description, a list of the three pieces, a reserved line 'Price on request' where prices will go later, and an 'Order this set' button linking to Contact. The photo shows prominent third-party brand labels (Bath & Body Works and product names). The rights and authenticity must be confirmed with the customer before publishing, and the image should be replaced if they cannot be confirmed.",
+          "slots": [
+            {
+              "id": "products-bodycare-image",
+              "kind": "image",
+              "description": "Three red body care products (body lotion, hand cream, fragrance mist) beside pink peonies and a handmade cream ceramic cup and saucer with red hearts, against blurred white blossoms. Third-party labels are visible and their rights must be confirmed with the customer.",
+              "preferredCategory": "product",
+              "aspect": "4:5",
+              "assignedAsset": "asset-002"
+            }
+          ]
+        },
+        {
+          "id": "products-drinkware",
+          "type": "product-feature",
+          "purpose": "Show the floral insulated tumblers with bow straw toppers and the wildflower water bottles.",
+          "layoutNotes": "Mirror of the previous section: text left, photos right. A large tumbler photo in a 4:5 crop with a small second image offset below it on blush. In the tumbler photo, the '1/3' counter badge in the top-right corner must be cropped out and the cluttered table foreground trimmed. Brand names on the cups (Stanley, LoveShackFancy) are third-party, so the rights and authenticity must be confirmed with the customer before publishing. The second slot has no suitable photo, because the only bottle photo is used on the home hero. It stays a soft blush placeholder reading 'photo coming soon' until the customer supplies a clean bottle shot.",
+          "slots": [
+            {
+              "id": "products-drinkware-image",
+              "kind": "image",
+              "description": "Four floral-patterned insulated tumblers with handles, gold bands, coloured lids and bow-shaped straw toppers on a white table in front of white blossom branches. Third-party brand names are visible and their rights must be confirmed with the customer.",
+              "preferredCategory": "product",
+              "aspect": "4:5",
+              "assignedAsset": "asset-005"
+            },
+            {
+              "id": "products-drinkware-image-2",
+              "kind": "image",
+              "description": "A wildflower-print water bottle on a plain or softly styled background, as a clean individual product shot.",
+              "preferredCategory": "product",
+              "aspect": "1:1",
+              "assignedAsset": null
+            }
+          ]
+        },
+        {
+          "id": "products-home",
+          "type": "product-feature",
+          "purpose": "Cover the embroidered cushion covers and the ceramic cups and saucers in gift boxes.",
+          "layoutNotes": "Two equal columns on a blush band, one for cushion covers and one for cups and saucers. Each has a portrait image area, a heading, a description and a 'Price on request' line where prices will go later. The two photos already used on the home page are not repeated, so both slots stay placeholders for now, with a soft cream frame and a gold hairline. The customer should supply individual shots, ideally close-ups of the embroidery and of a boxed cup.",
+          "slots": [
+            {
+              "id": "products-home-image",
+              "kind": "image",
+              "description": "A close-up of an embroidered cushion cover, showing the stitched wildflowers and texture.",
+              "preferredCategory": "product",
+              "aspect": "4:5",
+              "assignedAsset": null
+            },
+            {
+              "id": "products-home-image-2",
+              "kind": "image",
+              "description": "A ceramic cup and saucer set presented in its gift box.",
+              "preferredCategory": "product",
+              "aspect": "4:5",
+              "assignedAsset": null
+            }
+          ]
+        },
+        {
+          "id": "products-order",
+          "type": "cta-band",
+          "purpose": "Tell visitors how to order, by phone or by message, since there is no online checkout.",
+          "layoutNotes": "Full-width rose band. Large phone number 71-014463 in Instrument Serif at left, a short line about ordering at right, and a plum-outlined button to the Contact page. Gold stars as small ornaments at the corners.",
+          "slots": []
+        }
+      ]
+    },
+    {
+      "slug": "about",
+      "sections": [
+        {
+          "id": "about-story",
+          "type": "story",
+          "purpose": "Tell the story of My Sweet Home and the person behind the shop, in a warm, personal voice.",
+          "layoutNotes": "Two columns: a narrow 4:5 photo area on the left and a long text block on the right with a large opening line in Instrument Serif italic. Without an owner photo, the left area shows a blush panel with a small gold bow ornament and the label 'photo of the owner coming soon', and the logo is not used here. Text uses a 60ch measure.",
+          "slots": [
+            {
+              "id": "about-story-image",
+              "kind": "image",
+              "description": "A warm portrait of the owner or maker with the products, in soft natural light.",
+              "preferredCategory": "people",
+              "aspect": "4:5",
+              "assignedAsset": null
+            }
+          ]
+        },
+        {
+          "id": "about-craft",
+          "type": "process",
+          "purpose": "Show the care that goes into choosing, preparing and gift-boxing each piece.",
+          "layoutNotes": "A wide, short image placeholder on top (21:9) with a gold hairline frame, followed by three short text blocks in columns (choosing, preparing, gifting), each introduced by a small numeral. No invented facts, so the text only describes the idea in general terms. The photo should come from the customer: handmade, packaging or workspace shots.",
+          "slots": [
+            {
+              "id": "about-craft-image",
+              "kind": "image",
+              "description": "Gift-ready boxes being prepared or wrapped, or the workspace where orders are packed.",
+              "preferredCategory": "workspace",
+              "aspect": "21:9",
+              "assignedAsset": null
+            }
+          ]
+        },
+        {
+          "id": "about-values",
+          "type": "values",
+          "purpose": "Sum up the brand's character in three short promises, ending with a prompt to order or get in touch.",
+          "layoutNotes": "Blush band with three short statements set large in Instrument Serif, separated by vertical gold hairlines (stacked on mobile). A centered text link to the Contact page below. No images.",
+          "slots": []
+        }
+      ]
+    },
+    {
+      "slug": "contact",
+      "sections": [
+        {
+          "id": "contact-main",
+          "type": "contact",
+          "purpose": "Let visitors call or message the shop to ask questions and place orders.",
+          "layoutNotes": "Two columns. On the left, a big heading, then the phone number 71-014463 as a large tappable link. Email, address and opening hours have reserved slots that show only when the customer provides them. On the right, a simple form (name, phone or email, what would you like to order, message) with rose underlines instead of boxed fields and a solid rose submit button with plum text. Cream background with a gold hairline between columns.",
+          "slots": []
+        },
+        {
+          "id": "contact-how-to-order",
+          "type": "steps",
+          "purpose": "Make ordering clear in three steps so customers know what to send.",
+          "layoutNotes": "Three horizontal steps on a blush band, each with a gold numeral, a title and one sentence. Keep it short and friendly. A reserved note for delivery or pickup details appears only when the customer provides them.",
+          "slots": []
+        },
+        {
+          "id": "contact-location",
+          "type": "location",
+          "purpose": "Reserve a place for the shop or pickup point, to build trust once the details are available.",
+          "layoutNotes": "Wide 16:9 image area with a thin gold frame, beside or above a small address block. It stays a soft placeholder until the customer gives a storefront photo and an address. No map is invented.",
+          "slots": [
+            {
+              "id": "contact-location-image",
+              "kind": "image",
+              "description": "A photo of the shop front or the pickup location.",
+              "preferredCategory": "location",
+              "aspect": "16:9",
+              "assignedAsset": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "avoid": [
+    "Purple or blue-to-purple gradients",
+    "Glassmorphism",
+    "Generic SaaS feature-card grids",
+    "Centered hero with two buttons as default",
+    "Stock-photo look",
+    "Excessive rounded corners and shadows",
+    "Flat all-pink pages with no cream or gold relief, and a cartoonish baby-pink look; the tone is boutique elegant, not childish",
+    "Glitter or confetti effects beyond a few small gold stars and hairlines",
+    "Shopping cart, checkout, price tables or invented prices; ordering is by phone and message, with only reserved places for prices",
+    "Third-party brand labels (Bath & Body Works, Stanley, LoveShackFancy) shown prominently in the hero or enlarged"
+  ],
+  "styleBlock": "Boutique-romantic gift shop look for My Sweet Home. Warm cream background #FFFAF8, blush #F7C6D0 bands, rose #E8909F for buttons and highlights with plum text #4A2C33, and gold #C9A56A for hairlines, stars and bow ornaments (decoration only, never body text). Headings in Instrument Serif, large and light, with one italic word; body and labels in Figtree. Airy spacing of 96-128px between sections, asymmetric layouts, tall 4:5 portrait photos with small corner radii (4-8px) and no heavy shadows. Photos are bright, soft and floral, cropped clean. Thin gold frames. Mood: sweet, feminine, elegant, warm and charming."
+}

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "approvedAt": "2026-10-08T17:30:00Z",
+  "pages": [
+    { "slug": "home", "screenId": "def456", "html": "design/variants/home-def456.html", "screenshot": "design/variants/home-def456.png" },
+    { "slug": "menu", "screenId": "m1", "html": "design/menu.html", "screenshot": "design/menu.png" },
+    { "slug": "about", "screenId": "a1", "html": "design/about.html", "screenshot": "design/about.png" },
+    { "slug": "contact", "screenId": "c1", "html": "design/contact.html", "screenshot": "design/contact.png" }
+  ],
+  "slotAssets": { "home-hero-image": "asset-001", "home-highlights-image": "asset-002", "about-story-image": null },
+  "reviewNotes": ["Make sure hero image is not cropped on mobile"]
+}

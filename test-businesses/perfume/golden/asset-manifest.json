@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "asset-001",
+      "file": "inputs/assets/PHOTO-2026-09-29-21-46-09 2.jpg",
+      "hash": "1aeb34a1edd6f2c60210869e7ecab344cd71eabaa4ba8aba2cc9e32a68fdf4b2",
+      "kind": "image",
+      "category": "product",
+      "description": "A sealed, shrink-wrapped perfume gift box with a pale iridescent finish, holographic starburst corners and pink foil lettering stands upright on a dark wooden table in an indoor room.",
+      "quality": "medium",
+      "orientation": "landscape",
+      "width": 1280,
+      "height": 960,
+      "dominantColors": [
+        "#D9D6E3",
+        "#5A3A2A",
+        "#E8E2D0",
+        "#B0447A"
+      ],
+      "usableFor": [
+        "card",
+        "gallery"
+      ],
+      "notes": "Text visible: KAY ALI, DÉJÀ VU WHITE FLOWER, EAU DE PARFUM, 30ml×4. Product is sharp and centered, but the background is a cluttered home interior with a window and furniture, and the lighting is dim with slight glare on the box. The box is cropped close to the top edge, so it is risky for wide hero crops. Better suited for a product card or gallery than a hero image."
+    },
+    {
+      "id": "asset-002",
+      "file": "inputs/assets/PHOTO-2026-09-29-21-46-09 3.jpg",
+      "hash": "278ff4af29f68727aba2cd8700a9b801797623f7e55607fd2fa92be40100567c",
+      "kind": "image",
+      "category": "product",
+      "description": "Two boxed eau de parfum products standing side by side on a wooden table: a dark brown box with a gold label on the left and a gold ridged box with a dark square label on the right.",
+      "quality": "medium",
+      "orientation": "landscape",
+      "width": 1280,
+      "height": 960,
+      "dominantColors": [
+        "#3B2418",
+        "#C9A24D",
+        "#8A5A33",
+        "#E8E4DE"
+      ],
+      "usableFor": [
+        "card",
+        "gallery"
+      ],
+      "notes": "Indoor lighting with reflections and glare on the glossy packaging and shrink wrap. The background is cluttered with glassware, a window and furniture. The boxes are close to the frame edges, so cropping is risky. The photo is slightly tilted and casually composed, with no clear empty space for text. Text visible: TOM FORD, TOBACCO VANILLE, EAU DE PARFUM 100 ML, EAU DE PARFUM, VAPORISATEUR SPRAY, 3.4 FL.OZ./OZ. LIQ./100 ml, TOM FORD BLACK ORCHID, EAU DE PARFUM, VAPORISATEUR SPRAY, 3.4 FL.OZ./OZ. LIQ./100 ml."
+    },
+    {
+      "id": "asset-003",
+      "file": "inputs/assets/PHOTO-2026-09-29-21-46-09 4.jpg",
+      "hash": "e622ae1e9bd9c4324e8bf92e046cb9496c6c192984c2714efeb08bbe1c206315",
+      "kind": "image",
+      "category": "product",
+      "description": "Three sealed perfume boxes stand side by side on a polished wooden table with dining chairs blurred in the background.",
+      "quality": "medium",
+      "orientation": "landscape",
+      "width": 1280,
+      "height": 960,
+      "dominantColors": [
+        "#3B2A1E",
+        "#8A5A36",
+        "#C9CCCB",
+        "#1E1B1A"
+      ],
+      "usableFor": [
+        "gallery",
+        "card"
+      ],
+      "notes": "Text visible: AVENTUS, CREED, DE PERE EN FILS DEPUIS 1760, FROM FATHER TO SON SINCE 1760, 100 ML, 3.3 FL.OZ.; BLEU DE CHANEL PARIS, EAU DE PARFUM POUR HOMME; ISSEY MIYAKE, L'EAU D'ISSEY POUR HOMME, EAU DE TOILETTE VAPORISATEUR NATURAL SPRAY, 125ml, 4.2 FL.OZ. Casual home setting with indoor lighting, warm tones and some glare on the wrapping. The right box is cropped at the top and the left box at the edge, so it is risky as a hero. Little empty space for text. Looks like a phone snapshot, so it suits a gallery or product card better than a banner."
+    },
+    {
+      "id": "asset-004",
+      "file": "inputs/assets/PHOTO-2026-09-29-21-46-09 5.jpg",
+      "hash": "19bf0d7059e70bda3cfea104e9122efeb030c8560c20a56141ee53c55f911a2c",
+      "kind": "image",
+      "category": "product",
+      "description": "Four sealed, dark-colored perfume boxes in a row on a wooden table, with the top edges of the boxes cropped out of the frame.",
+      "quality": "medium",
+      "orientation": "landscape",
+      "width": 1280,
+      "height": 960,
+      "dominantColors": [
+        "#2A1E1A",
+        "#5A3320",
+        "#8B4A28",
+        "#C9463D"
+      ],
+      "usableFor": [
+        "gallery",
+        "card"
+      ],
+      "notes": "Text visible: SAUVAGE EAU DE PARFUM VAPORISATEUR SPRAY Dior; Dior HOMME PARFUM; VALENTINO UOMO BORN IN ROMA INTENSE EAU DE PARFUM INTENSE 100 ml 3.4 FL.OZ.; STRONGER WITH YOU INTENSELY EMPORIO ARMANI EAU DE PARFUM POUR HOMME 100 ml 3.3 FL.OZ. Shot from a high angle with a lot of empty wood table in the lower half, which could hold text but the wood grain is busy. Box tops are cropped and the lighting is dim with some glare on the cellophane wrap. Slightly tilted, casual shot, not a polished product photo. Not suitable as a hero; could be cropped to the boxes for a card or gallery."
+    },
+    {
+      "id": "asset-005",
+      "file": "inputs/assets/PHOTO-2026-09-29-21-46-09.jpg",
+      "hash": "e394336b847fea374988ade6c56eaed55f2ca0213c5062e78f2e49677bed785b",
+      "kind": "image",
+      "category": "product",
+      "description": "Four sealed perfume boxes in a row on a dark wooden table, with a red floral box on the left, two cream-colored boxes in the middle and a white box on the right.",
+      "quality": "medium",
+      "orientation": "landscape",
+      "width": 1280,
+      "height": 960,
+      "dominantColors": [
+        "#5A3220",
+        "#F1E6C4",
+        "#C8372D",
+        "#F4F1EC"
+      ],
+      "usableFor": [
+        "gallery",
+        "card"
+      ],
+      "notes": "Text visible: GUCCI BLOOM, 100 ml, 3.3 FL.OZ.; IN LOVE WITH YOU, EMPORIO ARMANI, EAU DE PARFUM POUR FEMME, 100 ml, 3.4 FL.OZ.; Sì, eau de parfum, GIORGIO ARMANI, VAPORISATEUR NATURAL SPRAY, 100 ml 3.4 FL.OZ.; BURBERRY Her, Eau de Parfum, 100 ml e 3.3 FL.OZ., NATURAL SPRAY VAPORISATEUR. Shot from a slightly high angle with warm indoor lighting and a cluttered background (bag at top left, wooden furniture at top right). The left box is cropped at the edge and the foreground is slightly soft, so it is not suited as a hero image. Works best in a gallery or product card, ideally cropped tighter."
+    },
+    {
+      "id": "asset-006",
+      "file": "inputs/assets/PHOTO-2026-09-29-21-49-35.jpg",
+      "hash": "a409d24fcf8224aab7ba7648f238b63dae8e657c384007f6317f22fb4a8b21b3",
+      "kind": "logo",
+      "category": "logo",
+      "description": "A circular brand badge with a gold rim on a cream background, showing a gold monogram letter B topped with a perfume bottle cap and leaf motifs, the name BONZA, taglines, and contact details for WhatsApp, Instagram, TikTok and Facebook.",
+      "quality": "high",
+      "orientation": "square",
+      "width": 1254,
+      "height": 1254,
+      "dominantColors": [
+        "#F3EADF",
+        "#9A6B35",
+        "#B88A4E",
+        "#5A3A1C"
+      ],
+      "usableFor": [
+        "card",
+        "about",
+        "gallery"
+      ],
+      "notes": "Circular crop on a white background, so it needs a round or neutral placement and is not suited as a full-width hero. Contact details are small and may be hard to read at small sizes. Text visible: BONZA; SCENTS FOR A BETTER YOU; More than a fragrance A feeling; WhatsApp: 81 526 765; Instagram: bonza_perfumes; TikTok: bonza_perfumes; Facebook: Bonza Perfume; PERFUMES | BEAUTY | SELF-CARE"
+    }
+  ],
+  "logo": "asset-006",
+  "documents": [],
+  "gaps": [
+    {
+      "need": "high quality hero image",
+      "reason": "The Home page needs a striking, polished banner to introduce Bonza and its featured perfumes. All current product photos are medium quality, taken on a wooden table in a home setting.",
+      "priority": "high"
+    },
+    {
+      "need": "high quality individual product photos on clean backgrounds",
+      "reason": "The Perfumes page shows each perfume with its price for online sales. The current photos are medium-quality group shots on a wooden table, with some boxes cropped, so they don't present each perfume clearly.",
+      "priority": "high"
+    },
+    {
+      "need": "photos of the perfume bottles themselves (not just sealed boxes)",
+      "reason": "Customers buying fragrance online want to see the bottle. Every current photo shows only sealed boxes, which weakens the Perfumes page and the featured items on Home.",
+      "priority": "medium"
+    },
+    {
+      "need": "lifestyle or mood images",
+      "reason": "Bonza has no brand identity yet. Atmospheric images would give Home a premium look and set the brand's visual tone.",
+      "priority": "medium"
+    },
+    {
+      "need": "how-to-order visuals (DM/WhatsApp order screenshots or illustrated steps)",
+      "reason": "The How to Order page explains ordering by DM. Step visuals or sample chat screenshots would make the process clear and build trust.",
+      "priority": "medium"
+    },
+    {
+      "need": "packaging and delivery photos",
+      "reason": "Online buyers want reassurance about how orders are packed and shipped. Such photos would support the How to Order page and build trust in the shop.",
+      "priority": "low"
+    }
+  ]
+}

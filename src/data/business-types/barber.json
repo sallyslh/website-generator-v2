@@ -1,0 +1,806 @@
+{
+  "type": "barber",
+  "label": "Barber",
+  "kind": "services",
+  "researchedAt": "2026-10-28",
+  "draftedByModel": true,
+  "note": "Written by the model from general knowledge. Pages are ordered from the most to the least important; each has sections inside it. \"merges\" lists the draft pages that were joined because they said the same thing. A person should read it once.",
+  "draftPages": 33,
+  "pages": [
+    {
+      "id": "home",
+      "title": "Home",
+      "purpose": "Introduces the shop, its vibe and top services, with a clear path to book a chair.",
+      "default": true,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "review",
+        "contact"
+      ],
+      "uniqueContent": "The first impression of the shop: hero, top services preview and the main Book button.",
+      "tier": "essential",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Hero with Book button",
+          "content": "Strong shop photo, tagline and a prominent Book a chair button."
+        },
+        {
+          "title": "Top services",
+          "content": "Three or four popular services with starting prices, linking to Services."
+        },
+        {
+          "title": "Meet the barbers preview",
+          "content": "A few faces with a link to the Team page."
+        },
+        {
+          "title": "Reviews highlight",
+          "content": "Star rating and two short client quotes."
+        },
+        {
+          "title": "Hours and location",
+          "content": "Opening hours, address and phone in a compact strip."
+        }
+      ],
+      "mergedFrom": [
+        "home"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "book-online",
+      "title": "Book online",
+      "purpose": "Lets visitors book any kind of appointment, or find out how walk-ins work.",
+      "default": true,
+      "feature": "booking",
+      "featureNote": "haircut or shave with a chosen barber; father and son adjacent slots; wedding party enquiry; walk-in queue info",
+      "demoNeeds": [
+        "people",
+        "price",
+        "stat"
+      ],
+      "uniqueContent": "The booking flow for every appointment type, plus walk-in and queue information.",
+      "tier": "essential",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Book a chair",
+          "content": "Pick a service, a barber and a time slot."
+        },
+        {
+          "title": "Father & son slots",
+          "content": "Book two adjacent chairs for a parent and child at the bundled price."
+        },
+        {
+          "title": "Wedding party enquiry",
+          "content": "Request a group appointment for a groom and groomsmen, with date and party size."
+        },
+        {
+          "title": "Walk-ins",
+          "content": "How walk-ins work, typical waits and the busiest hours."
+        },
+        {
+          "title": "Booking confirmation",
+          "content": "Reminders and how to change an appointment, with a link to the FAQ for the full policy."
+        }
+      ],
+      "mergedFrom": [
+        "book-online",
+        "walk-ins"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "services-prices",
+      "title": "Services",
+      "purpose": "Lists every cut, shave and grooming treatment with duration and price.",
+      "default": true,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "price"
+      ],
+      "uniqueContent": "The complete menu of services with prices, durations and what each includes, including kids', seniors' and father & son offers.",
+      "tier": "essential",
+      "layoutIdea": "One long page: an overview board at the top with a jump link to each service group, then a block for each group with details and prices.",
+      "sections": [
+        {
+          "title": "Overview board",
+          "content": "All service groups with starting prices, each jumping to its block below."
+        },
+        {
+          "title": "Haircuts",
+          "content": "Skin fade, taper fade, crew cut, pompadour and textured crop with price and duration."
+        },
+        {
+          "title": "Hot towel shave",
+          "content": "The straight-razor ritual step by step and what to expect."
+        },
+        {
+          "title": "Beard & grooming",
+          "content": "Beard shaping, line-ups, moustache trims and beard oil treatments."
+        },
+        {
+          "title": "Kids' haircuts",
+          "content": "Children's cuts by age range, with tips for nervous first-timers."
+        },
+        {
+          "title": "Seniors' mornings",
+          "content": "Quiet weekday-morning classic cuts at a discount."
+        }
+      ],
+      "mergedFrom": [
+        "services-prices",
+        "haircuts",
+        "hot-towel-shave",
+        "beard-grooming",
+        "kids-cuts",
+        "seniors",
+        "father-son"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "our-barbers",
+      "title": "Team",
+      "purpose": "Introduces each barber, with specialties, experience and their own work.",
+      "default": true,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "people"
+      ],
+      "uniqueContent": "Profiles of the individual barbers so clients can choose who cuts their hair.",
+      "tier": "essential",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Barber profiles",
+          "content": "Photo, name, years of experience and a short bio for each barber."
+        },
+        {
+          "title": "Specialties",
+          "content": "What each barber is best at, such as fades, beards or classic cuts."
+        },
+        {
+          "title": "Book with this barber",
+          "content": "A link to Book online with that barber preselected."
+        }
+      ],
+      "mergedFrom": [
+        "our-barbers"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "contact",
+      "title": "Contact",
+      "purpose": "Gives address, map, phone, hours and directions.",
+      "default": true,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "contact"
+      ],
+      "uniqueContent": "Where the shop is, when it is open and how to reach it.",
+      "tier": "essential",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Address and map",
+          "content": "Street address with an embedded map."
+        },
+        {
+          "title": "Opening hours",
+          "content": "Weekly hours and holiday changes."
+        },
+        {
+          "title": "Phone and message",
+          "content": "Phone number, email, social links and a short contact form."
+        },
+        {
+          "title": "Parking and transit",
+          "content": "Nearby parking, bus or train stops and walking directions."
+        }
+      ],
+      "mergedFrom": [
+        "contact"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "gallery",
+      "title": "Our work",
+      "purpose": "Shows finished cuts, fades and beard work in photos.",
+      "default": true,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [],
+      "uniqueContent": "The visual portfolio of before-and-after photos and finished styles.",
+      "tier": "essential",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Fades and tapers",
+          "content": "Photo grid of finished fades and tapers."
+        },
+        {
+          "title": "Beards and shaves",
+          "content": "Beard shaping and shave results."
+        },
+        {
+          "title": "Before and after",
+          "content": "Side-by-side transformations."
+        },
+        {
+          "title": "Classic and long styles",
+          "content": "Pompadours, crops and scissor cuts."
+        }
+      ],
+      "mergedFrom": [
+        "gallery"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "reviews",
+      "title": "Reviews",
+      "purpose": "Collects testimonials and star ratings from regulars and first-timers.",
+      "default": true,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "review",
+        "stat"
+      ],
+      "uniqueContent": "Real client feedback and the overall rating.",
+      "tier": "essential",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Overall rating",
+          "content": "Average stars and number of reviews."
+        },
+        {
+          "title": "Client testimonials",
+          "content": "Quotes from regulars and first-timers with names."
+        },
+        {
+          "title": "Leave a review",
+          "content": "Links to the Google or other review page."
+        }
+      ],
+      "mergedFrom": [
+        "reviews"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "first-visit",
+      "title": "First visit",
+      "purpose": "Walks new clients through what to expect, including calm and accessible appointments.",
+      "default": false,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "people",
+        "contact"
+      ],
+      "uniqueContent": "A step-by-step beginner's guide and information on accessibility and sensory-friendly cuts.",
+      "tier": "recommended",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Arriving",
+          "content": "Where to go, how early to arrive and what to bring."
+        },
+        {
+          "title": "Consultation",
+          "content": "How the barber agrees the cut with you."
+        },
+        {
+          "title": "The cut and aftercare",
+          "content": "What happens in the chair and how to look after the result."
+        },
+        {
+          "title": "Step-free access",
+          "content": "Entrance, space and facilities for clients with mobility needs."
+        },
+        {
+          "title": "Sensory-friendly cuts",
+          "content": "Calm, quiet appointments for clients with autism or anxiety and how to request one."
+        }
+      ],
+      "mergedFrom": [
+        "first-visit",
+        "accessibility"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "faq",
+      "title": "FAQ",
+      "purpose": "Answers common questions and states booking and cancellation rules.",
+      "default": false,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "price"
+      ],
+      "uniqueContent": "Quick answers plus the lateness, no-show, rescheduling and deposit policy.",
+      "tier": "recommended",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Hair and services",
+          "content": "Questions on hair types, products and treatments."
+        },
+        {
+          "title": "Children",
+          "content": "Age limits, accompanying adults and kids' cuts."
+        },
+        {
+          "title": "Booking and cancellation policy",
+          "content": "Lateness, no-shows, rescheduling and deposits."
+        },
+        {
+          "title": "Payment",
+          "content": "Accepted methods, tipping and gift card use."
+        }
+      ],
+      "mergedFrom": [
+        "faq",
+        "booking-policy"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "the-shop",
+      "title": "About us",
+      "purpose": "Tells the story of the shop, its space and its craft values.",
+      "default": false,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "people",
+        "stat"
+      ],
+      "uniqueContent": "The history of the barbershop, the interior tour and the values behind the craft.",
+      "tier": "recommended",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Our story",
+          "content": "How the shop started and where it is today."
+        },
+        {
+          "title": "The space",
+          "content": "Photo tour of the chairs, the interior and the atmosphere."
+        },
+        {
+          "title": "Craft values",
+          "content": "What the shop cares about in its work."
+        },
+        {
+          "title": "Numbers",
+          "content": "Years open, cuts done and clients served."
+        },
+        {
+          "title": "Media features",
+          "content": "Articles and mentions."
+        },
+        {
+          "title": "Awards",
+          "content": "Barber competition wins."
+        },
+        {
+          "title": "Partner brands",
+          "content": "Logos of product partners."
+        }
+      ],
+      "mergedFrom": [
+        "the-shop",
+        "our-story",
+        "press"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "memberships",
+      "title": "Memberships",
+      "purpose": "Explains monthly cut plans, prepaid bundles and loyalty rewards.",
+      "default": false,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "price"
+      ],
+      "uniqueContent": "Recurring plans and rewards for regular clients.",
+      "tier": "recommended",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Monthly plans",
+          "content": "Plans with the cuts included and monthly price."
+        },
+        {
+          "title": "Prepaid bundles",
+          "content": "Packs of cuts at a lower price per visit."
+        },
+        {
+          "title": "Loyalty rewards",
+          "content": "How points or stamps turn into free services."
+        },
+        {
+          "title": "Terms",
+          "content": "Pausing, cancelling and sharing a plan."
+        }
+      ],
+      "mergedFrom": [
+        "memberships"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "shop-products",
+      "title": "Shop",
+      "purpose": "Sells grooming products and gift cards online, with help choosing.",
+      "default": false,
+      "feature": "order",
+      "featureNote": "grooming products for pickup or delivery; gift card with a chosen amount",
+      "demoNeeds": [
+        "price"
+      ],
+      "uniqueContent": "Products used in the chairs, gift cards and a guide to picking styling products.",
+      "tier": "recommended",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Styling products",
+          "content": "Pomades, clay and sprays with prices."
+        },
+        {
+          "title": "Beard care and shaving kits",
+          "content": "Oils, balms, combs and kits."
+        },
+        {
+          "title": "Product guide",
+          "content": "Choose a product by hair type and hold level."
+        },
+        {
+          "title": "Gift cards",
+          "content": "Buy a gift card with a chosen amount."
+        },
+        {
+          "title": "Pickup and delivery",
+          "content": "Collect in the shop or have it delivered."
+        }
+      ],
+      "mergedFrom": [
+        "shop-products",
+        "gift-cards",
+        "product-guide"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "wedding-groom",
+      "title": "Weddings & groups",
+      "purpose": "Offers grooming packages for wedding parties, offices and teams.",
+      "default": false,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "price",
+        "people",
+        "review"
+      ],
+      "uniqueContent": "Group packages for grooms, groomsmen, companies, sports teams and events, in the shop or on site.",
+      "tier": "recommended",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Groom & wedding party",
+          "content": "Packages for the groom, best man and groomsmen on the wedding day."
+        },
+        {
+          "title": "Corporate grooming days",
+          "content": "On-site or in-shop days for offices."
+        },
+        {
+          "title": "Teams and events",
+          "content": "Grooming for sports teams and special events."
+        },
+        {
+          "title": "Group pricing",
+          "content": "Package prices by group size."
+        },
+        {
+          "title": "How to enquire",
+          "content": "Link to the group enquiry on Book online."
+        }
+      ],
+      "mergedFrom": [
+        "wedding-groom",
+        "corporate-grooming"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "events",
+      "title": "Community",
+      "purpose": "Shows events, guest barbers and the shop's charity work.",
+      "default": false,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "people",
+        "stat"
+      ],
+      "uniqueContent": "Upcoming event days and the shop's work in the local community.",
+      "tier": "optional",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Upcoming events",
+          "content": "Guest barber days, cut-a-thons and product launches."
+        },
+        {
+          "title": "Charity cuts",
+          "content": "Free cuts for people in need."
+        },
+        {
+          "title": "Partnerships and sponsorships",
+          "content": "School events and local sponsorships."
+        },
+        {
+          "title": "Impact",
+          "content": "Numbers of free cuts and funds raised."
+        }
+      ],
+      "mergedFrom": [
+        "events",
+        "charity-cuts"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "hair-tips",
+      "title": "Blog",
+      "purpose": "Shares grooming advice from the barbers.",
+      "default": false,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "people"
+      ],
+      "uniqueContent": "Articles on home care, growing out a cut and beard maintenance.",
+      "tier": "optional",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Latest articles",
+          "content": "Recent posts with images."
+        },
+        {
+          "title": "Hair care",
+          "content": "Home care and styling advice."
+        },
+        {
+          "title": "Beard care",
+          "content": "Maintenance and growing tips."
+        },
+        {
+          "title": "Growing out a cut",
+          "content": "How to manage the in-between stages."
+        }
+      ],
+      "mergedFrom": [
+        "hair-tips"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "barber-academy",
+      "title": "Barber academy",
+      "purpose": "Presents training for aspiring barbers.",
+      "default": false,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "price",
+        "people"
+      ],
+      "uniqueContent": "Courses teaching clipper basics, fades and shaving to students.",
+      "tier": "optional",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Courses",
+          "content": "Course levels from beginner to advanced."
+        },
+        {
+          "title": "What you learn",
+          "content": "Clipper basics, fades and straight-razor shaving."
+        },
+        {
+          "title": "Instructors",
+          "content": "The barbers who teach."
+        },
+        {
+          "title": "Fees and dates",
+          "content": "Prices and start dates."
+        },
+        {
+          "title": "Apply",
+          "content": "Enquiry form for students."
+        }
+      ],
+      "mergedFrom": [
+        "barber-academy"
+      ],
+      "evidence": "idea"
+    },
+    {
+      "id": "apprenticeship",
+      "title": "Careers",
+      "purpose": "Invites apprentices and qualified barbers to join, or freelancers to rent a chair.",
+      "default": false,
+      "feature": "",
+      "featureNote": "",
+      "demoNeeds": [
+        "people",
+        "contact",
+        "price"
+      ],
+      "uniqueContent": "Job openings, apprenticeships and chair rental terms.",
+      "tier": "optional",
+      "layoutIdea": "",
+      "sections": [
+        {
+          "title": "Open positions",
+          "content": "Current chairs and roles for qualified barbers."
+        },
+        {
+          "title": "Apprenticeships",
+          "content": "How apprentices train and how to apply."
+        },
+        {
+          "title": "Chair rental",
+          "content": "Booth or chair on weekly or monthly terms."
+        },
+        {
+          "title": "Life at the shop",
+          "content": "Culture and what the team offers."
+        },
+        {
+          "title": "Apply or enquire",
+          "content": "Contact form for applications and rental questions."
+        }
+      ],
+      "mergedFrom": [
+        "apprenticeship",
+        "chair-rental"
+      ],
+      "evidence": "idea"
+    }
+  ],
+  "merges": [
+    {
+      "kept": "services-prices",
+      "absorbed": [
+        "haircuts",
+        "hot-towel-shave",
+        "beard-grooming",
+        "kids-cuts",
+        "seniors",
+        "father-son"
+      ],
+      "why": "All are services of one barbershop menu; one long page with a jump board replaces many thin pages. Father & son booking itself lives on Book online."
+    },
+    {
+      "kept": "book-online",
+      "absorbed": [
+        "walk-ins"
+      ],
+      "why": "Walk-ins and appointments are two ways to get a chair and belong together; father & son and wedding party bookings are sections of this single booking page."
+    },
+    {
+      "kept": "wedding-groom",
+      "absorbed": [
+        "corporate-grooming"
+      ],
+      "why": "Both are group grooming packages for an event or organisation, with the same audience of group organisers."
+    },
+    {
+      "kept": "shop-products",
+      "absorbed": [
+        "gift-cards",
+        "product-guide"
+      ],
+      "why": "All ordering goes in one place, and the product guide helps choose what is sold there."
+    },
+    {
+      "kept": "faq",
+      "absorbed": [
+        "booking-policy"
+      ],
+      "why": "Rules, policies and questions are one page."
+    },
+    {
+      "kept": "first-visit",
+      "absorbed": [
+        "accessibility"
+      ],
+      "why": "Access and sensory-friendly information is part of preparing for a first appointment."
+    },
+    {
+      "kept": "the-shop",
+      "absorbed": [
+        "our-story"
+      ],
+      "why": "The space and the story are both parts of one About us page."
+    },
+    {
+      "kept": "events",
+      "absorbed": [
+        "charity-cuts"
+      ],
+      "why": "Events and charity days are community activities that fit one Community page."
+    },
+    {
+      "kept": "apprenticeship",
+      "absorbed": [
+        "chair-rental"
+      ],
+      "why": "Both address barbers seeking a place to work, so they sit together on Careers."
+    }
+  ],
+  "review": {
+    "rounds": 3,
+    "applied": {
+      "removedSections": [
+        {
+          "page": "Team",
+          "section": "Their work",
+          "ownedBy": "Our work"
+        },
+        {
+          "page": "Services",
+          "section": "Father & son",
+          "ownedBy": "Book online"
+        }
+      ],
+      "merged": [
+        {
+          "kept": "About us",
+          "absorbed": "Press",
+          "why": "Only three short sections (media mentions, awards, partner logos), not enough for a standalone page; it fits as a section on About us."
+        }
+      ],
+      "renamed": []
+    },
+    "remaining": [
+      "unclear name: gallery"
+    ],
+    "note": ""
+  },
+  "homeSectionIdeas": [
+    "Hero with shop photo and a Book a Chair button",
+    "Signature services with prices",
+    "Today's opening hours and live walk-in availability",
+    "Meet the barbers strip",
+    "Before-and-after gallery preview",
+    "Client reviews with star rating",
+    "Memberships and gift card highlight",
+    "Location map with directions and parking"
+  ],
+  "styleNotes": [
+    "Classic barbershop character: dark charcoal or deep navy with warm leather, brass or cream accents.",
+    "Bold condensed or slab-serif headings paired with a clean readable sans-serif for body text.",
+    "Rich photography of real chairs, tools and finished cuts, with a subtle texture such as wood or tile.",
+    "Prominent sticky Book Now button and easy-to-scan price lists on mobile."
+  ],
+  "sources": []
+}

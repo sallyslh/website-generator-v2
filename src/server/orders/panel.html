@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Orders</title>
+<style>
+  :root { --bg:#f4f1ea; --card:#ffffff; --fg:#1d2428; --soft:#667078; --line:#e1dccf; --accent:#12495a; --new:#c0392b; --ok:#2e7d4f; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#14191c; --card:#1d2428; --fg:#eef0f1; --soft:#9aa5ab; --line:#2c353a; --accent:#7cc4d8; --new:#ff7a6b; --ok:#6fcf97; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  header { position: sticky; top: 0; z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); padding: 12px 16px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  header h1 { font-size: 18px; margin: 0; flex: 1 1 auto; }
+  .live { font-size: 13px; color: var(--soft); }
+  .live i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--ok); margin-right: 6px; }
+  .live.off i { background: var(--new); }
+  button { font: inherit; cursor: pointer; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--fg); padding: 8px 16px; }
+  button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  @media (prefers-color-scheme: dark) { button.primary { color: #0b1417; } }
+  button.danger { color: var(--new); }
+  nav { display: flex; gap: 8px; padding: 12px 16px; overflow-x: auto; }
+  nav button.on { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+  nav b { display: inline-block; min-width: 1.5em; margin-left: 6px; padding: 0 6px; border-radius: 999px; background: var(--new); color: #fff; font-size: 12px; }
+  main { padding: 0 16px 48px; display: grid; gap: 12px; max-width: 760px; margin: 0 auto; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
+  .card.fresh { border-color: var(--new); box-shadow: 0 0 0 2px color-mix(in srgb, var(--new) 25%, transparent); }
+  .top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .ref { font-size: 20px; font-weight: 700; }
+  .badge { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; padding: 3px 10px; border-radius: 999px; background: var(--fg); color: var(--bg); }
+  .time { color: var(--soft); font-size: 13px; }
+  ul { list-style: none; padding: 0; margin: 10px 0; border-top: 1px solid var(--line); }
+  li { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; border-bottom: 1px solid var(--line); }
+  .total { display: flex; justify-content: space-between; font-weight: 700; font-size: 18px; margin: 6px 0; }
+  .who { margin: 8px 0; color: var(--soft); overflow-wrap: anywhere; }
+  .who a { color: var(--accent); }
+  .note { background: color-mix(in srgb, var(--accent) 10%, transparent); border-radius: 8px; padding: 6px 10px; margin: 6px 0; overflow-wrap: anywhere; }
+  .actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .empty { text-align: center; color: var(--soft); padding: 48px 0; }
+  .err { color: var(--new); }
+  [hidden] { display: none !important; }
+  body:not(.assist-open) .c-bubble, body:not(.assist-open) .c-panel { display: none !important; }
+  .auth { max-width: 380px; margin: 12vh auto; padding: 0 16px; }
+  .auth h1 { font-size: 22px; margin: 0 0 6px; }
+  .auth p { color: var(--soft); margin: 0 0 12px; }
+  .auth label { display: block; font-size: 14px; color: var(--soft); margin-top: 10px; }
+  .auth input, .box input { width: 100%; font: inherit; padding: 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--card); color: var(--fg); margin-top: 4px; }
+  .auth button.primary { width: 100%; margin-top: 16px; padding: 12px; }
+  .stats { display: flex; gap: 10px; padding: 12px 16px 0; overflow-x: auto; }
+  .stat { flex: 1 0 auto; min-width: 120px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 8px 12px; }
+  .stat b { display: block; font-size: 20px; } .stat span { font-size: 12px; color: var(--soft); }
+  .search { padding: 0 16px 8px; max-width: 760px; margin: 0 auto; } .search input { width: 100%; font: inherit; padding: 10px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--fg); }
+  .day { color: var(--soft); font-size: 13px; text-transform: uppercase; letter-spacing: .05em; margin: 10px 2px 0; }
+  .menu { display: flex; gap: 8px; flex-wrap: wrap; }
+  .menu button { padding: 6px 12px; font-size: 14px; }
+  .box { max-width: 760px; margin: 0 auto; padding: 0 16px 48px; }
+  .box .card { margin-bottom: 12px; }
+  .row { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; padding: 8px 0; border-bottom: 1px solid var(--line); }
+  .row small { color: var(--soft); display: block; }
+  .linkbox { background: color-mix(in srgb, var(--accent) 10%, transparent); border-radius: 8px; padding: 8px 10px; margin-top: 8px; overflow-wrap: anywhere; font-size: 14px; }
+  .ok { color: var(--ok); }
+  @media print { header, nav, .actions { display: none; } }
+</style>
+</head>
+<body>
+
+<div class="auth" id="loginView" hidden>
+  <h1 class="siteName">Orders</h1>
+  <p>Sign in to see your orders.</p>
+  <label>Email<input id="liEmail" type="email" autocomplete="username"></label>
+  <label>Password<input id="liPass" type="password" autocomplete="current-password"></label>
+  <button class="primary" id="liGo">Sign in</button>
+  <p class="err" id="liErr"></p>
+  <p>Forgot your password? <a href="#" id="goRecover">The owner can use the recovery code</a>. Staff: ask the owner for a reset link.</p>
+</div>
+
+<div class="auth" id="recoverView" hidden>
+  <h1 class="siteName">Orders</h1>
+  <p>Owner only. Enter your email, the recovery code you saved when you created your account, and a new password.</p>
+  <label>Email<input id="rcEmail" type="email" autocomplete="username"></label>
+  <label>Recovery code<input id="rcCode" type="text" autocomplete="off" placeholder="xxxx-xxxx-xxxx-xxxx-xxxx"></label>
+  <label>New password (at least 8 characters)<input id="rcNew" type="password" autocomplete="new-password"></label>
+  <button class="primary" id="rcRecover">Set the new password</button>
+  <p class="err" id="rcErr"></p>
+  <p><a href="#" id="backLogin">Back to sign in</a></p>
+</div>
+
+<div class="auth" id="codeView" hidden>
+  <h1>Save your recovery code</h1>
+  <p>If you ever forget your password, this code is the only way back in for the owner: nobody else, not even the people who built your website, can reset it for you. It is shown only now.</p>
+  <p class="linkbox" id="codeText" style="font-size:20px;letter-spacing:.06em;text-align:center;user-select:all"></p>
+  <p>Write it down or keep it in a safe place (a password manager is perfect).</p>
+  <button class="primary" id="codeGo">I saved it</button>
+</div>
+
+<div class="auth" id="setupView" hidden>
+  <h1 class="siteName">Orders</h1>
+  <p>Welcome! Create the owner account for this page. You can add your staff afterwards.</p>
+  <label>Your name<input id="suName" type="text" autocomplete="name"></label>
+  <label>Email<input id="suEmail" type="email" autocomplete="username"></label>
+  <label>Password (at least 8 characters)<input id="suPass" type="password" autocomplete="new-password"></label>
+  <button class="primary" id="suGo">Create my account</button>
+  <p class="err" id="suErr"></p>
+</div>
+
+<div class="auth" id="resetView" hidden>
+  <h1 class="siteName">Orders</h1>
+  <p>Choose a new password.</p>
+  <label>New password (at least 8 characters)<input id="rsPass" type="password" autocomplete="new-password"></label>
+  <button class="primary" id="rsGo">Save and sign in</button>
+  <p class="err" id="rsErr"></p>
+</div>
+
+<div class="auth" id="noticeView" hidden>
+  <h1 class="siteName">Orders</h1>
+  <p id="noticeText"></p>
+</div>
+
+<div id="app" hidden>
+  <header>
+    <h1 id="title">Orders</h1>
+    <span class="live" id="live"><i></i><span id="liveText">Live</span></span>
+    <button id="sound">Sound off</button>
+    <span class="menu">
+      <button id="goOrders" hidden>Orders</button>
+      <button id="goEdit" hidden>Edit my website</button>
+      <button id="goAssist" hidden>Assistant</button>
+      <button id="goStaff" hidden>Staff</button>
+      <button id="goAlerts" hidden>Alerts</button>
+      <button id="goPass">Password</button>
+      <button id="goOut">Sign out</button>
+    </span>
+  </header>
+  <div id="ordersView">
+    <div class="stats" id="stats"></div>
+    <nav id="tabs"></nav>
+    <div class="search" id="searchBox" hidden><input id="search" type="search" placeholder="Search the history: name, phone, dish, number"></div>
+    <main id="list"></main>
+  </div>
+  <div class="box" id="assistantView" hidden>
+    <h2>Try your assistant</h2>
+    <div class="card">
+      <p style="margin:0 0 10px">The chat window is open at the bottom of this page, the same one your visitors see. Ask it anything, as a customer would.</p>
+      <p style="margin:0 0 10px">If an answer is not right, tap <b>Not right?</b> under it and write what it should do instead. It changes right away.</p>
+      <label style="display:flex;gap:10px;align-items:center;margin:12px 0 0"><input type="checkbox" id="asOn" style="width:auto"> The assistant is on</label>
+      <p class="time" id="asUsage" style="margin:8px 0 0"></p>
+      <div class="actions"><button id="asUndo" hidden>Take back my last change</button></div>
+      <p id="asMsg" class="ok"></p>
+    </div>
+  </div>
+  <div class="box" id="alertsView" hidden>
+    <h2>Alerts on this phone</h2>
+    <div class="card">
+      <p style="margin:0 0 10px">When someone places an order or asks for an appointment, this phone makes a sound and shows a notification, even when this page is closed. Turn it on once on each phone or computer you want to be alerted on.</p>
+      <p style="margin:0 0 10px"><small>The notification only says that something new arrived. The details of the customer stay here, behind your sign-in.</small></p>
+      <p id="alStatus" style="font-weight:700;margin:12px 0 0"></p>
+      <div class="actions"><button class="primary" id="alOn">Turn on alerts on this phone</button><button id="alTest" hidden>Send me a test alert</button><button id="alOff" class="danger" hidden>Turn off on this phone</button></div>
+      <p id="alHelp" class="hint"></p>
+      <p class="err" id="alErr"></p>
+    </div>
+  </div>
+  <div class="box" id="staffView" hidden>
+    <h2>Your staff</h2>
+    <div class="card" id="staffList"></div>
+    <div class="card">
+      <b>Add a person</b>
+      <input id="stName" type="text" placeholder="Name" style="margin-top:10px">
+      <input id="stEmail" type="email" placeholder="Email" style="margin-top:8px">
+      <input id="stPass" type="password" placeholder="Password (at least 8 characters)" autocomplete="new-password" style="margin-top:8px">
+      <div class="actions"><button class="primary" id="stGo">Add</button></div>
+      <p class="err" id="stErr"></p>
+    </div>
+  </div>
+  <div class="box" id="passView" hidden>
+    <h2>Recovery code</h2>
+    <div class="card">
+      <p style="margin:0 0 8px">Owner only. A new code replaces the old one. It is shown once.</p>
+      <input id="rcPass" type="password" placeholder="Your password" autocomplete="current-password">
+      <div class="actions"><button class="primary" id="rcNewCode">Make a new recovery code</button></div>
+      <p id="rcShow" class="linkbox" hidden style="font-size:18px;letter-spacing:.06em;user-select:all"></p>
+      <p class="err" id="rcMsg"></p>
+    </div>
+    <h2>Change your password</h2>
+    <div class="card">
+      <input id="pwOld" type="password" placeholder="Current password" autocomplete="current-password">
+      <input id="pwNew" type="password" placeholder="New password (at least 8 characters)" autocomplete="new-password" style="margin-top:8px">
+      <div class="actions"><button class="primary" id="pwGo">Save</button></div>
+      <p class="err" id="pwErr"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var site = '__SITE__'; if (site.indexOf('__') === 0) site = location.pathname.split('/').filter(Boolean)[1]; // the server fills in the site id
+  var api = '/api/panel/' + site;
+  var query = '';
+  var STR = { order: { new: 'New', progress: 'In progress', done: 'History' }, ways: { delivery: 'Delivery', pickup: 'Pick up', dinein: 'Eat in' } };
+  var tab = 'new', data = null, seen = null, soundOn = false, ctx = null, fresh = {}, baseTitle = document.title, me = null, timer = null;
+  function $(id) { return document.getElementById(id); }
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text !== undefined) n.textContent = text; return n; }
+  function call(path, body) {
+    var opt = body === undefined ? { cache: 'no-store' } : { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) };
+    return fetch(api + path, opt).then(function (r) { return r.json().catch(function () { return {}; }).then(function (d) { if (!r.ok) { var e = new Error(d.error || 'Something went wrong.'); e.status = r.status; throw e; } return d; }); });
+  }
+  function show(id) { ['loginView', 'setupView', 'resetView', 'noticeView', 'recoverView', 'codeView', 'app'].forEach(function (v) { $(v).hidden = v !== id; }); }
+  function fmt(n) { var f = (data && data.site.fmt) || '#'; return f.replace('#', String(Math.round(n * 100) / 100)); }
+  function ago(iso) { var s = Math.max(0, (Date.now() - new Date(iso).getTime()) / 1000); if (s < 60) return 'just now'; if (s < 3600) return Math.floor(s / 60) + ' min ago'; if (s < 86400) return Math.floor(s / 3600) + ' h ago'; return new Date(iso).toLocaleDateString(); }
+  function group(o) { return o.status === 'new' ? 'new' : ['accepted', 'ready', 'confirmed'].indexOf(o.status) >= 0 ? 'progress' : 'done'; }
+
+  function beep() {
+    if (!soundOn) return;
+    try {
+      ctx = ctx || new (window.AudioContext || window.webkitAudioContext)();
+      [0, 0.22].forEach(function (t, i) {
+        var o = ctx.createOscillator(), g = ctx.createGain(); o.type = 'sine'; o.frequency.value = i ? 1046 : 784;
+        g.gain.setValueAtTime(0.0001, ctx.currentTime + t); g.gain.exponentialRampToValueAtTime(0.35, ctx.currentTime + t + 0.02); g.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + t + 0.2);
+        o.connect(g); g.connect(ctx.destination); o.start(ctx.currentTime + t); o.stop(ctx.currentTime + t + 0.22);
+      });
+    } catch (e) { /* no sound on this device */ }
+  }
+  function act(order, status) { return call('/orders/' + order.id, { status: status }).then(load); }
+  function button(label, cls, fn) { var b = el('button', cls, label); b.addEventListener('click', fn); return b; }
+
+  function card(o) {
+    var c = el('div', 'card' + (fresh[o.id] ? ' fresh' : ''));
+    var top = el('div', 'top');
+    top.appendChild(el('span', 'ref', '#' + o.id));
+    top.appendChild(el('span', 'badge', o.kind === 'book' ? 'Appointment' : STR.ways[o.type] || o.type));
+    top.appendChild(el('span', 'time', ago(o.at)));
+    c.appendChild(top);
+    if (o.kind === 'book') {
+      c.appendChild(el('div', '', o.service || 'Appointment'));
+      c.appendChild(el('div', 'total', dayName(o.day + 'T12:00:00') + ' · ' + o.time + (o.minutes ? ' (' + o.minutes + ' min)' : '')));
+    } else {
+      var ul = el('ul');
+      o.items.forEach(function (i) { var li = el('li'); li.appendChild(el('span', '', i.qty + ' × ' + i.name)); li.appendChild(el('span', '', fmt(i.qty * i.price))); ul.appendChild(li); });
+      c.appendChild(ul);
+      if (o.fee) c.appendChild(el('div', 'who', 'Delivery fee: ' + fmt(o.fee)));
+      var t = el('div', 'total'); t.appendChild(el('span', '', 'Total · cash')); t.appendChild(el('span', '', fmt(o.total))); c.appendChild(t);
+    }
+    var who = el('div', 'who');
+    who.appendChild(document.createTextNode(o.name + ' · '));
+    var tel = el('a', '', o.phone); tel.href = 'tel:' + o.phone.replace(/[^0-9+]/g, ''); who.appendChild(tel);
+    var digits = o.phone.replace(/[^0-9]/g, '');
+    if (digits.length >= 8) { who.appendChild(document.createTextNode(' · ')); var wa = el('a', '', 'WhatsApp'); wa.href = 'https://wa.me/' + digits; wa.target = '_blank'; wa.rel = 'noopener noreferrer'; who.appendChild(wa); }
+    c.appendChild(who);
+    if (o.address) c.appendChild(el('div', 'note', (o.type === 'dinein' ? 'Table: ' : 'Address: ') + o.address));
+    if (o.notes) c.appendChild(el('div', 'note', 'Note: ' + o.notes));
+    var a = el('div', 'actions');
+    if (o.kind === 'book') {
+      if (o.status === 'new') { a.appendChild(button('Confirm', 'primary', function () { act(o, 'confirmed'); })); a.appendChild(button('Decline', 'danger', function () { act(o, 'declined'); })); }
+      else if (o.status === 'confirmed') a.appendChild(button('Done', 'primary', function () { act(o, 'done'); }));
+    } else if (o.status === 'new') { a.appendChild(button('Accept', 'primary', function () { act(o, 'accepted'); })); a.appendChild(button('Cancel', 'danger', function () { act(o, 'cancelled'); })); }
+    else if (o.status === 'accepted') { a.appendChild(button(o.type === 'delivery' ? 'Ready to go' : 'Ready', 'primary', function () { act(o, 'ready'); })); a.appendChild(button('Cancel', 'danger', function () { act(o, 'cancelled'); })); }
+    else if (o.status === 'ready') a.appendChild(button(o.type === 'delivery' ? 'Delivered' : 'Handed over', 'primary', function () { act(o, 'done'); }));
+    if (a.children.length) c.appendChild(a); else c.appendChild(el('div', 'time', ({ done: 'Done', cancelled: 'Cancelled', declined: 'Declined' }[o.status] || '') + (o.updatedBy ? ' · ' + o.updatedBy : '')));
+    return c;
+  }
+
+  function draw() {
+    $('title').textContent = data.site.name || 'Orders';
+    var counts = { new: 0, progress: 0, done: 0 };
+    data.orders.forEach(function (o) { counts[group(o)]++; });
+    var tabs = $('tabs'); tabs.textContent = '';
+    ['new', 'progress', 'done'].forEach(function (k) {
+      var b = el('button', tab === k ? 'on' : '', k === 'progress' && data.site.mode === 'book' ? 'Upcoming' : STR.order[k]);
+      if (k === 'new' && counts.new) b.appendChild(el('b', '', String(counts.new)));
+      b.addEventListener('click', function () { tab = k; draw(); }); tabs.appendChild(b);
+    });
+    drawStats();
+    $('searchBox').hidden = tab !== 'done';
+    var list = $('list'); list.textContent = '';
+    var shown = data.orders.filter(function (o) { return group(o) === tab; });
+    if (tab === 'progress') shown = data.site.mode === 'book' ? shown.slice().sort(function (a, b) { return (a.day + a.time).localeCompare(b.day + b.time); }) : shown.slice().reverse(); // appointments: the next one first
+    if (tab === 'done' && query) shown = shown.filter(function (o) { return matches(o, query); });
+    if (!shown.length) list.appendChild(el('div', 'empty', tab === 'new' ? 'No new orders. This page updates by itself.' : tab === 'done' ? (query ? 'No match.' : 'Everything that was done will be kept here.') : 'Nothing here.'));
+    var lastDay = '';
+    shown.forEach(function (o) {
+      if (tab === 'done') { var day = dayName(o.at); if (day !== lastDay) { lastDay = day; list.appendChild(el('div', 'day', day)); } }
+      list.appendChild(card(o));
+    });
+    document.title = counts.new ? '(' + counts.new + ') ' + baseTitle : baseTitle;
+  }
+
+  function dayName(iso) {
+    var d = new Date(iso), t = new Date(), y = new Date(Date.now() - 86400000);
+    if (d.toDateString() === t.toDateString()) return 'Today';
+    if (d.toDateString() === y.toDateString()) return 'Yesterday';
+    return d.toLocaleDateString(undefined, { weekday: 'long', day: 'numeric', month: 'long', year: d.getFullYear() === t.getFullYear() ? undefined : 'numeric' });
+  }
+  function matches(o, q) {
+    var text = [o.id, o.name, o.phone, o.address, o.notes, o.service, (o.items || []).map(function (i) { return i.name; }).join(' ')].join(' ').toLowerCase();
+    return q.toLowerCase().split(/s+/).every(function (w) { return text.indexOf(w) >= 0; });
+  }
+  // what came in today and this week (cancelled and declined do not count)
+  function drawStats() {
+    var start = new Date(); start.setHours(0, 0, 0, 0); var week = new Date(start.getTime() - 6 * 86400000);
+    var s = { today: [0, 0], week: [0, 0], all: [0, 0] };
+    data.orders.forEach(function (o) {
+      if (o.status === 'cancelled' || o.status === 'declined') return;
+      var at = new Date(o.at), sum = o.total || 0;
+      s.all[0]++; s.all[1] += sum;
+      if (at >= week) { s.week[0]++; s.week[1] += sum; }
+      if (at >= start) { s.today[0]++; s.today[1] += sum; }
+    });
+    var box = $('stats'); box.textContent = '';
+    [['Today', s.today], ['Last 7 days', s.week], ['All time', s.all]].forEach(function (x) {
+      var d = el('div', 'stat'); d.appendChild(el('b', '', String(x[1][0]) + (data.site.mode === 'book' ? (x[1][0] === 1 ? ' appointment' : ' appointments') : (x[1][0] === 1 ? ' order' : ' orders')) + (data.site.mode === 'book' ? '' : ' · ' + fmt(x[1][1])))); d.appendChild(el('span', '', x[0])); box.appendChild(d);
+    });
+  }
+
+  function load() {
+    return call('/orders').then(function (d) {
+      var ids = d.orders.map(function (o) { return o.id; });
+      if (seen) { var added = d.orders.filter(function (o) { return seen.indexOf(o.id) < 0 && o.status === 'new'; }); if (added.length) { added.forEach(function (o) { fresh[o.id] = true; }); beep(); } }
+      seen = ids; data = d; draw();
+      $('live').classList.remove('off'); $('liveText').textContent = 'Live';
+    }).catch(function (e) { if (e.status === 401) start(); else { $('live').classList.add('off'); $('liveText').textContent = 'Offline, trying again'; } });
+  }
+
+  function view(name) {
+    ['ordersView', 'staffView', 'passView', 'assistantView', 'alertsView'].forEach(function (v) { $(v).hidden = v !== name; });
+    document.body.classList.toggle('assist-open', name === 'assistantView');
+    if (name === 'staffView') loadStaff();
+    if (name === 'alertsView') loadAlerts();
+    if (name === 'assistantView') loadAssistant();
+  }
+  // alerts on this phone (Web Push): needs a service worker, the browser's permission, and a secure address (https, or localhost)
+  var pushReady = 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
+  function b64(s) { var p = '='.repeat((4 - s.length % 4) % 4); var r = atob((s + p).replace(/-/g, '+').replace(/_/g, '/')); var a = new Uint8Array(r.length); for (var i = 0; i < r.length; i++) a[i] = r.charCodeAt(i); return a; }
+  function pushReg() { return navigator.serviceWorker.register('/panel-sw.js', { scope: '/panel' }).then(function () { return navigator.serviceWorker.ready; }); }
+  function loadAlerts() {
+    $('alErr').textContent = ''; $('alHelp').textContent = '';
+    if (!pushReady) { $('alStatus').textContent = 'This browser cannot show alerts.'; $('alHelp').textContent = /iPhone|iPad/.test(navigator.userAgent) ? 'On an iPhone: open this page in Safari, tap Share, choose "Add to Home Screen", then open the panel from the new icon and come back here.' : 'Please use a recent Chrome, Edge, Firefox or Safari.'; $('alOn').hidden = true; return; }
+    pushReg().then(function (reg) { return reg.pushManager.getSubscription(); }).then(function (sub) {
+      var on = Boolean(sub) && Notification.permission === 'granted';
+      $('alStatus').textContent = on ? 'Alerts are ON for this phone.' : Notification.permission === 'denied' ? 'Alerts are blocked in this browser.' : 'Alerts are off for this phone.';
+      $('alOn').hidden = on; $('alTest').hidden = !on; $('alOff').hidden = !on;
+      if (Notification.permission === 'denied') $('alHelp').textContent = 'Allow notifications for this site in the browser settings, then come back here.';
+    }).catch(function (e) { $('alErr').textContent = 'Alerts cannot start here: ' + e.message; });
+  }
+  function turnOn() {
+    $('alErr').textContent = '';
+    Notification.requestPermission().then(function (p) {
+      if (p !== 'granted') { loadAlerts(); return; }
+      return Promise.all([pushReg(), call('/push')]).then(function (r) {
+        return r[0].pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64(r[1].key) });
+      }).then(function (sub) { return call('/push', { subscription: sub.toJSON() }); }).then(loadAlerts);
+    }).catch(function (e) { $('alErr').textContent = 'Could not turn alerts on: ' + e.message; });
+  }
+  function turnOff() {
+    pushReg().then(function (reg) { return reg.pushManager.getSubscription(); }).then(function (sub) {
+      if (!sub) return; var endpoint = sub.endpoint;
+      return call('/push/remove', { endpoint: endpoint }).then(function () { return sub.unsubscribe(); });
+    }).then(loadAlerts).catch(function (e) { $('alErr').textContent = e.message; });
+  }
+  function loadStaff() {
+    call('/staff').then(function (d) {
+      var box = $('staffList'); box.textContent = '';
+      d.users.forEach(function (u) {
+        var row = el('div', 'row'); var info = el('div'); info.appendChild(document.createTextNode(u.name + (u.role === 'owner' ? ' (owner)' : ''))); info.appendChild(el('small', '', u.email)); row.appendChild(info);
+        if (u.role !== 'owner') {
+          var acts = el('div', 'actions'); acts.style.marginTop = '0';
+          acts.appendChild(button('Reset link', '', function () {
+            call('/staff/' + u.id + '/reset', {}).then(function (r) { var full = location.origin + r.path; var lb = el('div', 'linkbox', 'Send this link to ' + u.name + ' (it works once, for 24 hours): ' + full); row.appendChild(lb); }).catch(function (e) { alert(e.message); });
+          }));
+          acts.appendChild(button('Remove', 'danger', function () { if (confirm('Remove ' + u.name + '?')) call('/staff/' + u.id + '/remove', {}).then(loadStaff); }));
+          row.appendChild(acts);
+        }
+        box.appendChild(row);
+      });
+    });
+  }
+
+  // The assistant page: the same chat bubble the visitors see (loaded from the website's own files) with a "Not right?" under each answer.
+  // The owner sees no rules, no tests and no proposals: a comment is handled behind the scenes and only the result is shown.
+  var chatLoaded = false;
+  function openChat() {
+    if (chatLoaded) return; chatLoaded = true;
+    var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/chat.css'; document.head.appendChild(css);
+    var cfg = document.createElement('div'); cfg.id = 'chat-config'; cfg.hidden = true;
+    cfg.setAttribute('data-site', site); cfg.setAttribute('data-api', ''); cfg.setAttribute('data-name', $('title').textContent); cfg.setAttribute('data-lang', 'en');
+    cfg.setAttribute('data-feedback', '/api/panel/' + site + '/assistant/feedback'); cfg.setAttribute('data-open', '1');
+    document.body.appendChild(cfg);
+    var js = document.createElement('script'); js.src = '/chat.js'; document.body.appendChild(js);
+  }
+  function loadAssistant() {
+    call('/assistant').then(function (a) {
+      $('asOn').checked = a.enabled;
+      var pct = a.usage.budget ? Math.min(100, Math.round(a.usage.usd / a.usage.budget * 100)) : 0;
+      $('asUsage').textContent = pct >= 100 ? 'The monthly allowance is used up: visitors are sent to you directly until next month.' : pct >= 80 ? 'The monthly allowance is almost used up.' : '';
+      $('asUndo').hidden = !a.adjustments.some(function (x) { return x.source === 'owner'; });
+      openChat();
+    }).catch(function (e) { $('asMsg').textContent = e.message; $('asMsg').className = 'err'; });
+  }
+  function enter(user, siteInfo) {
+    me = user; show('app');
+    var s = siteInfo || {};
+    $('goStaff').hidden = user.role !== 'owner'; $('goAlerts').hidden = false; $('goOrders').hidden = s.ordering === false; $('goAssist').hidden = !(user.role === 'owner' && s.assistant); $('goEdit').hidden = !(user.role === 'owner' && s.editable);
+    view(s.ordering === false ? (s.assistant && user.role === 'owner' ? 'assistantView' : 'passView') : 'ordersView');
+    seen = null; load(); clearInterval(timer); timer = setInterval(function () { if (!$('ordersView').hidden) load(); }, 5000);
+  }
+  function start() {
+    var hash = location.hash.replace(/^#/, ''); var param = {}; hash.split('&').forEach(function (p) { var kv = p.split('='); if (kv[0]) param[kv[0]] = decodeURIComponent(kv.slice(1).join('=')); });
+    call('/state').then(function (s) {
+      document.querySelectorAll('.siteName').forEach(function (n) { n.textContent = s.name; });
+      if (param.reset) { show('resetView'); return; }
+      if (s.needsSetup) { if (param.setup) show('setupView'); else { $('noticeText').textContent = 'This page is not set up yet. Open the setup link you were given.'; show('noticeView'); } return; }
+      if (s.signedIn) { call('/me').then(function (d) { enter(d.user, d.site); }); return; }
+      show('loginView');
+    });
+  }
+
+  function showCode(code) { $('codeText').textContent = code || ''; show('codeView'); }
+  $('codeGo').addEventListener('click', function () { $('codeText').textContent = ''; start(); });
+  $('goRecover').addEventListener('click', function (e) { e.preventDefault(); show('recoverView'); });
+  $('backLogin').addEventListener('click', function (e) { e.preventDefault(); show('loginView'); });
+  $('rcRecover').addEventListener('click', function () {
+    call('/recover', { email: $('rcEmail').value, code: $('rcCode').value, password: $('rcNew').value }).then(function (d) { $('rcCode').value = $('rcNew').value = ''; showCode(d.recoveryCode); }).catch(function (e) { $('rcErr').textContent = e.message; });
+  });
+  $('rcNewCode').addEventListener('click', function () {
+    call('/recovery-code', { password: $('rcPass').value }).then(function (d) { $('rcPass').value = ''; $('rcMsg').textContent = ''; $('rcShow').hidden = false; $('rcShow').textContent = d.recoveryCode; }).catch(function (e) { $('rcMsg').textContent = e.message; });
+  });
+  function onEnter(id, fn) { $(id).addEventListener('keydown', function (e) { if (e.key === 'Enter') fn(); }); }
+  function submitLogin() { call('/login', { email: $('liEmail').value, password: $('liPass').value }).then(function () { $('liPass').value = ''; start(); }).catch(function (e) { $('liErr').textContent = e.message; }); }
+  $('liGo').addEventListener('click', submitLogin); onEnter('liPass', submitLogin);
+  $('suGo').addEventListener('click', function () {
+    var token = new URLSearchParams(location.hash.replace(/^#/, '')).get('setup') || '';
+    call('/setup', { token: token, name: $('suName').value, email: $('suEmail').value, password: $('suPass').value }).then(function (d) { history.replaceState(null, '', location.pathname); showCode(d.recoveryCode); }).catch(function (e) { $('suErr').textContent = e.message; });
+  });
+  $('rsGo').addEventListener('click', function () {
+    var token = new URLSearchParams(location.hash.replace(/^#/, '')).get('reset') || '';
+    call('/reset', { token: token, password: $('rsPass').value }).then(function () { history.replaceState(null, '', location.pathname); start(); }).catch(function (e) { $('rsErr').textContent = e.message; });
+  });
+  $('goOrders').addEventListener('click', function () { view('ordersView'); load(); });
+  $('goStaff').addEventListener('click', function () { view('staffView'); });
+  $('goAlerts').addEventListener('click', function () { view('alertsView'); });
+  $('alOn').addEventListener('click', turnOn);
+  $('alOff').addEventListener('click', turnOff);
+  $('alTest').addEventListener('click', function () {
+    $('alErr').textContent = ''; $('alHelp').textContent = 'Sending...';
+    call('/push/test', {}).then(function (d) { $('alHelp').textContent = d.result.sent ? 'Sent. You should see it in a moment.' : 'Nothing was sent to this device. Try turning alerts off and on again.'; }).catch(function (e) { $('alHelp').textContent = ''; $('alErr').textContent = e.message; });
+  });
+  $('goAssist').addEventListener('click', function () { view('assistantView'); });
+  $('goEdit').addEventListener('click', function () { location.href = '/?edit=1'; });
+  $('asOn').addEventListener('change', function () {
+    call('/assistant', { enabled: $('asOn').checked }).then(function () { $('asMsg').textContent = $('asOn').checked ? 'The assistant is on.' : 'The assistant is off: visitors do not see the chat.'; $('asMsg').className = 'ok'; })
+      .catch(function (e) { $('asMsg').textContent = e.message; $('asMsg').className = 'err'; });
+  });
+  $('asUndo').addEventListener('click', function () {
+    call('/assistant/feedback/undo', {}).then(function (r) { $('asMsg').textContent = r.message; $('asMsg').className = r.ok ? 'ok' : 'err'; loadAssistant(); }).catch(function (e) { $('asMsg').textContent = e.message; $('asMsg').className = 'err'; });
+  });
+  $('goPass').addEventListener('click', function () { view('passView'); });
+  $('goOut').addEventListener('click', function () { call('/logout', {}).then(function () { clearInterval(timer); location.hash = ''; start(); }); });
+  $('stGo').addEventListener('click', function () {
+    call('/staff', { name: $('stName').value, email: $('stEmail').value, password: $('stPass').value }).then(function () { $('stName').value = $('stEmail').value = $('stPass').value = ''; $('stErr').textContent = ''; loadStaff(); }).catch(function (e) { $('stErr').textContent = e.message; });
+  });
+  $('pwGo').addEventListener('click', function () {
+    call('/password', { old: $('pwOld').value, password: $('pwNew').value }).then(function () { $('pwOld').value = $('pwNew').value = ''; $('pwErr').textContent = 'Saved.'; $('pwErr').className = 'ok'; }).catch(function (e) { $('pwErr').textContent = e.message; $('pwErr').className = 'err'; });
+  });
+  $('search').addEventListener('input', function () { query = $('search').value.trim(); draw(); });
+  $('sound').addEventListener('click', function () { soundOn = !soundOn; $('sound').textContent = soundOn ? 'Sound on' : 'Sound off'; if (soundOn) beep(); });
+  window.addEventListener('hashchange', start); // a setup or reset link pasted into a tab that is already open
+  start();
+})();
+</script>
+</body>
+</html>
